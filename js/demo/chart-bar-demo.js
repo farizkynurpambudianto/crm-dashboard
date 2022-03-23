@@ -27,19 +27,38 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
+function randomNumberInterval (min, max){
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function numberGeneratorArray(){
+  let tempArray = []
+
+  for(i = 0; i <= 12; i++){
+    tempArray.push(randomNumberInterval(0, 15000))
+  }
+
+  return tempArray
+}
+
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
-    datasets: [{
-      label: "Revenue",
-      backgroundColor: "#4e73df",
-      hoverBackgroundColor: "#2e59d9",
-      borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
-    }],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Sep", "Nov", "Dec"],
+    datasets: [
+      { 
+        label: "Pendapatan",
+        backgroundColor: "#7B7C85",
+        data: numberGeneratorArray(),
+      },
+      {
+        label: "Penjualan",
+        backgroundColor: "#E7E7E7",
+        data: numberGeneratorArray(),
+      }
+    ],
   },
   options: {
     maintainAspectRatio: false,
@@ -53,6 +72,8 @@ var myBarChart = new Chart(ctx, {
     },
     scales: {
       xAxes: [{
+        categoryPercentage: 0.2,
+        barPercentage: 1,
         time: {
           unit: 'month'
         },
@@ -61,9 +82,9 @@ var myBarChart = new Chart(ctx, {
           drawBorder: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 12
         },
-        maxBarThickness: 25,
+        maxBarThickness: 8,
       }],
       yAxes: [{
         ticks: {
@@ -73,7 +94,7 @@ var myBarChart = new Chart(ctx, {
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return 'Rp' + number_format(value);
           }
         },
         gridLines: {
@@ -86,7 +107,9 @@ var myBarChart = new Chart(ctx, {
       }],
     },
     legend: {
-      display: false
+      align: "start",
+      padding: 50,
+      display: true
     },
     tooltips: {
       titleMarginBottom: 10,

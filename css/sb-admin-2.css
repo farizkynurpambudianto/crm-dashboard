@@ -10322,6 +10322,7 @@ a:focus {
 .sidebar {
   width: 6.5rem;
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
 .sidebar .nav-item {
@@ -10449,7 +10450,6 @@ a:focus {
 }
 
 .sidebar .sidebar-brand {
-  height: 4.375rem;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
@@ -10638,6 +10638,7 @@ a:focus {
 }
 
 .sidebar-light .nav-item .nav-link {
+  transition: all 0.3s ease;
   color: #858796;
 }
 
@@ -10658,11 +10659,13 @@ a:focus {
 }
 
 .sidebar-light .nav-item.active .nav-link {
-  color: #6e707e;
+  transition: all 0.3s ease;
+  background: #7B7C85;
+  color: #ffffff;
 }
 
 .sidebar-light .nav-item.active .nav-link i {
-  color: #6e707e;
+  color: #ffffff;
 }
 
 .sidebar-light #sidebarToggle {
@@ -11279,3 +11282,26 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+/* Custom Styling */
+
+.custom-card {
+  height: 100%;
+  border-radius: 8px; 
+  border: 1px solid #EFF0F6; 
+  box-shadow: 0px 2px 8px 0px rgba(38, 68, 103, 0.08);
+  background: #ffffff;
+  padding: 16px;
+}
+
+.icon-wrapper {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(123, 124, 133, 0.1); 
+  border-radius: 8px; 
+  width: 60px; 
+  height: 60px
+}
+
+
