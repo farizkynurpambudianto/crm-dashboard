@@ -107,7 +107,7 @@ var myBarChart = new Chart(ctx, {
       }],
     },
     legend: {
-      align: "start",
+      align: "center",
       padding: 50,
       display: true
     },

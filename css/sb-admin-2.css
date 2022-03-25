@@ -10320,9 +10320,10 @@ a:focus {
 }
 
 .sidebar {
-  width: 6.5rem;
+  width: 300px;
   min-height: 100vh;
   transition: all 0.3s ease;
+  padding: 0px 16px;
 }
 
 .sidebar .nav-item {
@@ -10453,7 +10454,7 @@ a:focus {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 800;
-  padding: 1.5rem 1rem;
+  padding: 32px 16px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
@@ -10509,7 +10510,7 @@ a:focus {
 
 @media (min-width: 768px) {
   .sidebar {
-    width: 14rem !important;
+    width: 300px;
   }
   .sidebar .nav-item .collapse {
     position: relative;
@@ -10601,8 +10602,8 @@ a:focus {
   }
   .sidebar.toggled .nav-item .nav-link {
     text-align: center;
-    padding: 0.75rem 1rem;
-    width: 6.5rem;
+    padding: 8px;
+    width: 100%;
   }
   .sidebar.toggled .nav-item .nav-link span {
     font-size: 0.65rem;
@@ -10662,6 +10663,7 @@ a:focus {
   transition: all 0.3s ease;
   background: #7B7C85;
   color: #ffffff;
+  border-radius: 8px;
 }
 
 .sidebar-light .nav-item.active .nav-link i {
@@ -11302,6 +11304,13 @@ body.sidebar-toggled footer.sticky-footer {
   border-radius: 8px; 
   width: 60px; 
   height: 60px
+}
+
+.bottom-table {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
