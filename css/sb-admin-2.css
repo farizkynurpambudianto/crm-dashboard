@@ -11313,4 +11313,30 @@ body.sidebar-toggled footer.sticky-footer {
   align-items: center;
 }
 
+.inner-circle {
+  position:absolute;
+  width: 100%;
+  top: 43%;
+  text-align: center
+}
+
+.detail-chart{
+  margin-top: auto;
+  padding: 0px 24px;
+  width: 100%;
+}
+
+.detail-chart .detail-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 
