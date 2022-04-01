@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>CRM - Client</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link
+      href="vendor/datatables/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul
+        class="navbar-nav bg-white sidebar sidebar-light accordion"
+        id="accordionSidebar"
+      >
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html"
+        >
+          <img class="img-fluid" src="img/logo_deka.svg" alt="..." />
+        </a>
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Client -->
+        <li class="nav-item active">
+          <a class="nav-link" href="client.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Klien</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Proposal -->
+        <li class="nav-item">
+          <a class="nav-link" href="proposal.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Proposal</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Proyek -->
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">
+            <i class="fas fa-fw fa-briefcase"></i>
+            <span>Proyek</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pengaturan</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+          >
+            <!-- Sidebar Toggle (Topbar) -->
+            <button
+              id="sidebarToggleTop"
+              class="btn btn-link d-md-none rounded-circle mr-3"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="searchDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div
+                  class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                  aria-labelledby="searchDropdown"
+                >
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control bg-light border-0 small"
+                        placeholder="Search for..."
+                        aria-label="Search"
+                        aria-describedby="basic-addon2"
+                      />
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div
+                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="alertsDropdown"
+                >
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 12, 2019</div>
+                      <span class="font-weight-bold"
+                        >A new monthly report is ready to download!</span
+                      >
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for
+                      your account.
+                    </div>
+                  </a>
+                  <a
+                    class="dropdown-item text-center small text-gray-500"
+                    href="#"
+                    >Show All Alerts</a
+                  >
+                </div>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="userDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    class="img-profile rounded-circle mr-2"
+                    src="img/undraw_profile.svg"
+                  />
+                  <span class="d-none d-lg-inline text-gray-600 small mr-2"
+                    >Joseph Augustus</span
+                  >
+                  <i class="fas fa-sm fa-chevron-down"></i>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div
+                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="userDropdown"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#logoutModal"
+                  >
+                    <i
+                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                    ></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">Klien</h1>
+            <div class="card shadow mb-4 p-4">
+              <div
+                class="d-flex flex-row align-items-center justify-content-between mb-2"
+              >
+                <div class="col-3 p-0">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="searchField"
+                      placeholder="Cari Klien..."
+                    />
+                  </div>
+                </div>
+                <div
+                  class="d-flex flex-row align-items-center justify-content-end"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-light mr-2"
+                    style="background: rgba(123, 124, 133, 0.1); color: #838383"
+                  >
+                    Export CSV
+                  </button>
+                  <div class="dropdown no-arrow">
+                    <button 
+                      type="button" 
+                      id="filterDropdown"
+                      class="btn btn-secondary dropdown-toggle" 
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"">
+                        <i class="fas fa-filter"></i>
+                        Urutkan dan Filter
+                    </button>
+                    <!-- Filter Dropdown -->
+                    <form
+                      class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                      aria-labelledby="userDropdown"
+                    >
+                      <div class="p-4" style="width:400px">
+                        <div class="d-flex align-items-center justify-content-between">
+                          <p class="h5 font-weight-bolder m-0">Urutkan & Filter</p>
+                          <button class="btn btn-secondary">Terapkan</button>
+                        </div>
+                        <div class="accordion mt-4" id="accordionExample">
+                          <!-- Urutkan - Collapse -->
+                          <div class="mb-2">
+                            <div id="headingOne">
+                              <h2 class="mb-0">
+                                <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0 font-weight-bolder">Urutkan</p>
+                                    <li class="fas fa-chevron-down"></li>
+                                  </div>
+                                </button>
+                              </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                              <div class="px-1 pt-2">
+                                <div class="custom-control custom-checkbox mb-1">
+                                  <input type="checkbox" class="custom-control-input" id="sortAlphabet">
+                                  <label class="custom-control-label" for="sortAlphabet">Urutkan Sesuai Abjad</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                  <input type="checkbox" class="custom-control-input" id="sortNewest">
+                                  <label class="custom-control-label" for="sortNewest">Urutkan Data Terbaru</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-1">
+                                  <input type="checkbox" class="custom-control-input" id="sortOldest">
+                                  <label class="custom-control-label" for="sortOldest">Urutkan Data Terlama</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Industry -->
+                          <div class="mb-2">
+                            <div id="headingTwo">
+                              <h2 class="mb-0">
+                                <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                  <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0 font-weight-bolder">Industry</p>
+                                    <li class="fas fa-chevron-down"></li>
+                                  </div>
+                                </button>
+                              </h2>
+                            </div>
+
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                              <div class="px-1 pt-2">
+                                <div class="form-group my-3">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="searchIndustry"
+                                    placeholder="Masukkan Nama Industri..."
+                                  />
+                                </div>
+                                <div class="mb-2">
+                                  <div class="accordion" id="innerAccordion">
+                                  <!-- FMCG - Collapse -->
+                                  <div>
+                                    <div id="innerHeadingOne">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseOne" aria-expanded="true" aria-controls="innerCollapseOne">
+                                          <div class="d-flex justify-content-between">
+                                            <p class="h6 mb-0 font-weight-bolder">FMCG</p>
+                                            <li class="fas fa-chevron-down"></li>
+                                          </div>
+                                        </button>
+                                      </h2>
+                                    </div>
+    
+                                    <div id="innerCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#innerAccordion">
+                                      <div class="p-1 pt-2">
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="fnb">
+                                          <label class="custom-control-label" for="fnb">F&B</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="skincare">
+                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- Banking - Collapse -->
+                                  <div>
+                                    <div id="innerHeadingTwo">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseTwo" aria-expanded="true" aria-controls="innerCollapseTwo">
+                                          <div class="d-flex justify-content-between">
+                                            <p class="h6 mb-0 font-weight-bolder">Banking & Financial</p>
+                                            <li class="fas fa-chevron-down"></li>
+                                          </div>
+                                        </button>
+                                      </h2>
+                                    </div>
+    
+                                    <div id="innerCollapseTwo" class="collapse" aria-labelledby="innerHeadingTwo" data-parent="#innerAccordion">
+                                      <div class="p-1 pt-2">
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="fnb">
+                                          <label class="custom-control-label" for="fnb">F&B</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="skincare">
+                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <!-- Agency - Collapse -->
+                                  <div>
+                                    <div id="innerHeadingThree">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseThree" aria-expanded="true" aria-controls="innerCollapseThree">
+                                          <div class="d-flex justify-content-between">
+                                            <p class="h6 mb-0 font-weight-bolder">Agency</p>
+                                            <li class="fas fa-chevron-down"></li>
+                                          </div>
+                                        </button>
+                                      </h2>
+                                    </div>
+    
+                                    <div id="innerCollapseThree" class="collapse" aria-labelledby="innerHeadingThree" data-parent="#innerAccordion">
+                                      <div class="p-1 pt-2">
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="fnb">
+                                          <label class="custom-control-label" for="fnb">F&B</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="skincare">
+                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <!-- Education - Collapse -->
+                                  <div>
+                                    <div id="innerHeadingFour">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseFour" aria-expanded="true" aria-controls="innerCollapseFour">
+                                          <div class="d-flex justify-content-between">
+                                            <p class="h6 mb-0 font-weight-bolder">Education</p>
+                                            <li class="fas fa-chevron-down"></li>
+                                          </div>
+                                        </button>
+                                      </h2>
+                                    </div>
+    
+                                    <div id="innerCollapseFour" class="collapse" aria-labelledby="innerHeadingFour" data-parent="#innerAccordion">
+                                      <div class="p-1 pt-2">
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="fnb">
+                                          <label class="custom-control-label" for="fnb">F&B</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="skincare">
+                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-1">
+                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table
+                    class="table table-custom"
+                    id="dataTable"
+                    width="100%"
+                    cellspacing="0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="custom-control custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="checkAll"
+                            /><label
+                              class="custom-control-label"
+                              for="checkAll"
+                            ></label>
+                          </div>
+                        </th>
+                        <th>Nama</th>
+                        <th>Tipe Klien</th>
+                        <th>PIC</th>
+                        <th>Industri</th>
+                        <th>Negara</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="custom-control custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="data-1"
+                            /><label
+                              class="custom-control-label"
+                              for="data-1"
+                            ></label>
+                          </div>
+                        </td>
+                        <td>Vivo Mobile Indonesia</td>
+                        <td>End-Client</td>
+                        <td>Sekar Setia Ningrum</td>
+                        <td>
+                          <span class="bg-gray-100 rounded-pill py-2 px-3">
+                            FMCG
+                          </span>
+                        </td>
+                        <td>Indonesia</td>
+                        <td>
+                          <a
+                            class="bg-transparent rounded-circle border-0" 
+                            role="button"
+                            href="client-detail.html"
+                          >
+                            <i class="fa fa-chevron-right text-gray-700"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="custom-control custom-checkbox">
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="data-2"
+                            /><label
+                              class="custom-control-label"
+                              for="data-2"
+                            ></label>
+                          </div>
+                        </td>
+                        <td>Zurich Insurance Infonesia</td>
+                        <td>End-Client</td>
+                        <td>Aditya Johan</td>
+                        <td>
+                          <span class="bg-gray-100 rounded-pill py-2 px-3">
+                            Elektronik
+                          </span>
+                        </td>
+                        <td>Indonesia</td>
+                        <td>
+                            <a
+                              class="bg-transparent rounded-circle border-0" 
+                              role="button"
+                              href="client-detail.html"
+                            >
+                              <i class="fa fa-chevron-right text-gray-700"></i>
+                            </a>
+                          </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; DEKA CRM Dashboard 2022</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/datatables/client.js"></script>
+  </body>
+</html>

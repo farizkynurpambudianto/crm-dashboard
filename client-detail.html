@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>CRM - Detail Client</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link
+      href="vendor/datatables/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul
+        class="navbar-nav bg-white sidebar sidebar-light accordion"
+        id="accordionSidebar"
+      >
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html"
+        >
+          <img class="img-fluid" src="img/logo_deka.svg" alt="..." />
+        </a>
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Client -->
+        <li class="nav-item active">
+          <a class="nav-link" href="client.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Klien</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Proposal -->
+        <li class="nav-item">
+          <a class="nav-link" href="proposal.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Proposal</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Proyek -->
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">
+            <i class="fas fa-fw fa-briefcase"></i>
+            <span>Proyek</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item">
+          <a class="nav-link" href="settings.html">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pengaturan</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+          >
+            <h1 class="h4 font-weight-bolder mb-0 text-gray-800">Klien</h1>
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <button
+              id="sidebarToggleTop"
+              class="btn btn-link d-md-none rounded-circle mr-3"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="searchDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div
+                  class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                  aria-labelledby="searchDropdown"
+                >
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control bg-light border-0 small"
+                        placeholder="Search for..."
+                        aria-label="Search"
+                        aria-describedby="basic-addon2"
+                      />
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div
+                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="alertsDropdown"
+                >
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 12, 2019</div>
+                      <span class="font-weight-bold"
+                        >A new monthly report is ready to download!</span
+                      >
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for
+                      your account.
+                    </div>
+                  </a>
+                  <a
+                    class="dropdown-item text-center small text-gray-500"
+                    href="#"
+                    >Show All Alerts</a
+                  >
+                </div>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="userDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    class="img-profile rounded-circle mr-2"
+                    src="img/undraw_profile.svg"
+                  />
+                  <span class="d-none d-lg-inline text-gray-600 small mr-2"
+                    >Joseph Augustus</span
+                  >
+                  <i class="fas fa-sm fa-chevron-down"></i>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div
+                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="userDropdown"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#logoutModal"
+                  >
+                    <i
+                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                    ></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Breadcrumbs -->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Klien</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Vivo Mobile Indonesia
+                </li>
+              </ol>
+            </nav>
+
+            <!-- Content -->
+            <div class="d-flex align-item-start">
+              <div class="col-9">
+                <!-- Informasi Dasar Klien -->
+                <div class="custom-card mb-4" style="height: auto">
+                  <p class="mb-0 font-weight-bolder">Informasi Dasar Klien</p>
+                  <hr />
+                  <div class="d-flex align-item-start">
+                    <div
+                      class="d-flex align-items-center justify-content-center"
+                      style="
+                        width: 120px;
+                        height: 120px;
+                        background: #7b7c85;
+                        border-radius: 4px;
+                      "
+                    >
+                      <p class="h3 font-weight-bolder text-white mb-0">N</p>
+                    </div>
+                    <div class="pl-3" style="flex: 1">
+                      <div
+                        class="d-flex align-item-center justify-content-between mb-4"
+                      >
+                        <p class="mb-0 font-weight-bolder h3">
+                          Vivo Mobile Indonesia
+                        </p>
+                        <div class="d-flex align-item-center">
+                          <span class="bg-gray-100 rounded-pill py-2 px-3">
+                            FMCG
+                          </span>
+                          <span class="bg-gray-100 rounded-pill py-2 px-3">
+                            Food & Beverages
+                          </span>
+                        </div>
+                      </div>
+                      <div class="d-flex align-item-start">
+                        <div class="col-6">
+                          <div class="mb-3 grid-icon-text">
+                            <i class="fas fa-phone-alt"></i>
+                            <p class="ml-2 mb-0">+62 8622-7162-212</p>
+                          </div>
+                          <div class="mb-3 grid-icon-text">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                              <p class="ml-2 font-weight-bold mb-0">
+                                Jakarta Selatan, Indonesia
+                              </p>
+                              <p class="ml-2 mb-0">
+                                Jalan Jakarta Raya Kebayoran Baru Jaksel, 12950
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="mb-3 grid-icon-text">
+                            <i class="fas fa-briefcase"></i>
+                            <p class="ml-2 mb-0">End Client</p>
+                          </div>
+                          <div class="mb-3 grid-icon-text">
+                            <i class="fas fa-globe"></i>
+                            <p class="ml-2 mb-0">www.vivo.com</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Client Segment Report -->
+                <div class="custom-card mb-4 px-0" style="height: auto">
+                  <p class="mb-0 font-weight-bolder px-3">
+                    Client's Segment Report
+                  </p>
+                  <hr />
+
+                  <!-- Relationship Status -->
+                  <div class="d-flex align-items-start px-3">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">
+                          Relationship Status
+                        </p>
+                        <a href="#" class="btn btn-light text-muted mb-0"
+                          >Edit</a
+                        >
+                      </div>
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="d-flex flex-grow-1">
+                          <div class="col-4 p-1">
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                          </div>
+                          <div class="col-4 p-1">
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                          </div>
+                          <div class="col-4 p-1">
+                            <div
+                              class="bg-gray-200 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                          </div>
+                        </div>
+                        <p class="ml-3 mb-0">Cautios</p>
+                      </div>
+                      <p class="mb-3">Personal Notes</p>
+                      <div class="notes-wrapper mb-3">
+                        <p class="mb-0">
+                          Client yang ini tuh agak ribet kalau ngasih brief jadi
+                          agak hati2 aja. Terus kalau lagi ngobrol juga mending
+                          bawain kopi atau teh.
+                        </p>
+                      </div>
+                      <p class="mb-1">
+                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                  <!-- Client Budget -->
+                  <div class="d-flex align-items-start px-3 mb-1">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">Client's Budget</p>
+                        <a href="#" class="btn btn-light text-muted mb-0"
+                          >Edit</a
+                        >
+                      </div>
+                      <div
+                        class="notes-wrapper d-flex justify-content-between mb-3"
+                      >
+                        <p class="mb-0">150.000</p>
+                        <p class="mb-0">2019</p>
+                      </div>
+                      <p class="mb-0">
+                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                  <!-- Client Concern -->
+                  <div class="d-flex align-items-start px-3 mb-1">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">Client's Concern</p>
+                        <a href="#" class="btn btn-light text-muted mb-0"
+                          >Edit</a
+                        >
+                      </div>
+                      <div class="notes-wrapper mb-3">
+                        <p class="font-weight-bolder mb-1">Budget & Pricing</p>
+                        <p class="mb-0">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Est ac aliquam quis volutpat enim imperdiet.
+                          Volutpat turpis fames lorem adipiscing in sit amet
+                          sed. Erat posuere nisl neque amet platea tortor
+                          tellus, diam elit.
+                        </p>
+                      </div>
+                      <div class="notes-wrapper mb-3">
+                        <p class="font-weight-bolder mb-1">
+                          Metodologi & Analisis
+                        </p>
+                        <p class="mb-0">-</p>
+                      </div>
+                      <div class="notes-wrapper mb-3">
+                        <p class="font-weight-bolder mb-1">Decision Maker</p>
+                        <p class="mb-0">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Est ac aliquam quis volutpat enim imperdiet.
+                          Volutpat turpis fames lorem adipiscing in sit amet
+                          sed. Erat posuere nisl neque amet platea tortor
+                          tellus, diam elit.
+                        </p>
+                      </div>
+                      <p class="mb-0">
+                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                  <!-- Competitor -->
+                  <div class="d-flex align-items-start px-3 mb-1">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">Competitor</p>
+                        <a href="#" class="btn btn-light text-muted mb-0"
+                          >Edit</a
+                        >
+                      </div>
+                      <div class="notes-wrapper mb-3">
+                        <p class="font-weight-bolder mb-1">New Insider Inc.</p>
+                      </div>
+                      <div class="notes-wrapper mb-3">
+                        <p class="font-weight-bolder mb-1">PT Insight Mania</p>
+                      </div>
+                      <p class="mb-0">
+                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
+                      </p>
+                    </div>
+                  </div>
+                  <hr />
+                  <!-- Chance to Win -->
+                  <div class="d-flex align-items-start px-3 mb-1">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">Chance to Win</p>
+                        <a href="#" class="btn btn-light text-muted mb-0"
+                          >Edit</a
+                        >
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <div class="col-3">
+                          <div class="chart-pie">
+                            <canvas id="myPieChart"></canvas>
+                            <div class="inner-circle">
+                              <p class="h3 font-weight-bolder m-0">32%</p>
+                              <p class="m-0">Chance to Win</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-9">
+                          <div>
+                            <p class="mb-1 font-weight-bold">
+                              Total Proposal Terkirim
+                            </p>
+                            <p class="font-weight-bolder">231</p>
+                          </div>
+                          <hr />
+                          <div class="d-flex justify-content-between mb-3">
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="chart-indicator mr-2"
+                                style="background: #7b7c85"
+                              ></div>
+                              <p class="m-0">Proposal Sukses</p>
+                            </div>
+                            <p class="m-0">126</p>
+                          </div>
+                          <div class="d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                              <div
+                                class="chart-indicator mr-2"
+                                style="background: #e7e7e7"
+                              ></div>
+                              <p class="m-0">Proposal Gagal</p>
+                            </div>
+                            <p class="m-0">90</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="mb-0">
+                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project & Proposal -->
+                <div class="custom-card mb-4 px-0" style="height: auto">
+                  <div class="d-flex align-items-start px-3 mb-1">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">Proposal & Proyek</p>
+                        <div class="d-flex align-items-center">
+                          <div class="form-group mb-0 mr-2">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="searchField"
+                              placeholder="Cari Klien..."
+                            />
+                          </div>
+                          <div class="dropdown no-arrow">
+                      <button 
+                        type="button" 
+                        id="filterDropdown"
+                        class="btn btn-secondary dropdown-toggle" 
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"">
+                          <i class="fas fa-filter"></i>
+                          Urutkan dan Filter
+                      </button>
+                      <!-- Filter Dropdown -->
+                      <form
+                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown"
+                      >
+                        <div class="p-4" style="width:400px">
+                          <div class="d-flex align-items-center justify-content-between">
+                            <p class="h5 font-weight-bolder m-0">Urutkan & Filter</p>
+                            <button class="btn btn-secondary">Terapkan</button>
+                          </div>
+                          <div class="accordion mt-4" id="accordionExample">
+                            <!-- Urutkan - Collapse -->
+                            <div class="mb-2">
+                              <div id="headingOne">
+                                <h2 class="mb-0">
+                                  <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="d-flex justify-content-between">
+                                      <p class="h6 mb-0 font-weight-bolder">Urutkan</p>
+                                      <li class="fas fa-chevron-down"></li>
+                                    </div>
+                                  </button>
+                                </h2>
+                              </div>
+  
+                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="px-1 pt-2">
+                                  <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="sortAlphabet">
+                                    <label class="custom-control-label" for="sortAlphabet">Urutkan Sesuai Abjad</label>
+                                  </div>
+                                  <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="sortNewest">
+                                    <label class="custom-control-label" for="sortNewest">Urutkan Data Terbaru</label>
+                                  </div>
+                                  <div class="custom-control custom-checkbox mb-1">
+                                    <input type="checkbox" class="custom-control-input" id="sortOldest">
+                                    <label class="custom-control-label" for="sortOldest">Urutkan Data Terlama</label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- Industry -->
+                            <div class="mb-2">
+                              <div id="headingTwo">
+                                <h2 class="mb-0">
+                                  <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                    <div class="d-flex justify-content-between">
+                                      <p class="h6 mb-0 font-weight-bolder">Industry</p>
+                                      <li class="fas fa-chevron-down"></li>
+                                    </div>
+                                  </button>
+                                </h2>
+                              </div>
+  
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="px-1 pt-2">
+                                  <div class="form-group my-3">
+                                    <input
+                                      type="text"
+                                      class="form-control"
+                                      id="searchIndustry"
+                                      placeholder="Masukkan Nama Industri..."
+                                    />
+                                  </div>
+                                  <div class="mb-2">
+                                    <div class="accordion" id="innerAccordion">
+                                    <!-- FMCG - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingOne">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseOne" aria-expanded="true" aria-controls="innerCollapseOne">
+                                            <div class="d-flex justify-content-between">
+                                              <p class="h6 mb-0 font-weight-bolder">FMCG</p>
+                                              <li class="fas fa-chevron-down"></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
+      
+                                      <div id="innerCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#innerAccordion">
+                                        <div class="p-1 pt-2">
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="fnb">
+                                            <label class="custom-control-label" for="fnb">F&B</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="skincare">
+                                            <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                            <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <!-- Banking - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingTwo">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseTwo" aria-expanded="true" aria-controls="innerCollapseTwo">
+                                            <div class="d-flex justify-content-between">
+                                              <p class="h6 mb-0 font-weight-bolder">Banking & Financial</p>
+                                              <li class="fas fa-chevron-down"></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
+      
+                                      <div id="innerCollapseTwo" class="collapse" aria-labelledby="innerHeadingTwo" data-parent="#innerAccordion">
+                                        <div class="p-1 pt-2">
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="fnb">
+                                            <label class="custom-control-label" for="fnb">F&B</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="skincare">
+                                            <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                            <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+  
+                                    <!-- Agency - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingThree">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseThree" aria-expanded="true" aria-controls="innerCollapseThree">
+                                            <div class="d-flex justify-content-between">
+                                              <p class="h6 mb-0 font-weight-bolder">Agency</p>
+                                              <li class="fas fa-chevron-down"></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
+      
+                                      <div id="innerCollapseThree" class="collapse" aria-labelledby="innerHeadingThree" data-parent="#innerAccordion">
+                                        <div class="p-1 pt-2">
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="fnb">
+                                            <label class="custom-control-label" for="fnb">F&B</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="skincare">
+                                            <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                            <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+  
+                                    <!-- Education - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingFour">
+                                        <h2 class="mb-0">
+                                          <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseFour" aria-expanded="true" aria-controls="innerCollapseFour">
+                                            <div class="d-flex justify-content-between">
+                                              <p class="h6 mb-0 font-weight-bolder">Education</p>
+                                              <li class="fas fa-chevron-down"></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
+      
+                                      <div id="innerCollapseFour" class="collapse" aria-labelledby="innerHeadingFour" data-parent="#innerAccordion">
+                                        <div class="p-1 pt-2">
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="fnb">
+                                            <label class="custom-control-label" for="fnb">F&B</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="skincare">
+                                            <label class="custom-control-label" for="skincare">Personal Skincare</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-1">
+                                            <input type="checkbox" class="custom-control-input" id="babyProducts">
+                                            <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="table-responsive mb-3">
+                        <table
+                          class="table table-custom"
+                          id="dataTable"
+                          width="100%"
+                          cellspacing="0"
+                        >
+                          <thead>
+                            <tr>
+                              <th>No</th>
+                              <th>Kode Proyek</th>
+                              <th>Nama Proyek</th>
+                              <th>Researcher</th>
+                              <th>Jenis Proyek</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1.</td>
+                              <td>DKT-202203-0031</td>
+                              <td>Cartenz</td>
+                              <td>Bayu Wibowo</td>
+                              <td>Brand Engagement</td>
+                            </tr>
+                            <tr>
+                              <td>2.</td>
+                              <td>DKT-202203-0031</td>
+                              <td>Cartenz</td>
+                              <td>Bayu Wibowo</td>
+                              <td>Brand Engagement</td>
+                            </tr>
+                            <tr>
+                              <td>3.</td>
+                              <td>DKT-202203-0031</td>
+                              <td>Cartenz</td>
+                              <td>Bayu Wibowo</td>
+                              <td>Brand Engagement</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                      </div>
+                      <p class="mb-0">
+                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="custom-card mb-4 px-0" style="height: auto">
+                  <p class="mb-0 font-weight-bolder px-3">Client Satisfaction</p>
+                  <hr>
+  
+                  <!-- Overall Satisfaction -->
+                    <div class="d-flex align-items-start px-3">
+                      <img src="img/star_illustration.svg" alt="..." />
+                      <div class="ml-3" style="flex: 1">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="font-weight-bolder mb-0">
+                            Overall Satisfaction
+                          </p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <p class="h6 font-weight-bolder mb-0">Kepuasan Klien</p>
+                          <p class="h6 mb-0">9/10</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="indicator-grid" style="width: 100%">
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-200 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <p class="mb-0">Mengecewakan (1)</p>
+                          <p class="mb-0">Sangat Puas (10)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <!-- Detail Satisfaction -->
+                    <div class="d-flex align-items-start px-3">
+                      <img src="img/star_illustration.svg" alt="..." />
+                      <div class="ml-3" style="flex: 1">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="font-weight-bolder mb-0">
+                            Detail Satisfaction
+                          </p>
+                        </div>
+                        <!-- Questionnaire -->
+                        <div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="h6 font-weight-bolder mb-0">Questionnaire</p>
+                            <p class="h6 mb-0">9/10</p>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <div class="indicator-grid" style="width: 100%">
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-200 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                            </div>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="mb-0">Mengecewakan (1)</p>
+                            <p class="mb-0">Sangat Puas (10)</p>
+                          </div>
+                        </div>
+                        <!-- Fieldwork -->
+                        <div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="h6 font-weight-bolder mb-0">Fieldwork</p>
+                            <p class="h6 mb-0">9/10</p>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <div class="indicator-grid" style="width: 100%">
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-200 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                            </div>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="mb-0">Mengecewakan (1)</p>
+                            <p class="mb-0">Sangat Puas (10)</p>
+                          </div>
+                        </div>
+                        <!-- Data Quality -->
+                        <div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="h6 font-weight-bolder mb-0">Data Quality</p>
+                            <p class="h6 mb-0">9/10</p>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <div class="indicator-grid" style="width: 100%">
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-200 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                            </div>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="mb-0">Mengecewakan (1)</p>
+                            <p class="mb-0">Sangat Puas (10)</p>
+                          </div>
+                        </div>
+                        <!-- Report -->
+                        <div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="h6 font-weight-bolder mb-0">Report</p>
+                            <p class="h6 mb-0">9/10</p>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <div class="indicator-grid" style="width: 100%">
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-700 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                                <div
+                                  class="bg-gray-200 rounded-pill"
+                                  style="height: 10px"
+                                ></div>
+                            </div>
+                          </div>
+                          <div class="d-flex justify-content-between align-items-center mb-3">
+                            <p class="mb-0">Mengecewakan (1)</p>
+                            <p class="mb-0">Sangat Puas (10)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <!-- Recommendibility -->
+                    <div class="d-flex align-items-start px-3">
+                      <img src="img/star_illustration.svg" alt="..." />
+                      <div class="ml-3" style="flex: 1">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="font-weight-bolder mb-0">
+                            Recommendibility
+                          </p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <p class="h6 font-weight-bolder mb-0">Kepuasan Klien</p>
+                          <p class="h6 mb-0">9/10</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="indicator-grid" style="width: 100%">
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-700 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                              <div
+                                class="bg-gray-200 rounded-pill"
+                                style="height: 10px"
+                              ></div>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                          <p class="mb-0">Sangat Tidak Direkomendasikan (0)</p>
+                          <p class="mb-0">Sangat Direkomendasikan (10)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+
+                    <!-- Recommendibility -->
+                    <div class="d-flex align-items-start px-3">
+                      <img src="img/star_illustration.svg" alt="..." />
+                      <div class="ml-3" style="flex: 1">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="font-weight-bolder mb-0">
+                            Open Ended Response
+                          </p>
+                        </div>
+                        <div class="notes-wrapper mb-3">
+                        <p class="mb-0">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est ac aliquam quis volutpat enim imperdiet. Volutpat turpis fames lorem adipiscing in sit amet sed. Erat posuere nisl neque amet platea tortor tellus, diam elit. Sed eget velit sit lectus risus. Molestie proin ultrices egestas aliquam ultrices. Posuere tristique commodo pharetra sagittis, ac. Tristique sit cras elit facilisi. 
+                        </p>
+                      </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-3">
+                <div class="custom-card" style="height: auto">
+                  <!-- Informasi PIC -->
+                  <div class="mb-4">
+                    <p class="mb-0">Informasi PIC</p>
+                    <hr />
+                    <p class="font-weight-bold mb-3">Informasi Dasar</p>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">
+                          Perusahaan
+                        </p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">PT CLIENT ABCD</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">Nama</p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">Febriana Sintia</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">Dept</p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">IT Dept</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">
+                          Position
+                        </p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">Programmer</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Email -->
+                  <div class="mb-4">
+                    <p class="font-weight-bold mb-3">Email</p>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">Kerja</p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">email.king@xyz.com</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">
+                          Individu
+                        </p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">email.king@xyz.com</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- No Telepon -->
+                  <div class="mb-4">
+                    <p class="font-weight-bold mb-3">Nomor Handphone</p>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">Kerja</p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">+62 8622-7162-212</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                      <div class="col-5 pl-0">
+                        <p class="font-weight-light text-muted mb-0">
+                          Individu
+                        </p>
+                      </div>
+                      <div class="col-7 pr-0">
+                        <p class="font-weight-bold mb-0">+62 8622-7162-212</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Login Akses -->
+                  <div class="mb-3">
+                    <p class="font-weight-bold mb-3">Login Akses</p>
+                    <span class="bg-gray-100 rounded-pill py-2 px-3">
+                      Tidak Memiliki Akses
+                    </span>
+                  </div>
+                  <hr />
+                  <p class="text-center mb-1">Lihat PIC Lainnya (2)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white mt-5">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; DEKA CRM Dashboard 2022</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inject title html to data table -->
+    <script>
+      const injectTitle = () => {
+        let element = document.getElementById('dataTable')
+        console.log(element)
+      }
+      injectTitle()
+    </script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- Bootstrap select -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+  </body>
+</html>
