@@ -606,9 +606,165 @@
                             />
                           </div>
                         </div>
-                        <div class="btn btn-primary px-4 py-2">
+                        <button
+                          class="btn btn-primary px-4 py-2"
+                          data-toggle="modal"
+                          data-target="#createAdminModal"
+                        >
                           <li class="fas fa-plus mr-2"></li>
                           Tambah Admin
+                        </button>
+                        <!-- Create Admin Modal -->
+                        <div
+                          class="modal fade"
+                          id="createAdminModal"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div
+                            class="modal-dialog modal-lg modal-dialog-centered"
+                          >
+                            <div class="modal-content">
+                              <div class="modal-header" style="padding: 40px">
+                                <h5
+                                  class="modal-title font-weight-bolder"
+                                  id="staticBackdropLabel"
+                                >
+                                  Tambah Admin
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close"
+                                >
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body" style="padding: 40px">
+                                <div class="form-group mb-4">
+                                  <!-- Nama -->
+                                  <div
+                                    class="row no-gutters align-items-center"
+                                    style="padding-bottom: 24px"
+                                  >
+                                    <div class="col col-3">
+                                      <p class="font-weight-bolder mb-0">
+                                        Nama
+                                      </p>
+                                    </div>
+                                    <div class="col col-9">
+                                      <input
+                                        class="form-control form-control-user"
+                                        placeholder="Masukkan nama"
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <!-- Email -->
+                                  <div
+                                    class="row no-gutters align-items-center"
+                                    style="padding-bottom: 24px"
+                                  >
+                                    <div class="col col-3">
+                                      <p class="font-weight-bolder mb-0">
+                                        Email
+                                      </p>
+                                    </div>
+                                    <div class="col col-9">
+                                      <input
+                                        class="form-control form-control-user"
+                                        placeholder="Masukkan email"
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <!-- Password -->
+                                  <div
+                                    class="row no-gutters align-items-start"
+                                    style="padding-bottom: 24px"
+                                  >
+                                    <div class="col col-3 pt-2">
+                                      <p class="font-weight-bolder mb-0">
+                                        Password
+                                      </p>
+                                    </div>
+                                    <div class="col col-9">
+                                      <input
+                                        id="inputPassword-admin"
+                                        type="password"
+                                        class="form-control form-control-user"
+                                        placeholder="Masukkan password"
+                                        oninput="handlePasswordValidation(event)"
+                                      />
+                                      <div class="row no-gutters mt-4 mb-2">
+                                        <div
+                                          id="level-1"
+                                          class="col m-1 rounded-pill bg-gray-400"
+                                          style="height: 3px"
+                                        ></div>
+                                        <div
+                                          id="level-2"
+                                          class="col m-1 rounded-pill bg-gray-400"
+                                          style="height: 3px"
+                                        ></div>
+                                        <div
+                                          id="level-3"
+                                          class="col m-1 rounded-pill bg-gray-400"
+                                          style="height: 3px"
+                                        ></div>
+                                        <div
+                                          id="level-4"
+                                          class="col m-1 rounded-pill bg-gray-400"
+                                          style="height: 3px"
+                                        ></div>
+                                      </div>
+                                      <div>
+                                        <li>Berisi setidaknya 6 karakter</li>
+                                        <li>
+                                          Berisi setidaknya satu angka & huruf
+                                          besar
+                                        </li>
+                                        <li>Berawalan dengan huruf kapital</li>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <!-- Ulangi Password -->
+                                  <div
+                                    class="row no-gutters align-items-center"
+                                  >
+                                    <div class="col col-3">
+                                      <p class="font-weight-bolder mb-0">
+                                        Ulangi Password
+                                      </p>
+                                    </div>
+                                    <div class="col col-9">
+                                      <input
+                                        type="password"
+                                        class="form-control form-control-user"
+                                        placeholder="Masukkan password kembali"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row no-gutters justify-content-end">
+                                  <button
+                                    class="btn btn-outline-primary mr-2"
+                                    data-dismiss="modal"
+                                  >
+                                    Batalkan
+                                  </button>
+                                  <button class="btn btn-primary">
+                                    Simpan
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -782,6 +938,28 @@
       $(document).ready(function () {
         hideValuePassword()
       })
+
+      const handlePasswordValidation = (e) => {
+        const pass = e.target.value
+        let strength = 0
+        const arr = [/.{5,}/, /[a-z]+/, /[0-9]+/, /^[A-Z]/]
+        jQuery.map(arr, function (regexp) {
+          if (pass.match(regexp)) strength++
+        })
+        handlePasswordStrength(strength)
+      }
+      const handlePasswordStrength = (strength) => {
+        console.log(strength)
+        for (let i = 1; i <= 4; i++) {
+          if (i <= strength) {
+            $(`#level-${i}`).addClass('bg-gradient-success')
+            $(`#level-${i}`).removeClass('bg-gray-400')
+          } else {
+            $(`#level-${i}`).addClass('bg-gray-400')
+            $(`#level-${i}`).removeClass('bg-gradient-success')
+          }
+        }
+      }
       const showPassword = (id) => {
         $(id).show()
         $(`${id}-hint`).hide()
