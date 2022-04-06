@@ -1610,6 +1610,10 @@ pre code {
   border-bottom: 1px solid #e7eaee;
 }
 
+tr:last-child > td {
+  border-bottom: none;
+}
+
 .table thead th {
   vertical-align: bottom;
   background: #f9f9f9;
@@ -1651,7 +1655,7 @@ pre code {
 
 .table-hover tbody tr:hover {
   color: #858796;
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #f9f9f9;
 }
 
 .table-primary,
@@ -8000,16 +8004,8 @@ button.bg-dark:focus {
   white-space: normal;
 }
 
-.shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem 0 rgba(58, 59, 69, 0.2) !important;
-}
-
 .shadow {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
-}
-
-.shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  box-shadow: 0px 2px 8px rgba(38, 68, 103, 0.08) !important;
 }
 
 .shadow-none {
@@ -11867,7 +11863,7 @@ button.custom-icon-button {
   border: 1px solid #e5e5e5;
 }
 
-.indicator-grid{
+.indicator-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   column-gap: 4px;
