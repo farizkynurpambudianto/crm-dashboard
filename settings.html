@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>CRM - Client</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link
+      href="vendor/datatables/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul
+        class="navbar-nav bg-white sidebar sidebar-light accordion"
+        id="accordionSidebar"
+      >
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html"
+        >
+          <img class="img-fluid" src="img/logo_deka.svg" alt="..." />
+        </a>
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Client -->
+        <li class="nav-item">
+          <a class="nav-link" href="client.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Klien</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Proposal -->
+        <li class="nav-item">
+          <a class="nav-link" href="proposal.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Proposal</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Proyek -->
+        <li class="nav-item">
+          <a class="nav-link" href="project.html">
+            <i class="fas fa-fw fa-briefcase"></i>
+            <span>Proyek</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item active">
+          <a class="nav-link" href="settings.html">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pengaturan</span>
+          </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+          <nav
+            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+          >
+            <!-- Sidebar Toggle (Topbar) -->
+            <button
+              id="sidebarToggleTop"
+              class="btn btn-link d-md-none rounded-circle mr-3"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown no-arrow d-sm-none">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="searchDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-search fa-fw"></i>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div
+                  class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                  aria-labelledby="searchDropdown"
+                >
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        class="form-control bg-light border-0 small"
+                        placeholder="Search for..."
+                        aria-label="Search"
+                        aria-describedby="basic-addon2"
+                      />
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+              <!-- Nav Item - Alerts -->
+              <li class="nav-item dropdown no-arrow mx-1">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="alertsDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-bell fa-fw"></i>
+                  <!-- Counter - Alerts -->
+                  <span class="badge badge-danger badge-counter">3+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div
+                  class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="alertsDropdown"
+                >
+                  <h6 class="dropdown-header">Alerts Center</h6>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-primary">
+                        <i class="fas fa-file-alt text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 12, 2019</div>
+                      <span class="font-weight-bold"
+                        >A new monthly report is ready to download!</span
+                      >
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-success">
+                        <i class="fas fa-donate text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 7, 2019</div>
+                      $290.29 has been deposited into your account!
+                    </div>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                      <div class="icon-circle bg-warning">
+                        <i class="fas fa-exclamation-triangle text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="small text-gray-500">December 2, 2019</div>
+                      Spending Alert: We've noticed unusually high spending for
+                      your account.
+                    </div>
+                  </a>
+                  <a
+                    class="dropdown-item text-center small text-gray-500"
+                    href="#"
+                    >Show All Alerts</a
+                  >
+                </div>
+              </li>
+
+              <div class="topbar-divider d-none d-sm-block"></div>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown no-arrow">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="userDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    class="img-profile rounded-circle mr-2"
+                    src="img/undraw_profile.svg"
+                  />
+                  <span class="d-none d-lg-inline text-gray-600 small mr-2"
+                    >Joseph Augustus</span
+                  >
+                  <i class="fas fa-sm fa-chevron-down"></i>
+                </a>
+                <!-- Dropdown - User Information -->
+                <div
+                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                  aria-labelledby="userDropdown"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-toggle="modal"
+                    data-target="#logoutModal"
+                  >
+                    <i
+                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+                    ></i>
+                    Logout
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">
+              Pengaturan
+            </h1>
+            <!-- Nav pills -->
+            <ul class="nav nav-pills mb-4">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#tab1"
+                  >Pengaturan Akun</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#tab2"
+                  >Riwayat Aktivitas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#tab3"
+                  >Kelola Admin</a
+                >
+              </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- Panel - Pengaturan Akun -->
+              <div class="tab-pane active" id="tab1">
+                <div class="card shadow mb-4 p-4">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <p class="font-weight-bolder mb-2">Pengaturan Akun</p>
+                      <p class="mb-3">
+                        Amet minim mollit non deserunt ullamco est sit aliqua.
+                        <br />
+                        Amet minim mollit non deserunt ullamco est sit aliqua.
+                      </p>
+                    </div>
+                    <button
+                      class="btn btn-primary px-4 py-2"
+                      style="height: fit-content"
+                      onclick="updateAccountHandler()"
+                    >
+                      Ubah Akun
+                    </button>
+                  </div>
+
+                  <hr />
+
+                  <div class="row no-gutters">
+                    <div class="col col-6 p-2">
+                      <div class="form-group mb-4">
+                        <p
+                          class="font-weight-bolder"
+                          style="margin-bottom: 12px"
+                        >
+                          Nama Depan
+                        </p>
+                        <input
+                          id="inputName-1"
+                          class="form-control form-control-user"
+                          placeholder="Masukkan nama depan"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group mb-4">
+                        <p
+                          class="font-weight-bolder"
+                          style="margin-bottom: 12px"
+                        >
+                          Email
+                        </p>
+                        <input
+                          id="inputEmail"
+                          type="email"
+                          class="form-control form-control-user"
+                          placeholder="Masukkan email"
+                          disabled
+                        />
+                      </div>
+                    </div>
+                    <div class="col col-6 p-2">
+                      <div class="form-group mb-4">
+                        <p
+                          class="font-weight-bolder"
+                          style="margin-bottom: 12px"
+                        >
+                          Nama Belakang
+                        </p>
+                        <input
+                          id="inputName-2"
+                          class="form-control form-control-user"
+                          placeholder="Masukkan nama belakang"
+                          disabled
+                        />
+                      </div>
+                      <div class="form-group mb-4">
+                        <p
+                          class="font-weight-bolder"
+                          style="margin-bottom: 12px"
+                        >
+                          Kata Sandi
+                        </p>
+                        <input
+                          type="password"
+                          class="form-control form-control-user mb-2"
+                          placeholder="Masukkan password"
+                          disabled
+                        />
+                        <a
+                          role="button"
+                          class="text-decoration-none text-black-50"
+                          data-toggle="modal"
+                          data-target="#changePasswordModal"
+                          >Ubah Kata Sandi</a
+                        >
+                        <!-- Change Password Modal -->
+                        <div
+                          class="modal fade"
+                          id="changePasswordModal"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5
+                                  class="modal-title font-weight-bolder"
+                                  id="staticBackdropLabel"
+                                >
+                                  Reset Password
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close"
+                                >
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p class="mb-2">
+                                  Amet minim mollit non deserunt ullamco est sit
+                                  aliqua. Amet minim mollit non deserunt ullamco
+                                  est sit aliqua.
+                                </p>
+                                <div class="form-group mb-4">
+                                  <p
+                                    class="font-weight-bolder"
+                                    style="margin-bottom: 12px"
+                                  >
+                                    Email
+                                  </p>
+                                  <input
+                                    type="email"
+                                    class="form-control form-control-user"
+                                    placeholder="Masukkan email anda"
+                                  />
+                                </div>
+                                <button
+                                  type="button"
+                                  class="btn btn-primary btn-block"
+                                  data-dismiss="modal"
+                                  data-toggle="modal"
+                                  data-target="#verifyEmailModal"
+                                >
+                                  Simpan
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="modal fade"
+                          id="verifyEmailModal"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body">
+                                <div
+                                  class="row no-gutters justify-content-end mb-3"
+                                >
+                                  <button
+                                    type="button"
+                                    class="close"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
+                                  >
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="text-center">
+                                  <div
+                                    class="mx-auto bg-gray-300 d-flex align-items-center justify-content-center mb-4"
+                                    style="
+                                      border-radius: 8px;
+                                      width: 56px;
+                                      height: 56px;
+                                    "
+                                  >
+                                    <i class="fas fa-envelope"></i>
+                                  </div>
+
+                                  <p
+                                    class="h3 font-weight-bolder text-dark mb-4"
+                                  >
+                                    Verifikasi Email Anda
+                                  </p>
+                                  <p>
+                                    Almost there! We’ve sent a verification
+                                    email to f********@g****.com. You need to
+                                    verify your email address to log into Deka
+                                    CRM Dashboard.
+                                  </p>
+
+                                  <hr class="my-4" />
+
+                                  <p>
+                                    Belum mendapat email?
+                                    <a href="#">Kirim Kembali</a>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row no-gutters justify-content-end">
+                    <button
+                      id="cancelButton"
+                      class="btn btn-outline-primary mr-2"
+                      disabled
+                    >
+                      Batalkan
+                    </button>
+                    <button id="submitButton" class="btn btn-primary" disabled>
+                      Simpan
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel - Riwayat Aktivitas -->
+              <div class="tab-pane fade" id="tab2">
+                <div class="card shadow mb-4 p-4">
+                  <div
+                    class="d-flex flex-row align-items-center justify-content-between mb-2"
+                  >
+                    <p class="h5 font-weight-bolder">Riwayat Aktivitas</p>
+                    <div class="col-3 p-0">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="searchField"
+                          placeholder="Cari Klien..."
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table
+                        class="table table-custom table-hover"
+                        id="dataTable"
+                        width="100%"
+                        cellspacing="0"
+                      >
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Nama Proposal</th>
+                            <th>Waktu</th>
+                            <th>Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1.</td>
+                            <td>Joseph Augustus</td>
+                            <td>22 Feb 2022, 15:03:23</td>
+                            <td>Log In</td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>Joseph Augustus</td>
+                            <td>22 Feb 2022, 15:03:23</td>
+                            <td>Mengganti Customer Segment</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel - Kelola Admin -->
+              <div class="tab-pane fade" id="tab3">
+                <div class="card shadow mb-4 p-4">
+                  <div
+                    class="d-flex flex-row align-items-center justify-content-between mb-3"
+                  >
+                    <p class="h5 font-weight-bolder mb-0">Daftar Pengguna</p>
+                    <div class="col-6">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <div class="col-6 p-0 mr-2">
+                          <div class="form-group mb-0">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="searchField"
+                              placeholder="Cari Klien..."
+                            />
+                          </div>
+                        </div>
+                        <div class="btn btn-primary px-4 py-2">
+                          <li class="fas fa-plus mr-2"></li>
+                          Tambah Admin
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table
+                        class="table table-custom table-hover"
+                        id="table-user"
+                        width="100%"
+                        cellspacing="0"
+                      >
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Roles</th>
+                            <th></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1.</td>
+                            <td>Joseph Augustus</td>
+                            <td>example@gmail.com</td>
+                            <td>
+                              <div class="row no-gutters">
+                                <p id="password-1-hint" class="mb-0 mr-2">
+                                  Tampilkan
+                                </p>
+                                <p id="password-1" class="mb-0 mr-2">
+                                  hue1h2eiuasad
+                                </p>
+                                <a
+                                  role="button"
+                                  onclick="showPassword('#password-1')"
+                                  id="password-1-buttonShow"
+                                >
+                                  <i class="fas fa-eye-slash"></i>
+                                </a>
+                                <a
+                                  role="button"
+                                  onclick="hidePassword('#password-1')"
+                                  id="password-1-buttonHide"
+                                >
+                                  <i class="fas fa-eye"></i>
+                                </a>
+                              </div>
+                            </td>
+                            <td>Administrator</td>
+                            <td>
+                              <a role="button">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2.</td>
+                            <td>Andi Julian</td>
+                            <td>example@gmail.com</td>
+                            <td>
+                              <div class="row no-gutters">
+                                <p id="password-2-hint" class="mb-0 mr-2">
+                                  Tampilkan
+                                </p>
+                                <p id="password-2" class="mb-0 mr-2">aezakmi</p>
+                                <a
+                                  role="button"
+                                  onclick="showPassword('#password-2')"
+                                  id="password-2-buttonShow"
+                                >
+                                  <i class="fas fa-eye-slash"></i>
+                                </a>
+                                <a
+                                  role="button"
+                                  onclick="hidePassword('#password-2')"
+                                  id="password-2-buttonHide"
+                                >
+                                  <i class="fas fa-eye"></i>
+                                </a>
+                              </div>
+                            </td>
+                            <td>Administrator</td>
+                            <td>
+                              <a role="button">
+                                <i class="fas fa-ellipsis-v"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright &copy; DEKA CRM Dashboard 2022</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Select "Logout" below if you are ready to end your current session.
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        hideValuePassword()
+      })
+      const showPassword = (id) => {
+        $(id).show()
+        $(`${id}-hint`).hide()
+        $(`${id}-buttonShow`).hide()
+        $(`${id}-buttonHide`).show()
+      }
+      const hidePassword = (id) => {
+        $(id).hide()
+        $(`${id}-hint`).show()
+        $(`${id}-buttonShow`).show()
+        $(`${id}-buttonHide`).hide()
+      }
+      const hideValuePassword = () => {
+        const totalRow = $('#table-user tr').length
+
+        for (let index = 1; index <= totalRow; index++) {
+          $(`#password-${index}`).hide()
+          $(`#password-${index}-buttonHide`).hide()
+        }
+      }
+      const enableField = () => {
+        $(
+          '#inputName-1, #inputEmail, #inputName-2, #cancelButton, #submitButton'
+        ).prop('disabled', false)
+      }
+      const disableField = () => {
+        $(
+          '#inputName-1, #inputEmail, #inputName-2, #cancelButton, #submitButton'
+        ).prop('disabled', true)
+      }
+      const updateAccountHandler = () => {
+        const isEnabled = $(
+          '#inputName-1, #inputEmail, #inputName-2, #cancelButton, #submitButton'
+        ).prop('disabled')
+        isEnabled ? enableField() : disableField()
+      }
+    </script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/datatables/client.js"></script>
+  </body>
+</html>
