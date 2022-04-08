@@ -31,6 +31,12 @@
       href="vendor/datatables/dataTables.bootstrap4.min.css"
       rel="stylesheet"
     />
+
+    <!-- Datepicker -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="page-top">
@@ -295,7 +301,9 @@
               <div class="col-9">
                 <!-- Informasi Dasar Klien -->
                 <div class="custom-card px-0 mb-4" style="height: auto">
-                  <p class="px-3 mb-0 font-weight-bolder">Informasi Dasar Klien</p>
+                  <p class="px-3 mb-0 font-weight-bolder">
+                    Informasi Dasar Klien
+                  </p>
                   <hr />
                   <div class="d-flex align-item-start px-3">
                     <div
@@ -587,533 +595,745 @@
                             />
                           </div>
                           <div class="dropdown no-arrow">
-                      <button 
-                        type="button" 
-                        id="filterDropdown"
-                        class="btn btn-secondary dropdown-toggle" 
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"">
-                          <i class="fas fa-filter"></i>
-                          Urutkan dan Filter
-                      </button>
-                      <!-- Filter Dropdown -->
-                      <form
-                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="userDropdown"
-                      >
-                        <div class="p-4" style="width:400px">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <p class="h5 font-weight-bolder m-0">Urutkan & Filter</p>
-                            <button class="btn btn-secondary">Terapkan</button>
-                          </div>
-                          <div class="accordion mt-4" id="accordionExample">
-                            <!-- Urutkan - Collapse -->
-                            <div class="mb-2">
-                              <div id="headingOne">
-                                <h2 class="mb-0">
-                                  <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div class="d-flex justify-content-between">
-                                      <p class="h6 mb-0 font-weight-bolder">Urutkan</p>
-                                      <li class="fas fa-chevron-down"></li>
-                                    </div>
+                            <button
+                              type="button"
+                              id="filterDropdown"
+                              class="btn btn-secondary dropdown-toggle"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              <i class="fas fa-filter"></i>
+                              Urutkan dan Filter
+                            </button>
+                            <!-- Filter Dropdown -->
+                            <form
+                              class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                              aria-labelledby="userDropdown"
+                            >
+                              <div class="p-4" style="width: 400px">
+                                <div
+                                  class="d-flex align-items-center justify-content-between"
+                                >
+                                  <p class="h5 font-weight-bolder m-0">
+                                    Urutkan & Filter
+                                  </p>
+                                  <button class="btn btn-secondary">
+                                    Terapkan
                                   </button>
-                                </h2>
-                              </div>
-  
-                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="px-1 pt-2">
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortAlphabet">
-                                    <label class="custom-control-label" for="sortAlphabet">Urutkan Sesuai Abjad</label>
+                                </div>
+                                <div class="mt-4">
+                                  <!-- Urutkan - Collapse -->
+                                  <div class="my-3">
+                                    <div id="headingOne">
+                                      <h2 class="mb-0">
+                                        <button
+                                          class="btn btn-block text-left px-1"
+                                          type="button"
+                                          data-toggle="collapse"
+                                          data-target="#collapseOne"
+                                          aria-expanded="true"
+                                          aria-controls="collapseOne"
+                                        >
+                                          <div
+                                            class="d-flex justify-content-between"
+                                          >
+                                            <p
+                                              class="h6 mb-0 font-weight-bolder"
+                                            >
+                                              Urutkan
+                                            </p>
+                                            <li
+                                              class="fas fa-chevron-down"
+                                            ></li>
+                                          </div>
+                                        </button>
+                                      </h2>
+                                    </div>
+
+                                    <div
+                                      id="collapseOne"
+                                      class="collapse multi-collapse show"
+                                      aria-labelledby="headingOne"
+                                    >
+                                      <div class="px-1 pt-2">
+                                        <div
+                                          class="custom-control custom-checkbox mb-1"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            id="sortAlphabet"
+                                          />
+                                          <label
+                                            class="custom-control-label"
+                                            for="sortAlphabet"
+                                            >Urutkan Sesuai Abjad</label
+                                          >
+                                        </div>
+                                        <div
+                                          class="custom-control custom-checkbox mb-1"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            id="sortNewest"
+                                          />
+                                          <label
+                                            class="custom-control-label"
+                                            for="sortNewest"
+                                            >Urutkan Data Terbaru</label
+                                          >
+                                        </div>
+                                        <div
+                                          class="custom-control custom-checkbox mb-1"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            id="sortOldest"
+                                          />
+                                          <label
+                                            class="custom-control-label"
+                                            for="sortOldest"
+                                            >Urutkan Data Terlama</label
+                                          >
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortNewest">
-                                    <label class="custom-control-label" for="sortNewest">Urutkan Data Terbaru</label>
+                                  <hr />
+
+                                  <!-- Jenis Project -->
+                                  <div class="my-3">
+                                    <div id="headingTwo">
+                                      <h2 class="mb-0">
+                                        <button
+                                          class="btn btn-block text-left px-1"
+                                          type="button"
+                                          data-toggle="collapse"
+                                          data-target="#collapseTwo"
+                                          aria-expanded="true"
+                                          aria-controls="collapseTwo"
+                                        >
+                                          <div
+                                            class="d-flex justify-content-between"
+                                          >
+                                            <p
+                                              class="h6 mb-0 font-weight-bolder"
+                                            >
+                                              Jenis Project
+                                            </p>
+                                            <li
+                                              class="fas fa-chevron-down"
+                                            ></li>
+                                          </div>
+                                        </button>
+                                      </h2>
+                                    </div>
+
+                                    <div
+                                      id="collapseTwo"
+                                      class="collapse multi-collapse"
+                                      aria-labelledby="headingTwo"
+                                    >
+                                      <div class="px-1 pt-2">
+                                        <div
+                                          class="custom-control custom-checkbox mb-1"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            id="sortAlphabet"
+                                          />
+                                          <label
+                                            class="custom-control-label"
+                                            for="sortAlphabet"
+                                            >Jenis Project Satu</label
+                                          >
+                                        </div>
+                                        <div
+                                          class="custom-control custom-checkbox mb-1"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            id="sortNewest"
+                                          />
+                                          <label
+                                            class="custom-control-label"
+                                            for="sortNewest"
+                                            >Jenis Project Dua</label
+                                          >
+                                        </div>
+                                        <div
+                                          class="custom-control custom-checkbox mb-1"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            class="custom-control-input"
+                                            id="sortOldest"
+                                          />
+                                          <label
+                                            class="custom-control-label"
+                                            for="sortOldest"
+                                            >Jenis Project Tiga</label
+                                          >
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortOldest">
-                                    <label class="custom-control-label" for="sortOldest">Urutkan Data Terlama</label>
+                                  <hr />
+
+                                  <div style="padding: 4px">
+                                    <p class="h6 mb-3 font-weight-bolder">
+                                      Tahun Project
+                                    </p>
+                                    <div class="input-group input-focus">
+                                      <input
+                                        type="text"
+                                        id="datepicker"
+                                        class="form-control"
+                                        placeholder="Pilih tahun project"
+                                      />
+                                      <div class="input-group-append">
+                                        <span class="input-group-text bg-white"
+                                          ><i class="fa fa-calendar"></i
+                                        ></span>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <!-- Jenis Project -->
-                            <div class="mb-2">
-                              <div id="headingTwo">
-                                <h2 class="mb-0">
-                                  <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div class="d-flex justify-content-between">
-                                      <p class="h6 mb-0 font-weight-bolder">Jenis Project</p>
-                                      <li class="fas fa-chevron-down"></li>
-                                    </div>
-                                  </button>
-                                </h2>
-                              </div>
-  
-                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="px-1 pt-2">
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortAlphabet">
-                                    <label class="custom-control-label" for="sortAlphabet">Jenis Project Satu</label>
-                                  </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortNewest">
-                                    <label class="custom-control-label" for="sortNewest">Jenis Project Dua</label>
-                                  </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortOldest">
-                                    <label class="custom-control-label" for="sortOldest">Jenis Project Tiga</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
+                            </form>
                           </div>
                         </div>
                       </div>
-                      <div class="table-responsive mb-3">
-                        <table
-                          class="table table-custom"
-                          id="dataTable"
-                          width="100%"
-                          cellspacing="0"
-                        >
-                          <thead>
-                            <tr>
-                              <th>No</th>
-                              <th>Tahun</th>
-                              <th>Kode Proyek</th>
-                              <th>Nama Proyek</th>
-                              <th>Researcher</th>
-                              <th>Jenis Proyek</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>1.</td>
-                              <td>2022</td>
-                              <td>DKT-202203-0031</td>
-                              <td>Cartenz</td>
-                              <td>Bayu Wibowo</td>
-                              <td>Brand Engagement</td>
-                            </tr>
-                            <tr>
-                              <td>2.</td>
-                              <td>2022</td>
-                              <td>DKT-202203-0031</td>
-                              <td>Cartenz</td>
-                              <td>Bayu Wibowo</td>
-                              <td>Brand Engagement</td>
-                            </tr>
-                            <tr>
-                              <td>3.</td>
-                              <td>2022</td>
-                              <td>DKT-202203-0031</td>
-                              <td>Cartenz</td>
-                              <td>Bayu Wibowo</td>
-                              <td>Brand Engagement</td>
-                            </tr>
-                        </tbody>
-                        </table>
+                      <!-- Nav pills -->
+                      <ul class="nav nav-pills mb-4">
+                        <li class="nav-item">
+                          <a
+                            class="nav-link active"
+                            data-toggle="pill"
+                            href="#tab1"
+                            >Proyek</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="pill" href="#tab2"
+                            >Proposal</a
+                          >
+                        </li>
+                      </ul>
+
+                      <!-- Tab panes -->
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                          <div class="table-responsive mb-3">
+                            <table
+                              class="table table-custom table-hover"
+                              id="dataTable"
+                              width="100%"
+                              cellspacing="0"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>No</th>
+                                  <th>Kode Proyek</th>
+                                  <th>Nama Proyek</th>
+                                  <th>Tahun</th>
+                                  <th>Perusahaan Klien</th>
+                                  <th>Researcher</th>
+                                  <th>Jenis Proyek</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1.</td>
+                                  <td>DKT-202203-0031</td>
+                                  <td>Cartenz</td>
+                                  <td>2022</td>
+                                  <td>Vivo Mobile Indonesia</td>
+                                  <td>Bayu Wibowo</td>
+                                  <td>Proyek 3</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="mb-0">
+                            Last Updated by <b>Febriana Sintia</b> at Feb 22,
+                            2022
+                          </p>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                          <div class="table-responsive mb-3">
+                            <table
+                              class="table table-custom table-hover"
+                              id="dataTable"
+                              width="100%"
+                              cellspacing="0"
+                            >
+                              <thead>
+                                <tr>
+                                  <th>No</th>
+                                  <th>Nama Proposal</th>
+                                  <th>Tahun</th>
+                                  <th>Perusahaan Klien</th>
+                                  <th>Researcher</th>
+                                  <th>Jenis Proyek</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>1.</td>
+                                  <td>Cartenz</td>
+                                  <td>2022</td>
+                                  <td>Vivo Mobile Indonesia</td>
+                                  <td>Bayu Wibowo</td>
+                                  <td>Proyek 3</td>
+                                </tr>
+                                <tr>
+                                  <td>2.</td>
+                                  <td>Siberlum</td>
+                                  <td>2022</td>
+                                  <td>Vivo Mobile Indonesia</td>
+                                  <td>Hendra Sudarsono</td>
+                                  <td>Proyek 1</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <p class="mb-0">
+                            Last Updated by <b>Febriana Sintia</b> at Feb 22,
+                            2022
+                          </p>
+                        </div>
                       </div>
-                      <p class="mb-0">
-                        Last Updated by <b>Febriana Sintia</b> at Feb 22, 2022
-                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="custom-card mb-4 px-0" style="height: auto">
-                  <p class="mb-0 font-weight-bolder px-3">Client Satisfaction</p>
-                  <hr>
-  
+                  <p class="mb-0 font-weight-bolder px-3">
+                    Client Satisfaction
+                  </p>
+                  <hr />
+
                   <!-- Overall Satisfaction -->
-                    <div class="d-flex align-items-start px-3">
-                      <img src="img/star_illustration.svg" alt="..." />
-                      <div class="ml-3" style="flex: 1">
+                  <div class="d-flex align-items-start px-3">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">
+                          Overall Satisfaction
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="h6 font-weight-bolder mb-0">Kepuasan Klien</p>
+                        <p class="h6 mb-0">9/10</p>
+                      </div>
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="indicator-grid" style="width: 100%">
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-200 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                        </div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="mb-0">Mengecewakan (1)</p>
+                        <p class="mb-0">Sangat Puas (10)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <!-- Detail Satisfaction -->
+                  <div class="d-flex align-items-start px-3">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">
+                          Detail Satisfaction
+                        </p>
+                      </div>
+                      <!-- Questionnaire -->
+                      <div>
                         <div
                           class="d-flex justify-content-between align-items-center mb-3"
                         >
-                          <p class="font-weight-bolder mb-0">
-                            Overall Satisfaction
+                          <p class="h6 font-weight-bolder mb-0">
+                            Questionnaire
                           </p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                          <p class="h6 font-weight-bolder mb-0">Kepuasan Klien</p>
                           <p class="h6 mb-0">9/10</p>
                         </div>
                         <div class="d-flex align-items-center mb-3">
                           <div class="indicator-grid" style="width: 100%">
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-200 rounded-pill"
-                                style="height: 10px"
-                              ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-200 rounded-pill"
+                              style="height: 10px"
+                            ></div>
                           </div>
                         </div>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="mb-0">Mengecewakan (1)</p>
+                          <p class="mb-0">Sangat Puas (10)</p>
+                        </div>
+                      </div>
+                      <!-- Fieldwork -->
+                      <div>
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="h6 font-weight-bolder mb-0">Fieldwork</p>
+                          <p class="h6 mb-0">9/10</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="indicator-grid" style="width: 100%">
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-200 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="mb-0">Mengecewakan (1)</p>
+                          <p class="mb-0">Sangat Puas (10)</p>
+                        </div>
+                      </div>
+                      <!-- Data Quality -->
+                      <div>
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="h6 font-weight-bolder mb-0">Data Quality</p>
+                          <p class="h6 mb-0">9/10</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="indicator-grid" style="width: 100%">
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-200 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="mb-0">Mengecewakan (1)</p>
+                          <p class="mb-0">Sangat Puas (10)</p>
+                        </div>
+                      </div>
+                      <!-- Report -->
+                      <div>
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
+                          <p class="h6 font-weight-bolder mb-0">Report</p>
+                          <p class="h6 mb-0">9/10</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                          <div class="indicator-grid" style="width: 100%">
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-700 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                            <div
+                              class="bg-gray-200 rounded-pill"
+                              style="height: 10px"
+                            ></div>
+                          </div>
+                        </div>
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-3"
+                        >
                           <p class="mb-0">Mengecewakan (1)</p>
                           <p class="mb-0">Sangat Puas (10)</p>
                         </div>
                       </div>
                     </div>
-                    <hr />
-                    <!-- Detail Satisfaction -->
-                    <div class="d-flex align-items-start px-3">
-                      <img src="img/star_illustration.svg" alt="..." />
-                      <div class="ml-3" style="flex: 1">
-                        <div
-                          class="d-flex justify-content-between align-items-center mb-3"
-                        >
-                          <p class="font-weight-bolder mb-0">
-                            Detail Satisfaction
-                          </p>
-                        </div>
-                        <!-- Questionnaire -->
-                        <div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="h6 font-weight-bolder mb-0">Questionnaire</p>
-                            <p class="h6 mb-0">9/10</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3">
-                            <div class="indicator-grid" style="width: 100%">
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-200 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Mengecewakan (1)</p>
-                            <p class="mb-0">Sangat Puas (10)</p>
-                          </div>
-                        </div>
-                        <!-- Fieldwork -->
-                        <div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="h6 font-weight-bolder mb-0">Fieldwork</p>
-                            <p class="h6 mb-0">9/10</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3">
-                            <div class="indicator-grid" style="width: 100%">
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-200 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Mengecewakan (1)</p>
-                            <p class="mb-0">Sangat Puas (10)</p>
-                          </div>
-                        </div>
-                        <!-- Data Quality -->
-                        <div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="h6 font-weight-bolder mb-0">Data Quality</p>
-                            <p class="h6 mb-0">9/10</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3">
-                            <div class="indicator-grid" style="width: 100%">
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-200 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Mengecewakan (1)</p>
-                            <p class="mb-0">Sangat Puas (10)</p>
-                          </div>
-                        </div>
-                        <!-- Report -->
-                        <div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="h6 font-weight-bolder mb-0">Report</p>
-                            <p class="h6 mb-0">9/10</p>
-                          </div>
-                          <div class="d-flex align-items-center mb-3">
-                            <div class="indicator-grid" style="width: 100%">
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-700 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                                <div
-                                  class="bg-gray-200 rounded-pill"
-                                  style="height: 10px"
-                                ></div>
-                            </div>
-                          </div>
-                          <div class="d-flex justify-content-between align-items-center mb-3">
-                            <p class="mb-0">Mengecewakan (1)</p>
-                            <p class="mb-0">Sangat Puas (10)</p>
-                          </div>
+                  </div>
+                  <hr />
+                  <!-- Recommendibility -->
+                  <div class="d-flex align-items-start px-3">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">Recommendibility</p>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="h6 font-weight-bolder mb-0">Kepuasan Klien</p>
+                        <p class="h6 mb-0">9/10</p>
+                      </div>
+                      <div class="d-flex align-items-center mb-3">
+                        <div class="indicator-grid" style="width: 100%">
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-700 rounded-pill"
+                            style="height: 10px"
+                          ></div>
+                          <div
+                            class="bg-gray-200 rounded-pill"
+                            style="height: 10px"
+                          ></div>
                         </div>
                       </div>
-                    </div>
-                    <hr />
-                    <!-- Recommendibility -->
-                    <div class="d-flex align-items-start px-3">
-                      <img src="img/star_illustration.svg" alt="..." />
-                      <div class="ml-3" style="flex: 1">
-                        <div
-                          class="d-flex justify-content-between align-items-center mb-3"
-                        >
-                          <p class="font-weight-bolder mb-0">
-                            Recommendibility
-                          </p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                          <p class="h6 font-weight-bolder mb-0">Kepuasan Klien</p>
-                          <p class="h6 mb-0">9/10</p>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                          <div class="indicator-grid" style="width: 100%">
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-700 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                              <div
-                                class="bg-gray-200 rounded-pill"
-                                style="height: 10px"
-                              ></div>
-                          </div>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                          <p class="mb-0">Sangat Tidak Direkomendasikan (0)</p>
-                          <p class="mb-0">Sangat Direkomendasikan (10)</p>
-                        </div>
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="mb-0">Sangat Tidak Direkomendasikan (0)</p>
+                        <p class="mb-0">Sangat Direkomendasikan (10)</p>
                       </div>
                     </div>
-                    <hr />
+                  </div>
+                  <hr />
 
-                    <!-- Recommendibility -->
-                    <div class="d-flex align-items-start px-3">
-                      <img src="img/star_illustration.svg" alt="..." />
-                      <div class="ml-3" style="flex: 1">
-                        <div
-                          class="d-flex justify-content-between align-items-center mb-3"
-                        >
-                          <p class="font-weight-bolder mb-0">
-                            Open Ended Response
-                          </p>
-                        </div>
-                        <div class="notes-wrapper mb-3">
-                        <p class="mb-0">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est ac aliquam quis volutpat enim imperdiet. Volutpat turpis fames lorem adipiscing in sit amet sed. Erat posuere nisl neque amet platea tortor tellus, diam elit. Sed eget velit sit lectus risus. Molestie proin ultrices egestas aliquam ultrices. Posuere tristique commodo pharetra sagittis, ac. Tristique sit cras elit facilisi. 
+                  <!-- Recommendibility -->
+                  <div class="d-flex align-items-start px-3">
+                    <img src="img/star_illustration.svg" alt="..." />
+                    <div class="ml-3" style="flex: 1">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-3"
+                      >
+                        <p class="font-weight-bolder mb-0">
+                          Open Ended Response
                         </p>
                       </div>
+                      <div class="notes-wrapper mb-3">
+                        <p class="mb-0">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit. Est ac aliquam quis volutpat enim imperdiet.
+                          Volutpat turpis fames lorem adipiscing in sit amet
+                          sed. Erat posuere nisl neque amet platea tortor
+                          tellus, diam elit. Sed eget velit sit lectus risus.
+                          Molestie proin ultrices egestas aliquam ultrices.
+                          Posuere tristique commodo pharetra sagittis, ac.
+                          Tristique sit cras elit facilisi.
+                        </p>
                       </div>
                     </div>
+                  </div>
                 </div>
               </div>
 
@@ -1331,5 +1551,17 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+    <!-- Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+      $('#datepicker').datepicker({
+        format: 'yyyy',
+        viewMode: 'years',
+        minViewMode: 'years',
+        autoclose: true
+      })
+    </script>
   </body>
 </html>

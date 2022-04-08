@@ -31,6 +31,12 @@
       href="vendor/datatables/dataTables.bootstrap4.min.css"
       rel="stylesheet"
     />
+
+    <!-- Datepicker -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="page-top">
@@ -278,18 +284,25 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">Proposal</h1>
+            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">
+              Proposal
+            </h1>
             <div class="card shadow mb-4 p-4">
               <div
                 class="d-flex flex-row align-items-center justify-content-between mb-2"
               >
                 <div class="col-3 p-0">
-                  <div class="form-group">
+                  <div class="input-group input-focus">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text bg-white"
+                        ><i class="fa fa-search"></i
+                      ></span>
+                    </div>
                     <input
                       type="text"
                       class="form-control"
                       id="searchField"
-                      placeholder="Cari Klien..."
+                      placeholder="Cari Proposal..."
                     />
                   </div>
                 </div>
@@ -297,90 +310,203 @@
                   class="d-flex flex-row align-items-center justify-content-end"
                 >
                   <div class="dropdown no-arrow">
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       id="filterDropdown"
-                      class="btn btn-secondary dropdown-toggle" 
+                      class="btn btn-secondary dropdown-toggle"
                       data-toggle="dropdown"
                       aria-haspopup="true"
-                      aria-expanded="false"">
-                        <i class="fas fa-filter"></i>
-                        Urutkan dan Filter
+                      aria-expanded="false"
+                    >
+                      <i class="fas fa-filter"></i>
+                      Urutkan dan Filter
                     </button>
                     <!-- Filter Dropdown -->
                     <form
-                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="userDropdown"
-                      >
-                        <div class="p-4" style="width:400px">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <p class="h5 font-weight-bolder m-0">Urutkan & Filter</p>
-                            <button class="btn btn-secondary">Terapkan</button>
-                          </div>
-                          <div class="accordion mt-4" id="accordionExample">
-                            <!-- Urutkan - Collapse -->
-                            <div class="mb-2">
-                              <div id="headingOne">
-                                <h2 class="mb-0">
-                                  <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <div class="d-flex justify-content-between">
-                                      <p class="h6 mb-0 font-weight-bolder">Urutkan</p>
-                                      <li class="fas fa-chevron-down"></li>
-                                    </div>
-                                  </button>
-                                </h2>
-                              </div>
-  
-                              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="px-1 pt-2">
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortAlphabet">
-                                    <label class="custom-control-label" for="sortAlphabet">Urutkan Sesuai Abjad</label>
+                      class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                      aria-labelledby="userDropdown"
+                    >
+                      <div class="p-4" style="width: 400px">
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <p class="h5 font-weight-bolder m-0">
+                            Urutkan & Filter
+                          </p>
+                          <button class="btn btn-secondary">Terapkan</button>
+                        </div>
+                        <div class="mt-4">
+                          <!-- Urutkan - Collapse -->
+                          <div class="my-3">
+                            <div id="headingOne">
+                              <h2 class="mb-0">
+                                <button
+                                  class="btn btn-block text-left px-1"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#collapseOne"
+                                  aria-expanded="true"
+                                  aria-controls="collapseOne"
+                                >
+                                  <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0 font-weight-bolder">
+                                      Urutkan
+                                    </p>
+                                    <li class="fas fa-chevron-down"></li>
                                   </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortNewest">
-                                    <label class="custom-control-label" for="sortNewest">Urutkan Data Terbaru</label>
-                                  </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortOldest">
-                                    <label class="custom-control-label" for="sortOldest">Urutkan Data Terlama</label>
-                                  </div>
+                                </button>
+                              </h2>
+                            </div>
+
+                            <div
+                              id="collapseOne"
+                              class="collapse multi-collapse show"
+                              aria-labelledby="headingOne"
+                            >
+                              <div class="px-1 pt-2">
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortAlphabet"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortAlphabet"
+                                    >Urutkan Sesuai Abjad</label
+                                  >
+                                </div>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortNewest"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortNewest"
+                                    >Urutkan Data Terbaru</label
+                                  >
+                                </div>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortOldest"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortOldest"
+                                    >Urutkan Data Terlama</label
+                                  >
                                 </div>
                               </div>
                             </div>
-                            <!-- Jenis Project -->
-                            <div class="mb-2">
-                              <div id="headingTwo">
-                                <h2 class="mb-0">
-                                  <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                    <div class="d-flex justify-content-between">
-                                      <p class="h6 mb-0 font-weight-bolder">Jenis Project</p>
-                                      <li class="fas fa-chevron-down"></li>
-                                    </div>
-                                  </button>
-                                </h2>
-                              </div>
-  
-                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="px-1 pt-2">
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortAlphabet">
-                                    <label class="custom-control-label" for="sortAlphabet">Jenis Project Satu</label>
+                          </div>
+                          <hr />
+
+                          <!-- Jenis Project -->
+                          <div class="my-3">
+                            <div id="headingTwo">
+                              <h2 class="mb-0">
+                                <button
+                                  class="btn btn-block text-left px-1"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#collapseTwo"
+                                  aria-expanded="true"
+                                  aria-controls="collapseTwo"
+                                >
+                                  <div class="d-flex justify-content-between">
+                                    <p class="h6 mb-0 font-weight-bolder">
+                                      Jenis Project
+                                    </p>
+                                    <li class="fas fa-chevron-down"></li>
                                   </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortNewest">
-                                    <label class="custom-control-label" for="sortNewest">Jenis Project Dua</label>
-                                  </div>
-                                  <div class="custom-control custom-checkbox mb-1">
-                                    <input type="checkbox" class="custom-control-input" id="sortOldest">
-                                    <label class="custom-control-label" for="sortOldest">Jenis Project Tiga</label>
-                                  </div>
+                                </button>
+                              </h2>
+                            </div>
+
+                            <div
+                              id="collapseTwo"
+                              class="collapse multi-collapse"
+                              aria-labelledby="headingTwo"
+                            >
+                              <div class="px-1 pt-2">
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortAlphabet"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortAlphabet"
+                                    >Jenis Project Satu</label
+                                  >
                                 </div>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortNewest"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortNewest"
+                                    >Jenis Project Dua</label
+                                  >
+                                </div>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortOldest"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortOldest"
+                                    >Jenis Project Tiga</label
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <hr />
+
+                          <div style="padding: 4px">
+                            <p class="h6 mb-3 font-weight-bolder">
+                              Tahun Project
+                            </p>
+                            <div class="input-group input-focus">
+                              <input
+                                type="text"
+                                id="datepicker"
+                                class="form-control"
+                                placeholder="Pilih tahun project"
+                              />
+                              <div class="input-group-append">
+                                <span class="input-group-text bg-white"
+                                  ><i class="fa fa-calendar"></i
+                                ></span>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </form>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -413,21 +539,45 @@
                         <td>Proyek 3</td>
                         <td>
                           <a
-                            class="bg-transparent rounded-circle border-0" 
+                            class="bg-transparent rounded-circle border-0"
                             role="button"
-                            data-toggle="modal" 
+                            data-toggle="modal"
                             data-target="#modal-detail-1"
                           >
                             <i class="fa fa-chevron-right text-gray-700"></i>
                           </a>
                         </td>
                         <!-- Modal -->
-                        <div class="modal fade" id="modal-detail-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" style="max-width: 900px">
+                        <div
+                          class="modal fade"
+                          id="modal-detail-1"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div
+                            class="modal-dialog modal-dialog-centered"
+                            style="max-width: 900px"
+                          >
                             <div class="modal-content">
-                              <div class="modal-header" style="padding: 40px 40px 24px 40px">
-                                <h5 class="modal-title font-weight-bolder" id="staticBackdropLabel">Detail Proposal</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <div
+                                class="modal-header"
+                                style="padding: 40px 40px 24px 40px"
+                              >
+                                <h5
+                                  class="modal-title font-weight-bolder"
+                                  id="staticBackdropLabel"
+                                >
+                                  Detail Proposal
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close"
+                                >
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
@@ -442,16 +592,30 @@
                                       border-radius: 4px;
                                     "
                                   >
-                                    <p class="h3 font-weight-bolder text-white mb-0">N</p>
+                                    <p
+                                      class="h3 font-weight-bolder text-white mb-0"
+                                    >
+                                      N
+                                    </p>
                                   </div>
-                                  <div class="d-flex justify-content-between flex-grow-1 ml-4">
+                                  <div
+                                    class="d-flex justify-content-between flex-grow-1 ml-4"
+                                  >
                                     <div>
-                                      <p class="font-weight-bolder mb-2">Project Design System</p>
+                                      <p class="font-weight-bolder mb-2">
+                                        Project Design System
+                                      </p>
                                       <p class="mb-0">Vivo Mobile Indonesia</p>
                                     </div>
                                     <div>
-                                      <p class="text-muted font-weight-light mb-2">Total Value</p>
-                                      <p class="font-weight-bolder mb-0">Rp 250.000.000</p>
+                                      <p
+                                        class="text-muted font-weight-light mb-2"
+                                      >
+                                        Total Value
+                                      </p>
+                                      <p class="font-weight-bolder mb-0">
+                                        Rp 250.000.000
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
@@ -459,13 +623,19 @@
                                   <div class="col-6 pl-1">
                                     <div class="row no-gutters">
                                       <div class="col-6">
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Industri Klien
                                         </p>
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Tanggal Dibuat
                                         </p>
-                                        <p class="text-muted font-weight-light mb-0">
+                                        <p
+                                          class="text-muted font-weight-light mb-0"
+                                        >
                                           Account PIC
                                         </p>
                                       </div>
@@ -485,13 +655,19 @@
                                   <div class="col-6 pr-1">
                                     <div class="row no-gutters">
                                       <div class="col-6">
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Jenis Project
                                         </p>
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Number Sample
                                         </p>
-                                        <p class="text-muted font-weight-light mb-0">
+                                        <p
+                                          class="text-muted font-weight-light mb-0"
+                                        >
                                           CPI
                                         </p>
                                       </div>
@@ -499,12 +675,8 @@
                                         <p class="text-dark mb-2">
                                           Brand Engagement
                                         </p>
-                                        <p class="text-dark mb-2">
-                                          -
-                                        </p>
-                                        <p class="text-dark mb-2">
-                                          -
-                                        </p>
+                                        <p class="text-dark mb-2">-</p>
+                                        <p class="text-dark mb-2">-</p>
                                       </div>
                                     </div>
                                   </div>
@@ -523,21 +695,42 @@
                         <td>Proyek 1</td>
                         <td>
                           <a
-                            class="bg-transparent rounded-circle border-0" 
+                            class="bg-transparent rounded-circle border-0"
                             role="button"
-                            data-toggle="modal" 
+                            data-toggle="modal"
                             data-target="#modal-detail-2"
                           >
                             <i class="fa fa-chevron-right text-gray-700"></i>
                           </a>
                         </td>
                         <!-- Modal -->
-                        <div class="modal fade" id="modal-detail-2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-dialog-centered" style="max-width: 900px">
+                        <div
+                          class="modal fade"
+                          id="modal-detail-2"
+                          data-backdrop="static"
+                          data-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
+                          <div
+                            class="modal-dialog modal-dialog-centered"
+                            style="max-width: 900px"
+                          >
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title font-weight-bolder" id="staticBackdropLabel">Detail Proposal</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <h5
+                                  class="modal-title font-weight-bolder"
+                                  id="staticBackdropLabel"
+                                >
+                                  Detail Proposal
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="close"
+                                  data-dismiss="modal"
+                                  aria-label="Close"
+                                >
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
@@ -552,16 +745,30 @@
                                       border-radius: 4px;
                                     "
                                   >
-                                    <p class="h3 font-weight-bolder text-white mb-0">N</p>
+                                    <p
+                                      class="h3 font-weight-bolder text-white mb-0"
+                                    >
+                                      N
+                                    </p>
                                   </div>
-                                  <div class="d-flex justify-content-between flex-grow-1 ml-4">
+                                  <div
+                                    class="d-flex justify-content-between flex-grow-1 ml-4"
+                                  >
                                     <div>
-                                      <p class="font-weight-bolder mb-2">Project Design System</p>
+                                      <p class="font-weight-bolder mb-2">
+                                        Project Design System
+                                      </p>
                                       <p class="mb-0">Vivo Mobile Indonesia</p>
                                     </div>
                                     <div>
-                                      <p class="text-muted font-weight-light mb-2">Total Value</p>
-                                      <p class="font-weight-bolder mb-0">Rp 250.000.000</p>
+                                      <p
+                                        class="text-muted font-weight-light mb-2"
+                                      >
+                                        Total Value
+                                      </p>
+                                      <p class="font-weight-bolder mb-0">
+                                        Rp 250.000.000
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
@@ -569,13 +776,19 @@
                                   <div class="col-6 pl-1">
                                     <div class="row no-gutters">
                                       <div class="col-6">
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Industri Klien
                                         </p>
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Tanggal Dibuat
                                         </p>
-                                        <p class="text-muted font-weight-light mb-0">
+                                        <p
+                                          class="text-muted font-weight-light mb-0"
+                                        >
                                           Account PIC
                                         </p>
                                       </div>
@@ -595,13 +808,19 @@
                                   <div class="col-6 pr-1">
                                     <div class="row no-gutters">
                                       <div class="col-6">
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Jenis Project
                                         </p>
-                                        <p class="text-muted font-weight-light mb-2">
+                                        <p
+                                          class="text-muted font-weight-light mb-2"
+                                        >
                                           Number Sample
                                         </p>
-                                        <p class="text-muted font-weight-light mb-0">
+                                        <p
+                                          class="text-muted font-weight-light mb-0"
+                                        >
                                           CPI
                                         </p>
                                       </div>
@@ -609,12 +828,8 @@
                                         <p class="text-dark mb-2">
                                           Brand Engagement
                                         </p>
-                                        <p class="text-dark mb-2">
-                                          -
-                                        </p>
-                                        <p class="text-dark mb-2">
-                                          -
-                                        </p>
+                                        <p class="text-dark mb-2">-</p>
+                                        <p class="text-dark mb-2">-</p>
                                       </div>
                                     </div>
                                   </div>
@@ -713,5 +928,17 @@
 
     <!-- Page level custom scripts -->
     <script src="js/datatables/client.js"></script>
+
+    <!-- Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+      $('#datepicker').datepicker({
+        format: 'yyyy',
+        viewMode: 'years',
+        minViewMode: 'years',
+        autoclose: true
+      })
+    </script>
   </body>
 </html>
