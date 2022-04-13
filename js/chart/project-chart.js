@@ -3,6 +3,23 @@
   '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
 Chart.defaults.global.defaultFontColor = '#858796'
 
+function assertDataProjectChart(firstYear, endYear, type) {
+  if (firstYear === undefined) return
+  if (endYear === undefined) return
+  if (type === undefined) return
+
+  const dataOne = projectChart.data.datasets[0]
+  const dataTwo = projectChart.data.datasets[1]
+
+  dataOne.data = arrayGeneratorProjectChart(12)
+  dataOne.label = `${type} ${firstYear}`
+
+  dataTwo.data = arrayGeneratorProjectChart(12)
+  dataTwo.label = `${type} ${endYear}`
+
+  projectChart.update()
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -29,10 +46,10 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 function randomNumber(min, max) {
-  return Math.random() * (max - min) + min
+  return Math.ceil(Math.random() * (max - min) + min)
 }
 
-function arrayGenerator(length) {
+function arrayGeneratorProjectChart(length) {
   let tempArray = []
   for (let i = 1; i <= length; i++) {
     tempArray.push(randomNumber(0, 50))
@@ -42,8 +59,8 @@ function arrayGenerator(length) {
 }
 
 // Area Chart Example
-var ctx = document.getElementById('myAreaChart')
-var myLineChart = new Chart(ctx, {
+var ctx = document.getElementById('projectChart')
+var projectChart = new Chart(ctx, {
   type: 'line',
   data: {
     labels: [
@@ -62,9 +79,9 @@ var myLineChart = new Chart(ctx, {
     ],
     datasets: [
       {
-        label: 'Pendapatan',
+        label: 'Prospek 2021',
         lineTension: 0.3,
-        backgroundColor: 'rgba(78, 115, 223, 0.05)',
+        backgroundColor: 'rgba(237, 243, 255, 1)',
         borderColor: 'rgba(78, 115, 223, 1)',
         pointRadius: 3,
         pointBackgroundColor: 'rgba(78, 115, 223, 1)',
@@ -74,22 +91,22 @@ var myLineChart = new Chart(ctx, {
         pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: arrayGenerator(12)
+        data: arrayGeneratorProjectChart(12)
       },
       {
-        label: 'Penjualan',
+        label: 'Prospek 2021',
         lineTension: 0.3,
-        backgroundColor: 'rgba(78, 115, 223, 0.05)',
-        borderColor: 'rgba(78, 115, 223, 1)',
+        backgroundColor: 'rgba(255, 250, 242, 1)',
+        borderColor: 'rgba(225, 135, 8, 1)',
         pointRadius: 3,
-        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointBorderColor: 'rgba(78, 115, 223, 1)',
+        pointBackgroundColor: 'rgba(225, 135, 8, 1)',
+        pointBorderColor: 'rgba(225, 135, 8, 1)',
         pointHoverRadius: 3,
-        pointHoverBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
+        pointBackgroundColor: 'rgba(225, 135, 8, 1)',
+        pointBorderColor: 'rgba(225, 135, 8, 1)',
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: arrayGenerator(12)
+        data: arrayGeneratorProjectChart(12)
       }
     ]
   },
@@ -114,14 +131,17 @@ var myLineChart = new Chart(ctx, {
             drawBorder: false
           },
           ticks: {
-            maxTicksLimit: 7
+            autoskip: false
           }
         }
       ],
       yAxes: [
         {
           ticks: {
-            maxTicksLimit: 5,
+            min: 0,
+            max: 50,
+            stepSize: 10,
+            maxTicksLimit: 6,
             padding: 10
           },
           gridLines: {
@@ -150,14 +170,7 @@ var myLineChart = new Chart(ctx, {
       displayColors: false,
       intersect: false,
       mode: 'index',
-      caretPadding: 10,
-      callbacks: {
-        label: function (tooltipItem, chart) {
-          var datasetLabel =
-            chart.datasets[tooltipItem.datasetIndex].label || ''
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel)
-        }
-      }
+      caretPadding: 10
     }
   }
 })

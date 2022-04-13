@@ -3,6 +3,22 @@
   '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
 Chart.defaults.global.defaultFontColor = '#858796'
 
+function assertDataHitrate(firstYear, endYear) {
+  if (firstYear === undefined) return
+  if (endYear === undefined) return
+
+  const dataOne = myBarChart.data.datasets[0]
+  const dataTwo = myBarChart.data.datasets[1]
+
+  dataOne.data = numberGeneratorArray(12)
+  dataOne.label = `${type} ${firstYear}`
+
+  dataTwo.data = numberGeneratorArray(12)
+  dataTwo.label = `${type} ${endYear}`
+
+  myBarChart.update()
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -28,23 +44,24 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec)
 }
 
-function randomNumber(min, max) {
-  return Math.random() * (max - min) + min
+function randomNumberInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-function arrayGenerator(length) {
+function numberGeneratorArray() {
   let tempArray = []
-  for (let i = 1; i <= length; i++) {
-    tempArray.push(randomNumber(0, 50))
+
+  for (i = 0; i <= 12; i++) {
+    tempArray.push(randomNumberInterval(0, 100))
   }
 
   return tempArray
 }
 
-// Area Chart Example
-var ctx = document.getElementById('myAreaChart')
-var myLineChart = new Chart(ctx, {
-  type: 'line',
+// Bar Chart Example
+var ctx = document.getElementById('hitRateChart')
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
   data: {
     labels: [
       'Jan',
@@ -57,39 +74,20 @@ var myLineChart = new Chart(ctx, {
       'Aug',
       'Sep',
       'Oct',
+      'Sep',
       'Nov',
       'Dec'
     ],
     datasets: [
       {
-        label: 'Pendapatan',
-        lineTension: 0.3,
-        backgroundColor: 'rgba(78, 115, 223, 0.05)',
-        borderColor: 'rgba(78, 115, 223, 1)',
-        pointRadius: 3,
-        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointBorderColor: 'rgba(78, 115, 223, 1)',
-        pointHoverRadius: 3,
-        pointHoverBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
-        pointHitRadius: 10,
-        pointBorderWidth: 2,
-        data: arrayGenerator(12)
+        label: 'Hit Rate',
+        backgroundColor: '#264179',
+        data: numberGeneratorArray()
       },
       {
-        label: 'Penjualan',
-        lineTension: 0.3,
-        backgroundColor: 'rgba(78, 115, 223, 0.05)',
-        borderColor: 'rgba(78, 115, 223, 1)',
-        pointRadius: 3,
-        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointBorderColor: 'rgba(78, 115, 223, 1)',
-        pointHoverRadius: 3,
-        pointHoverBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
-        pointHitRadius: 10,
-        pointBorderWidth: 2,
-        data: arrayGenerator(12)
+        label: 'Hit Rate',
+        backgroundColor: '#E18708',
+        data: numberGeneratorArray()
       }
     ]
   },
@@ -106,23 +104,33 @@ var myLineChart = new Chart(ctx, {
     scales: {
       xAxes: [
         {
+          categoryPercentage: 0.2,
+          barPercentage: 1,
           time: {
-            unit: 'date'
+            unit: 'month'
           },
           gridLines: {
             display: false,
             drawBorder: false
           },
           ticks: {
-            maxTicksLimit: 7
-          }
+            maxTicksLimit: 12
+          },
+          maxBarThickness: 8
         }
       ],
       yAxes: [
         {
           ticks: {
+            min: 0,
+            max: 100,
+            stepSize: 25,
             maxTicksLimit: 5,
-            padding: 10
+            padding: 10,
+            // Include a dollar sign in the ticks
+            callback: function (value, index, values) {
+              return `${value}%`
+            }
           },
           gridLines: {
             color: 'rgb(234, 236, 244)',
@@ -135,27 +143,27 @@ var myLineChart = new Chart(ctx, {
       ]
     },
     legend: {
+      align: 'center',
+      padding: 50,
       display: false
     },
     tooltips: {
-      backgroundColor: 'rgb(255,255,255)',
-      bodyFontColor: '#858796',
       titleMarginBottom: 10,
       titleFontColor: '#6e707e',
       titleFontSize: 14,
+      backgroundColor: 'rgb(255,255,255)',
+      bodyFontColor: '#858796',
       borderColor: '#dddfeb',
       borderWidth: 1,
       xPadding: 15,
       yPadding: 15,
       displayColors: false,
-      intersect: false,
-      mode: 'index',
       caretPadding: 10,
       callbacks: {
         label: function (tooltipItem, chart) {
           var datasetLabel =
             chart.datasets[tooltipItem.datasetIndex].label || ''
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel)
+          return tooltipItem.yLabel + '%'
         }
       }
     }
