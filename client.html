@@ -19,12 +19,13 @@
       type="text/css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <link href="css/typography.css" rel="stylesheet" />
 
     <!-- Custom styles for this page -->
     <link
@@ -69,7 +70,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-user"></i>
               </div>
-              <span class="medium-bodytext neutral-800--text">Klien</span>
+              <span class="medium-bodytext text-white">Klien</span>
             </div>
           </a>
         </li>
@@ -288,84 +289,140 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">Klien</h1>
+            <h1 class="bold-heading-2 neutral-800--text mb-4">Klien</h1>
             <div class="card shadow mb-4 p-4">
               <div
                 class="d-flex flex-row align-items-center justify-content-between mb-2"
               >
-                <div class="col-3 p-0">
-                  <div class="input-group input-focus">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-white"
-                        ><i class="fa fa-search"></i
-                      ></span>
+                <div class="col-4 p-0">
+                  <div class="d-flex align-items-center flex-nowrap">
+                    <div class="input-group input-focus mr-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="searchField"
+                        placeholder="Cari Klien..."
+                      />
+                      <div class="input-group-append">
+                        <span class="input-group-text bg-white"
+                          ><i class="fa fa-search"></i
+                        ></span>
+                      </div>
                     </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="searchField"
-                      placeholder="Cari Klien..."
-                    />
+                    <button class="btn btn-dark bg-primary-600 bold-body px-4">
+                      Cari
+                    </button>
                   </div>
                 </div>
                 <div
                   class="d-flex flex-row align-items-center justify-content-end"
                 >
-                  <button
-                    type="button"
-                    class="btn btn-light mr-2"
-                    style="background: rgba(123, 124, 133, 0.1); color: #838383"
-                  >
-                    Export CSV
-                  </button>
-                  <div class="dropdown no-arrow">
-                    <button 
-                      type="button" 
+                  <div class="dropdown no-arrow mr-2">
+                    <button
+                      type="button"
                       id="filterDropdown"
-                      class="btn btn-secondary dropdown-toggle" 
+                      class="btn dropdown-toggle bold-body primary-600--text"
+                      style="border: 1px solid #d0d5dd"
                       data-toggle="dropdown"
                       aria-haspopup="true"
-                      aria-expanded="false"">
-                        <i class="fas fa-filter"></i>
-                        Urutkan dan Filter
+                      aria-expanded="false"
+                    >
+                      <i class="fas fa-filter primary-600--text mr-2"></i>
+                      Urutkan dan Filter
                     </button>
                     <!-- Filter Dropdown -->
                     <form
                       class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                       aria-labelledby="userDropdown"
                     >
-                      <div class="p-4" style="width:400px">
-                        <div class="d-flex align-items-center justify-content-between">
-                          <p class="h5 font-weight-bolder m-0">Urutkan & Filter</p>
-                          <button class="btn btn-secondary">Terapkan</button>
+                      <div class="p-4" style="width: 400px">
+                        <div
+                          class="d-flex align-items-center justify-content-between"
+                        >
+                          <p class="bold-heading-3 neutral-700--text m-0">
+                            Urutkan & Filter
+                          </p>
+                          <button class="btn bg-primary-600 btn-dark bold-body">
+                            Terapkan
+                          </button>
                         </div>
                         <div class="accordion mt-4" id="accordionExample">
                           <!-- Urutkan - Collapse -->
                           <div class="mb-2">
                             <div id="headingOne">
                               <h2 class="mb-0">
-                                <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <div class="d-flex justify-content-between">
-                                    <p class="h6 mb-0 font-weight-bolder">Urutkan</p>
-                                    <li class="fas fa-chevron-down"></li>
+                                <button
+                                  class="btn btn-block text-left px-1"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#collapseOne"
+                                  aria-expanded="true"
+                                  aria-controls="collapseOne"
+                                >
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <p
+                                      class="primary-700--text bold-heading-5 mb-0"
+                                    >
+                                      Urutkan
+                                    </p>
+                                    <li
+                                      class="fas fa-chevron-down primary-700--text"
+                                    ></li>
                                   </div>
                                 </button>
                               </h2>
                             </div>
 
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div
+                              id="collapseOne"
+                              class="collapse show"
+                              aria-labelledby="headingOne"
+                              data-parent="#accordionExample"
+                            >
                               <div class="px-1 pt-2">
-                                <div class="custom-control custom-checkbox mb-1">
-                                  <input type="checkbox" class="custom-control-input" id="sortAlphabet">
-                                  <label class="custom-control-label" for="sortAlphabet">Urutkan Sesuai Abjad</label>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortAlphabet"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortAlphabet"
+                                    >Urutkan Sesuai Abjad</label
+                                  >
                                 </div>
-                                <div class="custom-control custom-checkbox mb-1">
-                                  <input type="checkbox" class="custom-control-input" id="sortNewest">
-                                  <label class="custom-control-label" for="sortNewest">Urutkan Data Terbaru</label>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortNewest"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortNewest"
+                                    >Urutkan Data Terbaru</label
+                                  >
                                 </div>
-                                <div class="custom-control custom-checkbox mb-1">
-                                  <input type="checkbox" class="custom-control-input" id="sortOldest">
-                                  <label class="custom-control-label" for="sortOldest">Urutkan Data Terlama</label>
+                                <div
+                                  class="custom-control custom-checkbox mb-1"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    class="custom-control-input"
+                                    id="sortOldest"
+                                  />
+                                  <label
+                                    class="custom-control-label"
+                                    for="sortOldest"
+                                    >Urutkan Data Terlama</label
+                                  >
                                 </div>
                               </div>
                             </div>
@@ -374,151 +431,363 @@
                           <div class="mb-2">
                             <div id="headingTwo">
                               <h2 class="mb-0">
-                                <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                  <div class="d-flex justify-content-between">
-                                    <p class="h6 mb-0 font-weight-bolder">Industry</p>
-                                    <li class="fas fa-chevron-down"></li>
+                                <button
+                                  class="btn btn-block text-left px-1"
+                                  type="button"
+                                  data-toggle="collapse"
+                                  data-target="#collapseTwo"
+                                  aria-expanded="true"
+                                  aria-controls="collapseTwo"
+                                >
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <p
+                                      class="primary-700--text bold-heading-5 mb-0"
+                                    >
+                                      Industri
+                                    </p>
+                                    <li
+                                      class="fas fa-chevron-down primary-700--text"
+                                    ></li>
                                   </div>
                                 </button>
                               </h2>
                             </div>
 
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div
+                              id="collapseTwo"
+                              class="collapse"
+                              aria-labelledby="headingTwo"
+                              data-parent="#accordionExample"
+                            >
                               <div class="px-1 pt-2">
-                                <div class="form-group my-3">
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="searchIndustry"
-                                    placeholder="Masukkan Nama Industri..."
-                                  />
-                                </div>
                                 <div class="mb-2">
                                   <div class="accordion" id="innerAccordion">
-                                  <!-- FMCG - Collapse -->
-                                  <div>
-                                    <div id="innerHeadingOne">
-                                      <h2 class="mb-0">
-                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseOne" aria-expanded="true" aria-controls="innerCollapseOne">
-                                          <div class="d-flex justify-content-between">
-                                            <p class="h6 mb-0 font-weight-bolder">FMCG</p>
-                                            <li class="fas fa-chevron-down"></li>
-                                          </div>
-                                        </button>
-                                      </h2>
-                                    </div>
-    
-                                    <div id="innerCollapseOne" class="collapse" aria-labelledby="innerHeadingOne" data-parent="#innerAccordion">
-                                      <div class="p-1 pt-2">
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="fnb">
-                                          <label class="custom-control-label" for="fnb">F&B</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="skincare">
-                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
-                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
-                                        </div>
+                                    <!-- FMCG - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingOne">
+                                        <h2 class="mb-0">
+                                          <button
+                                            class="btn btn-block text-left px-1"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#innerCollapseOne"
+                                            aria-expanded="true"
+                                            aria-controls="innerCollapseOne"
+                                          >
+                                            <div
+                                              class="d-flex justify-content-between align-items-center"
+                                            >
+                                              <p
+                                                class="medium-metadata primary-700--text mb-0"
+                                              >
+                                                FMCG
+                                              </p>
+                                              <li
+                                                class="fas fa-chevron-down primary-700--text"
+                                              ></li>
+                                            </div>
+                                          </button>
+                                        </h2>
                                       </div>
-                                    </div>
-                                  </div>
-                                  <!-- Banking - Collapse -->
-                                  <div>
-                                    <div id="innerHeadingTwo">
-                                      <h2 class="mb-0">
-                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseTwo" aria-expanded="true" aria-controls="innerCollapseTwo">
-                                          <div class="d-flex justify-content-between">
-                                            <p class="h6 mb-0 font-weight-bolder">Banking & Financial</p>
-                                            <li class="fas fa-chevron-down"></li>
-                                          </div>
-                                        </button>
-                                      </h2>
-                                    </div>
-    
-                                    <div id="innerCollapseTwo" class="collapse" aria-labelledby="innerHeadingTwo" data-parent="#innerAccordion">
-                                      <div class="p-1 pt-2">
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="fnb">
-                                          <label class="custom-control-label" for="fnb">F&B</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="skincare">
-                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
-                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
 
-                                  <!-- Agency - Collapse -->
-                                  <div>
-                                    <div id="innerHeadingThree">
-                                      <h2 class="mb-0">
-                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseThree" aria-expanded="true" aria-controls="innerCollapseThree">
-                                          <div class="d-flex justify-content-between">
-                                            <p class="h6 mb-0 font-weight-bolder">Agency</p>
-                                            <li class="fas fa-chevron-down"></li>
+                                      <div
+                                        id="innerCollapseOne"
+                                        class="collapse"
+                                        aria-labelledby="innerHeadingOne"
+                                        data-parent="#innerAccordion"
+                                      >
+                                        <div class="p-1 pt-2">
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="fnb"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="fnb"
+                                              >F&B</label
+                                            >
                                           </div>
-                                        </button>
-                                      </h2>
-                                    </div>
-    
-                                    <div id="innerCollapseThree" class="collapse" aria-labelledby="innerHeadingThree" data-parent="#innerAccordion">
-                                      <div class="p-1 pt-2">
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="fnb">
-                                          <label class="custom-control-label" for="fnb">F&B</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="skincare">
-                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
-                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="skincare"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="skincare"
+                                              >Personal Skincare</label
+                                            >
+                                          </div>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="babyProducts"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="babyProducs"
+                                              >Baby Products</label
+                                            >
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
+                                    <!-- Banking - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingTwo">
+                                        <h2 class="mb-0">
+                                          <button
+                                            class="btn btn-block text-left px-1"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#innerCollapseTwo"
+                                            aria-expanded="true"
+                                            aria-controls="innerCollapseTwo"
+                                          >
+                                            <div
+                                              class="d-flex justify-content-between align-items-center"
+                                            >
+                                              <p
+                                                class="medium-metadata primary-700--text mb-0"
+                                              >
+                                                Banking
+                                              </p>
+                                              <li
+                                                class="fas fa-chevron-down primary-700--text"
+                                              ></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
 
-                                  <!-- Education - Collapse -->
-                                  <div>
-                                    <div id="innerHeadingFour">
-                                      <h2 class="mb-0">
-                                        <button class="btn btn-block text-left px-1" type="button" data-toggle="collapse" data-target="#innerCollapseFour" aria-expanded="true" aria-controls="innerCollapseFour">
-                                          <div class="d-flex justify-content-between">
-                                            <p class="h6 mb-0 font-weight-bolder">Education</p>
-                                            <li class="fas fa-chevron-down"></li>
+                                      <div
+                                        id="innerCollapseTwo"
+                                        class="collapse"
+                                        aria-labelledby="innerHeadingTwo"
+                                        data-parent="#innerAccordion"
+                                      >
+                                        <div class="p-1 pt-2">
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="fnb"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="fnb"
+                                              >F&B</label
+                                            >
                                           </div>
-                                        </button>
-                                      </h2>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="skincare"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="skincare"
+                                              >Personal Skincare</label
+                                            >
+                                          </div>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="babyProducts"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="babyProducs"
+                                              >Baby Products</label
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-    
-                                    <div id="innerCollapseFour" class="collapse" aria-labelledby="innerHeadingFour" data-parent="#innerAccordion">
-                                      <div class="p-1 pt-2">
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="fnb">
-                                          <label class="custom-control-label" for="fnb">F&B</label>
+
+                                    <!-- Agency - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingThree">
+                                        <h2 class="mb-0">
+                                          <button
+                                            class="btn btn-block text-left px-1"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#innerCollapseThree"
+                                            aria-expanded="true"
+                                            aria-controls="innerCollapseThree"
+                                          >
+                                            <div
+                                              class="d-flex justify-content-between align-items-center"
+                                            >
+                                              <p
+                                                class="medium-metadata primary-700--text mb-0"
+                                              >
+                                                Agency
+                                              </p>
+                                              <li
+                                                class="fas fa-chevron-down primary-700--text"
+                                              ></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
+
+                                      <div
+                                        id="innerCollapseThree"
+                                        class="collapse"
+                                        aria-labelledby="innerHeadingThree"
+                                        data-parent="#innerAccordion"
+                                      >
+                                        <div class="p-1 pt-2">
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="fnb"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="fnb"
+                                              >F&B</label
+                                            >
+                                          </div>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="skincare"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="skincare"
+                                              >Personal Skincare</label
+                                            >
+                                          </div>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="babyProducts"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="babyProducs"
+                                              >Baby Products</label
+                                            >
+                                          </div>
                                         </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="skincare">
-                                          <label class="custom-control-label" for="skincare">Personal Skincare</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-1">
-                                          <input type="checkbox" class="custom-control-input" id="babyProducts">
-                                          <label class="custom-control-label" for="babyProducs">Baby Products</label>
+                                      </div>
+                                    </div>
+
+                                    <!-- Education - Collapse -->
+                                    <div>
+                                      <div id="innerHeadingFour">
+                                        <h2 class="mb-0">
+                                          <button
+                                            class="btn btn-block text-left px-1"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#innerCollapseFour"
+                                            aria-expanded="true"
+                                            aria-controls="innerCollapseFour"
+                                          >
+                                            <div
+                                              class="d-flex justify-content-between align-items-center"
+                                            >
+                                              <p
+                                                class="medium-metadata primary-700--text mb-0"
+                                              >
+                                                Education
+                                              </p>
+                                              <li
+                                                class="fas fa-chevron-down primary-700--text"
+                                              ></li>
+                                            </div>
+                                          </button>
+                                        </h2>
+                                      </div>
+
+                                      <div
+                                        id="innerCollapseFour"
+                                        class="collapse"
+                                        aria-labelledby="innerHeadingFour"
+                                        data-parent="#innerAccordion"
+                                      >
+                                        <div class="p-1 pt-2">
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="fnb"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="fnb"
+                                              >F&B</label
+                                            >
+                                          </div>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="skincare"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="skincare"
+                                              >Personal Skincare</label
+                                            >
+                                          </div>
+                                          <div
+                                            class="custom-control custom-checkbox mb-1"
+                                          >
+                                            <input
+                                              type="checkbox"
+                                              class="custom-control-input"
+                                              id="babyProducts"
+                                            />
+                                            <label
+                                              class="custom-control-label"
+                                              for="babyProducs"
+                                              >Baby Products</label
+                                            >
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
                               </div>
                             </div>
                           </div>
@@ -526,6 +795,14 @@
                       </div>
                     </form>
                   </div>
+                  <button
+                    type="button"
+                    class="btn bold-body primary-600--text"
+                    style="border: 1px solid #d0d5dd"
+                  >
+                    <i class="fas fa-file-export primary-600--text mr-2"></i>
+                    Export CSV
+                  </button>
                 </div>
               </div>
               <div class="card-body p-0">
@@ -572,18 +849,34 @@
                             ></label>
                           </div>
                         </td>
-                        <td>Vivo Mobile Indonesia</td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div
+                              class="bg-primary-600 d-flex align-items-center justify-content-center text-white mr-2"
+                              style="
+                                width: 21px;
+                                height: 21px;
+                                border-radius: 2px;
+                              "
+                            >
+                              <p class="bold-metadata-xs mb-0">N</p>
+                            </div>
+                            Vivo Mobile Indonesia
+                          </div>
+                        </td>
                         <td>End-Client</td>
                         <td>Sekar Setia Ningrum</td>
                         <td>
-                          <span class="bg-gray-100 rounded-pill py-2 px-3">
+                          <span
+                            class="bg-primary-50 rounded-pill py-2 px-3 primary-600--text"
+                          >
                             FMCG
                           </span>
                         </td>
                         <td>Indonesia</td>
                         <td>
                           <a
-                            class="bg-transparent rounded-circle border-0" 
+                            class="bg-transparent rounded-circle border-0"
                             role="button"
                             href="client-detail.html"
                           >
@@ -604,24 +897,40 @@
                             ></label>
                           </div>
                         </td>
-                        <td>Zurich Insurance Infonesia</td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div
+                              class="bg-primary-600 d-flex align-items-center justify-content-center text-white mr-2"
+                              style="
+                                width: 21px;
+                                height: 21px;
+                                border-radius: 2px;
+                              "
+                            >
+                              <p class="bold-metadata-xs mb-0">N</p>
+                            </div>
+                            Zurich Assurance Indonesia
+                          </div>
+                        </td>
                         <td>End-Client</td>
                         <td>Aditya Johan</td>
                         <td>
-                          <span class="bg-gray-100 rounded-pill py-2 px-3">
+                          <span
+                            class="bg-primary-50 rounded-pill py-2 px-3 primary-600--text"
+                          >
                             Elektronik
                           </span>
                         </td>
                         <td>Indonesia</td>
                         <td>
-                            <a
-                              class="bg-transparent rounded-circle border-0" 
-                              role="button"
-                              href="client-detail.html"
-                            >
-                              <i class="fa fa-chevron-right text-gray-700"></i>
-                            </a>
-                          </td>
+                          <a
+                            class="bg-transparent rounded-circle border-0"
+                            role="button"
+                            href="client-detail.html"
+                          >
+                            <i class="fa fa-chevron-right text-gray-700"></i>
+                          </a>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
