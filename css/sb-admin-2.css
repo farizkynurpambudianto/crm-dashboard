@@ -72,9 +72,10 @@ section {
 
 body {
   margin: 0;
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'Satoshi', sans-serif;
+  /* font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+    'Segoe UI Symbol', 'Noto Color Emoji'; */
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -10986,7 +10987,7 @@ a:focus {
     width: 14rem;
   }
   .sidebar .nav-item .nav-link i {
-    font-size: 0.85rem;
+    /* font-size: 0.85rem; */
     margin-right: 0.25rem;
   }
   .sidebar .nav-item .nav-link span {
@@ -11093,7 +11094,7 @@ a:focus {
 }
 
 .sidebar-light .nav-item .nav-link i {
-  color: #d1d3e2;
+  color: #264179;
 }
 
 .sidebar-light .nav-item .nav-link:active,
@@ -11114,7 +11115,7 @@ a:focus {
 
 .sidebar-light .nav-item.active .nav-link {
   transition: all 0.3s ease;
-  background: #7b7c85;
+  background: #264179;
   color: #ffffff;
   border-radius: 8px;
 }
@@ -11879,6 +11880,17 @@ button.custom-icon-button {
   background: white;
 }
 
+.bg-gradient-custom {
+  background: linear-gradient(129.18deg, #1c305a 13.4%, #122142 89.78%);
+}
+
+.bg-image-custom {
+  background-image: url('/img/background.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 /* remove the original arrow */
 select {
   -webkit-appearance: none;
@@ -11906,4 +11918,143 @@ select + i.fa {
 
 select option {
   padding-right: 21px;
+}
+
+/* Neutral Color */
+.bg-neutral-800 {
+  background-color: #1b1f26;
+}
+.bg-neutral-700 {
+  background-color: #28303e;
+}
+.bg-neutral-600 {
+  background-color: #3c4556;
+}
+.bg-neutral-500 {
+  background-color: #5c6575;
+}
+.bg-neutral-400 {
+  background-color: #98a2b3;
+}
+.bg-neutral-300 {
+  background-color: #d0d5dd;
+}
+.bg-neutral-200 {
+  background-color: #e4e7ec;
+}
+.bg-neutral-100 {
+  background-color: #f2f4f7;
+}
+.bg-neutral-50 {
+  background-color: #f8f9fb;
+}
+
+/* Primary (Blue) Color */
+.bg-primary-800 {
+  background-color: #122142;
+}
+.bg-primary-700 {
+  background-color: #1c305a;
+}
+.bg-primary-600 {
+  background-color: #264179;
+}
+.bg-primary-500 {
+  background-color: #3d5a95;
+}
+.bg-primary-400 {
+  background-color: #617aae;
+}
+.bg-primary-300 {
+  background-color: #abbee3;
+}
+.bg-primary-200 {
+  background-color: #d6e1f6;
+}
+.bg-primary-100 {
+  background-color: #edf3ff;
+}
+.bg-primary-50 {
+  background-color: #f8faff;
+}
+
+/* Secondary (Orange) Color */
+.bg-secondary-800 {
+  background-color: #8d5405;
+}
+.bg-secondary-700 {
+  background-color: #b96c00;
+}
+.bg-secondary-600 {
+  background-color: #e18708;
+}
+.bg-secondary-500 {
+  background-color: #f7a533;
+}
+.bg-secondary-400 {
+  background-color: #ffbb5c;
+}
+.bg-secondary-300 {
+  background-color: #ffcb82;
+}
+.bg-secondary-200 {
+  background-color: #ffdfb4;
+}
+.bg-secondary-100 {
+  background-color: #fff4e5;
+}
+.bg-secondary-50 {
+  background-color: #fffaf2;
+}
+
+/* Error Color */
+.bg-error-800 {
+  background-color: #f8d5dd;
+}
+.bg-error-700 {
+  background-color: #f1abbc;
+}
+.bg-error-600 {
+  background-color: #ed97ab;
+}
+.bg-error-500 {
+  background-color: #e9829a;
+}
+.bg-error-400 {
+  background-color: #e66d89;
+}
+.bg-error-300 {
+  background-color: #e25879;
+}
+.bg-error-200 {
+  background-color: #df4368;
+}
+.bg-error-100 {
+  background-color: #db2e57;
+}
+
+/* Success background-color */
+.bg-success-800 {
+  background-color: #d1f6e1;
+}
+.bg-success-700 {
+  background-color: #b9f1d2;
+}
+.bg-success-600 {
+  background-color: #8be8b5;
+}
+.bg-success-500 {
+  background-color: #74e3a6;
+}
+.bg-success-400 {
+  background-color: #5dde97;
+}
+.bg-success-300 {
+  background-color: #45d988;
+}
+.bg-success-200 {
+  background-color: #2ed579;
+}
+.bg-success-100 {
+  background-color: #17d06a;
 }
