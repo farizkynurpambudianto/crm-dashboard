@@ -18,13 +18,18 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <link href="css/typography.css" rel="stylesheet" />
 
     <!-- Custom styles for this page -->
     <link
@@ -40,6 +45,7 @@
       <ul
         class="navbar-nav bg-white sidebar sidebar-light accordion"
         id="accordionSidebar"
+        style="font-size: 24px"
       >
         <!-- Sidebar - Brand -->
         <a
@@ -52,50 +58,91 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
           <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-list-alt"></i>
+              </div>
+              <span class="bold-bodytext text-white">Dashboard</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Client -->
         <li class="nav-item">
           <a class="nav-link" href="client.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Klien</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-user"></i>
+              </div>
+              <span class="medium-bodytext neutral-800--text">Klien</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Proposal -->
         <li class="nav-item">
           <a class="nav-link" href="proposal.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Proposal</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <span class="medium-bodytext neutral-800--text">Proposal</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Proyek -->
         <li class="nav-item">
           <a class="nav-link" href="project.html">
-            <i class="fas fa-fw fa-briefcase"></i>
-            <span>Proyek</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <span class="medium-bodytext neutral-800--text">Proyek</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Settings -->
         <li class="nav-item">
           <a class="nav-link" href="settings.html">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Pengaturan</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-cog"></i>
+              </div>
+              <span class="medium-bodytext neutral-800--text">Pengaturan</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item" style="margin-top: auto">
+          <a class="nav-link" href="login.html">
+            <div class="row no-gutters align-items-center">
+              <div
+                class="bg-error-800"
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 8px;
+                  padding: 0px 6px;
+                  margin-right: 24px;
+                "
+              >
+                <i class="fas fa-sign-out-alt" style="color: #db2e57"></i>
+              </div>
+              <span class="medium-bodytext neutral-800--text">Keluar</span>
+            </div>
           </a>
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
+        <!-- <hr class="sidebar-divider d-none d-md-block" /> -->
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
+        <!-- <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
+        </div> -->
       </ul>
       <!-- End of Sidebar -->
 
@@ -107,8 +154,6 @@
           <nav
             class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
           >
-            <h1 class="h4 font-weight-bolder mb-0 text-gray-800">Dashboard</h1>
-
             <!-- Sidebar Toggle (Topbar) -->
             <button
               id="sidebarToggleTop"
@@ -224,13 +269,12 @@
               <div class="topbar-divider d-none d-sm-block"></div>
 
               <!-- Nav Item - User Information -->
-              <li class="nav-item dropdown no-arrow">
+              <li class="nav-item">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link"
                   href="#"
                   id="userDropdown"
                   role="button"
-                  data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
@@ -241,38 +285,7 @@
                   <span class="d-none d-lg-inline text-gray-600 small mr-2"
                     >Joseph Augustus</span
                   >
-                  <i class="fas fa-sm fa-chevron-down"></i>
                 </a>
-                <!-- Dropdown - User Information -->
-                <div
-                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                  aria-labelledby="userDropdown"
-                >
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#logoutModal"
-                  >
-                    <i
-                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                    ></i>
-                    Logout
-                  </a>
-                </div>
               </li>
             </ul>
           </nav>
@@ -280,40 +293,33 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
+            <p class="bold-heading-2 mb-2 neutral-800--text">Dashboard</p>
+            <p class="regular-metadata neutra-700--text mb-4">
+              Data terbaru dari 1 Januari, 2022 - 12 Desember, 2022
+            </p>
             <!-- Summary Card -->
             <div class="row mb-4">
               <div class="col-sm-3">
                 <div class="custom-card">
                   <div class="container-fluid p-0">
-                    <div class="icon-wrapper mb-2">
-                      <i class="fas fa-user"></i>
+                    <div class="icon-wrapper mb-2 bg-primary-100">
+                      <i class="fas fa-user primary-600--text"></i>
                     </div>
                     <div>
-                      <p class="font-weight-bolder mb-1">Total Klien</p>
-                      <div class="row align-items-center no-gutters w-100">
-                        <p class="text-dark font-weight-bolder mb-0 mr-4">
+                      <p class="bold-metadata neutral-800--text mb-3">
+                        Total Client
+                      </p>
+                      <div class="row align-items-center no-gutters w-100 mb-2">
+                        <p class="bold-heading-3 neutral-800--text mb-0 mr-2">
                           229
                         </p>
-                        <p class="font-weight-bolder mb-0">+ 3.35%</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="custom-card">
-                  <div class="container-fluid p-0">
-                    <div class="icon-wrapper mb-2">
-                      <i class="fas fa-bolt"></i>
-                    </div>
-                    <div>
-                      <p class="font-weight-bolder mb-1">Total Project</p>
-                      <div class="row align-items-center no-gutters w-100">
-                        <p class="text-dark font-weight-bolder mb-0 mr-4">
-                          110
+                        <p class="bold-metadata success-200--text mb-0">
+                          + 3.35%
                         </p>
-                        <p class="font-weight-bolder mb-0">+ 3.35%</p>
                       </div>
+                      <p class="primary-700--text regular-metadata-xs mb-0">
+                        Dibandingkan tahun lalu
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -321,18 +327,49 @@
               <div class="col-sm-3">
                 <div class="custom-card">
                   <div class="container-fluid p-0">
-                    <div class="icon-wrapper mb-2">
-                      <i class="fas fa-bolt"></i>
+                    <div class="icon-wrapper mb-2 bg-primary-100">
+                      <i class="fas fa-briefcase primary-600--text"></i>
                     </div>
                     <div>
-                      <p class="font-weight-bolder mb-1">
+                      <p class="bold-metadata neutral-800--text mb-3">
+                        Total Project
+                      </p>
+                      <div class="row align-items-center no-gutters w-100 mb-2">
+                        <p class="bold-heading-3 neutral-800--text mb-0 mr-2">
+                          229
+                        </p>
+                        <p class="bold-metadata error-100--text mb-0">
+                          - 0.15%
+                        </p>
+                      </div>
+                      <p class="primary-700--text regular-metadata-xs mb-0">
+                        Dibandingkan tahun lalu
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="custom-card">
+                  <div class="container-fluid p-0">
+                    <div class="icon-wrapper mb-2 bg-primary-100">
+                      <i class="fas fa-chart-line primary-600--text"></i>
+                    </div>
+                    <div>
+                      <p class="bold-metadata neutral-800--text mb-3">
                         Average Value Per Project (Mio)
                       </p>
-                      <div class="row align-items-center no-gutters w-100">
-                        <p class="text-dark font-weight-bolder mb-0 mr-4">
-                          110
+                      <div class="row align-items-center no-gutters w-100 mb-2">
+                        <p class="bold-heading-3 neutral-800--text mb-0 mr-2">
+                          229
+                        </p>
+                        <p class="bold-metadata error-100--text mb-0">
+                          - 0.15%
                         </p>
                       </div>
+                      <p class="primary-700--text regular-metadata-xs mb-0">
+                        Dibandingkan tahun lalu
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -340,139 +377,282 @@
               <div class="col-sm-3">
                 <div class="custom-card">
                   <div class="container-fluid p-0">
-                    <div class="icon-wrapper mb-2">
-                      <i class="fas fa-bolt"></i>
+                    <div class="icon-wrapper mb-2 bg-primary-100">
+                      <i class="fas fa-chart-line primary-600--text"></i>
                     </div>
                     <div>
-                      <p class="font-weight-bolder mb-1">
+                      <p class="bold-metadata neutral-800--text mb-3">
                         Average CPO (by Real Cost)
                       </p>
-                      <div class="row align-items-center no-gutters w-100">
-                        <p class="text-dark font-weight-bolder mb-0 mr-4">
+                      <div class="row align-items-center no-gutters w-100 mb-2">
+                        <p class="bold-heading-3 neutral-800--text mb-0 mr-2">
                           30%
                         </p>
+                        <p class="bold-metadata success-200--text mb-0">
+                          + 4.35%
+                        </p>
                       </div>
+                      <p class="primary-700--text regular-metadata-xs mb-0">
+                        Dibandingkan tahun lalu
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Pendapatan & Penjualan Chart -->
             <div class="row mb-4">
-              <div
-                class="col-sm-8"
-                style="display: flex; flex-direction: column; height: auto"
-              >
-                <div class="custom-card">
+              <div class="col-sm-12">
+                <div class="custom-card shadow">
                   <div
-                    class="p-4 d-flex flex-row align-items-center justify-content-between"
+                    class="d-flex flex-row align-items-center justify-content-between mb-3"
                   >
-                    <h6 class="m-0 font-weight-bold text-primary">
-                      Pendapatan dan Penjualan Tahunan
+                    <h6 class="m-0 bold-heading-4 neutral-800--text">
+                      Pendapatan & Penjualan Tahunan
                     </h6>
+                    <div class="d-flex">
+                      <div class="d-flex align-items-center">
+                        <p class="regular-bodytext primary-700--text mr-2 mb-0">
+                          Komparasi Tahun:
+                        </p>
+                        <select
+                          class="selectpicker"
+                          id="chart1-firstYear-select"
+                          data-width="120px"
+                          onchange="handlerFilterSalesChart(event, 'firstYear')"
+                        >
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                        </select>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <p class="regular-bodytext primary-700--text mx-2 mb-0">
+                          dan
+                        </p>
+                        <select
+                          class="selectpicker"
+                          id="chart1-endYear-select"
+                          onchange="handlerFilterSalesChart(event, 'endYear')"
+                          data-width="120px"
+                        >
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                        </select>
+                      </div>
+                      <div
+                        class="mb-0 mx-3"
+                        style="border-right: 1px solid #e4e7ec; height: 40px"
+                      ></div>
+                      <div>
+                        <select
+                          class="selectpicker"
+                          id="chart1-sales-select"
+                          onchange="handlerFilterSalesChart(event, 'type')"
+                          data-width="120px"
+                        >
+                          <option>Penjualan</option>
+                          <option>Pendapatan</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row no-gutters mb-3">
+                    <div class="d-flex align-items-center mr-3">
+                      <span
+                        class="bg-primary-600 mr-2"
+                        style="width: 14px; height: 14px; border-radius: 4px"
+                      ></span>
+                      <p id="legend1-sales-chart" class="regular-metadata mb-0">
+                        Penjualan 2022
+                      </p>
+                    </div>
                     <div class="d-flex align-items-center">
-                      <p class="text-gray-400 mr-2 mb-0">Pilih Tahun:</p>
-                      <select
-                        class="selectpicker"
-                        id="customSelect"
-                        data-width="120px"
-                      >
-                        <option>2021</option>
-                        <option>2020</option>
-                        <option>2019</option>
-                      </select>
+                      <span
+                        class="bg-secondary-600 mr-2"
+                        style="width: 14px; height: 14px; border-radius: 4px"
+                      ></span>
+                      <p id="legend2-sales-chart" class="regular-metadata mb-0">
+                        Penjualan 2021
+                      </p>
                     </div>
                   </div>
-                  <div class="card-body">
-                    <div class="chart-bar">
-                      <canvas id="myBarChart"></canvas>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="custom-card mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <div
-                    class="p-4 d-flex flex-row align-items-center justify-content-between"
-                  >
-                    <h6 class="m-0 font-weight-bold text-primary">Hit Rate</h6>
-                    <select
-                      class="selectpicker"
-                      id="customSelect"
-                      data-width="120px"
-                    >
-                      <option>Week 1</option>
-                      <option>Week 2</option>
-                      <option>Week 3</option>
-                      <option>Week 4</option>
-                    </select>
-                  </div>
-                  <!-- Card Body -->
-                  <div class="chart-wrapper">
-                    <div class="chart-pie">
-                      <canvas id="myPieChart"></canvas>
-                      <div class="inner-circle">
-                        <p class="h3 font-weight-bolder m-0">64%</p>
-                        <p class="m-0">Total Hit Rate</p>
-                      </div>
-                    </div>
-                    <div class="detail-chart">
-                      <div class="detail-row" style="margin-bottom: 24px">
-                        <div class="d-flex align-items-center">
-                          <div
-                            class="chart-indicator mr-2"
-                            style="background: #7b7c85"
-                          ></div>
-                          <p class="m-0">Proposal Sukses</p>
-                        </div>
-                        <p class="m-0">126</p>
-                      </div>
-                      <div class="detail-row">
-                        <div class="d-flex align-items-center">
-                          <div
-                            class="chart-indicator mr-2"
-                            style="background: #e7e7e7"
-                          ></div>
-                          <p class="m-0">Proposal Gagal</p>
-                        </div>
-                        <p class="m-0">105</p>
-                      </div>
+                  <div class="card-body p-0">
+                    <div class="chart-area">
+                      <canvas id="salesChart"></canvas>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Content Row -->
-
-            <div class="row">
-              <!-- Area Chart -->
+            <!-- Hit Rate Chart -->
+            <div class="row mb-4">
               <div class="col-sm-12">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
+                <div class="custom-card shadow">
                   <div
-                    class="p-4 d-flex flex-row align-items-center justify-content-between"
+                    class="d-flex flex-row align-items-center justify-content-between mb-3"
                   >
-                    <h6 class="m-0 font-weight-bold text-primary">
-                      Pendapatan dan Penjualan Tahunan
+                    <h6 class="m-0 bold-heading-4 neutral-800--text">
+                      Hit Rate
                     </h6>
-                    <div class="d-flex align-items-center">
-                      <p class="text-gray-400 mr-2 mb-0">Pilih Tahun:</p>
-                      <select
-                        class="selectpicker"
-                        id="customSelect"
-                        data-width="120px"
-                      >
-                        <option>2021</option>
-                        <option>2020</option>
-                        <option>2019</option>
-                      </select>
+                    <div class="d-flex">
+                      <div class="d-flex align-items-center">
+                        <p class="regular-bodytext primary-700--text mr-2 mb-0">
+                          Komparasi Tahun:
+                        </p>
+                        <select
+                          class="selectpicker"
+                          id="chart2-firstYear-select"
+                          data-width="120px"
+                          onchange="handlerFilterHitrateChart(event, 'firstYear')"
+                        >
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                        </select>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <p class="regular-bodytext primary-700--text mx-2 mb-0">
+                          dan
+                        </p>
+                        <select
+                          class="selectpicker"
+                          id="chart2-endYear-select"
+                          data-width="120px"
+                          onchange="handlerFilterHitrateChart(event, 'endYear')"
+                        >
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                  <!-- Card Body -->
-                  <div class="card-body">
+                  <div class="row no-gutters mb-3">
+                    <div class="d-flex align-items-center mr-3">
+                      <span
+                        class="bg-primary-600 mr-2"
+                        style="width: 14px; height: 14px; border-radius: 4px"
+                      ></span>
+                      <p
+                        id="legend1-hitrate-chart"
+                        class="regular-metadata mb-0"
+                      >
+                        Hitrate 2022
+                      </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="bg-secondary-600 mr-2"
+                        style="width: 14px; height: 14px; border-radius: 4px"
+                      ></span>
+                      <p
+                        id="legend2-hitrate-chart"
+                        class="regular-metadata mb-0"
+                      >
+                        Hitrate 2021
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
                     <div class="chart-area">
-                      <canvas id="myAreaChart"></canvas>
+                      <canvas id="hitRateChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Prospek & Proyek Chart -->
+            <div class="row mb-4">
+              <div class="col-sm-12">
+                <div class="custom-card shadow">
+                  <div
+                    class="d-flex flex-row align-items-center justify-content-between mb-3"
+                  >
+                    <h6 class="m-0 bold-heading-4 neutral-800--text">
+                      Prospek dan Projek
+                    </h6>
+                    <div class="d-flex">
+                      <div class="d-flex align-items-center">
+                        <p class="regular-bodytext primary-700--text mr-2 mb-0">
+                          Komparasi Tahun:
+                        </p>
+                        <select
+                          class="selectpicker"
+                          id="chart2-firstYear-select"
+                          data-width="120px"
+                          onchange="handlerFilterProjectChart(event, 'firstYear')"
+                        >
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                        </select>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <p class="regular-bodytext primary-700--text mx-2 mb-0">
+                          dan
+                        </p>
+                        <select
+                          class="selectpicker"
+                          id="chart2-endYear-select"
+                          data-width="120px"
+                          onchange="handlerFilterProjectChart(event, 'endYear')"
+                        >
+                          <option>2021</option>
+                          <option>2020</option>
+                          <option>2019</option>
+                        </select>
+                      </div>
+                      <div
+                        class="mb-0 mx-3"
+                        style="border-right: 1px solid #e4e7ec; height: 40px"
+                      ></div>
+                      <div>
+                        <select
+                          class="selectpicker"
+                          id="chart2-sales-select"
+                          data-width="120px"
+                          onchange="handlerFilterProjectChart(event, 'type')"
+                        >
+                          <option>Prospek</option>
+                          <option>Projek</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row no-gutters mb-3">
+                    <div class="d-flex align-items-center mr-3">
+                      <span
+                        class="bg-primary-600 mr-2"
+                        style="width: 14px; height: 14px; border-radius: 4px"
+                      ></span>
+                      <p
+                        id="legend1-project-chart"
+                        class="regular-metadata mb-0"
+                      >
+                        Prospek 2022
+                      </p>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <span
+                        class="bg-secondary-600 mr-2"
+                        style="width: 14px; height: 14px; border-radius: 4px"
+                      ></span>
+                      <p
+                        id="legend2-project-chart"
+                        class="regular-metadata mb-0"
+                      >
+                        Prospek 2021
+                      </p>
+                    </div>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="chart-area">
+                      <canvas id="projectChart"></canvas>
                     </div>
                   </div>
                 </div>
@@ -483,11 +663,26 @@
               <div
                 class="p-4 d-flex flex-row align-items-center justify-content-between"
               >
-                <h6 class="m-0 font-weight-bold text-primary">
-                  Project Terbaru
+                <h6 class="m-0 bold-heading-4 neutral-800--text">
+                  Proyek Terbaru
                 </h6>
+                <div class="col-3 p-0">
+                  <div class="input-group input-focus">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="searchField"
+                      placeholder="Cari Projek..."
+                    />
+                    <div class="input-group-append">
+                      <span class="input-group-text bg-white"
+                        ><i class="fa fa-search"></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="card-body">
+              <div class="card-body pt-0">
                 <div class="table-responsive">
                   <table
                     class="table table-custom"
@@ -582,15 +777,6 @@
       </div>
     </div>
 
-    <!-- Inject title html to data table -->
-    <script>
-      const injectTitle = () => {
-        let element = document.getElementById('dataTable')
-        console.log(element)
-      }
-      injectTitle()
-    </script>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -610,9 +796,22 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
+    <script src="js/chart/project-chart.js"></script>
+    <script src="js/chart/sales-chart.js"></script>
+    <script src="js/chart/hitrate-chart.js"></script>
+
+    <script
+      type="text/javascript"
+      src="js/chart/hitrate-chart-handler.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/chart/sales-chart-handler.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/chart/project-chart-handler.js"
+    ></script>
 
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>

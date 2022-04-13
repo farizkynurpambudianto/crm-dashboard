@@ -1,62 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <title>SB Admin 2 - Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    /> -->
+    <link
+      href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <link href="css/typography.css" rel="stylesheet" />
+  </head>
 
-</head>
+  <body class="bg-image-custom bg-primary-400" style="height: 100vh">
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="card-auth">
+          <a
+            class="d-flex align-items-center justify-content-center"
+            href="index.html"
+          >
+            <img class="img-fluid" src="img/logo_deka.svg" alt="..." />
+          </a>
+          <p
+            class="bold-heading-1 text-center neutral-800--text"
+            style="margin: 40px 0px"
+          >
+            Selamat datang <br />
+            di CRM Deka Insight
+          </p>
 
-<body class="bg-gray-800" style="height: 100vh">
-    <div class="container h-100 ">
-        <div class="row justify-content-center align-items-center h-100">
-            <div class="card-auth">
-                <a class="d-flex align-items-center justify-content-center" href="index.html">
-                    <img class="img-fluid" src="img/logo_deka.svg" alt="..." />
+          <form class="user">
+            <div class="mb-5">
+              <div class="form-group mb-4">
+                <p
+                  class="medium-body neutral-800--text"
+                  style="margin-bottom: 12px"
+                >
+                  Email
+                </p>
+                <input
+                  type="email"
+                  class="form-control form-control-user"
+                  id="exampleInputEmail"
+                  aria-describedby="emailHelp"
+                  placeholder="Masukkan email anda"
+                />
+              </div>
+              <div class="form-group">
+                <p
+                  class="medium-body neutral-800--text"
+                  style="margin-bottom: 12px"
+                >
+                  Password
+                </p>
+                <input
+                  type="password"
+                  class="form-control form-control-user"
+                  id="exampleInputPassword"
+                  placeholder="Masukkan password"
+                />
+              </div>
+              <div class="row justify-content-end no-gutters">
+                <a
+                  href="/reset-password.html"
+                  class="bold-body primary-500--text"
+                >
+                  Forgot Password?
                 </a>
-                <p class="h3 font-weight-bolder text-center text-dark" style="margin: 40px 0px;">Selamat datang <br/>
-                di CRM Deka Insight</p>
-
-                 <form class="user">
-                     <div class="mb-5">
-                         <div class="form-group mb-4">
-                             <p class="font-weight-bolder" style="margin-bottom: 12px">Email</p>
-                             <input type="email" class="form-control form-control-user"
-                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                 placeholder="Masukkan email anda">
-                         </div>
-                         <div class="form-group">
-                             <p class="font-weight-bolder"  style="margin-bottom: 12px">Password</p>
-                             <input type="password" class="form-control form-control-user"
-                                 id="exampleInputPassword" placeholder="Masukkan password">
-                         </div>
-                         <div class="row justify-content-end no-gutters">
-                             <a href="/reset-password.html" class="font-weight-bolder text-gray-600">
-                                 Forgot Password?
-                             </a>
-                         </div>
-                     </div>
-                    <a href="index.html" class="btn btn-dark bg-gray-700 btn-user btn-block">
-                        Login
-                    </a>
-                </form>
+              </div>
             </div>
+            <a
+              href="index.html"
+              class="btn btn-dark bg-primary-600 btn-user btn-block bold-body"
+            >
+              Login
+            </a>
+          </form>
         </div>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
@@ -68,7 +110,5 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-</body>
-
+  </body>
 </html>
