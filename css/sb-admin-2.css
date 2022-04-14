@@ -79,7 +79,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #858796;
+  color: #1b1f26;
   text-align: left;
   background-color: #fff;
 }
@@ -1641,6 +1641,16 @@ tr:last-child > td {
 .table-bordered thead th,
 .table-bordered thead td {
   border-bottom-width: 2px;
+}
+
+.table-noborder {
+  border: 0;
+}
+.table-noborder td {
+  border-bottom: 1px solid #e7eaee;
+}
+.table-noborder tr:last-child > td {
+  border-bottom: 1px solid #e7eaee;
 }
 
 .table-borderless th,
@@ -4322,6 +4332,17 @@ input[type='button'].btn-block {
   padding: 0.5rem 1rem;
 }
 
+.nav-underline .nav-link {
+  font-weight: 400;
+  color: #5c6575;
+}
+
+.nav-underline .nav-link.active {
+  border-bottom: 2px solid #264179;
+  font-weight: 700;
+  color: #264179;
+}
+
 .nav-link:hover,
 .nav-link:focus {
   text-decoration: none;
@@ -5075,7 +5096,7 @@ input[type='button'].btn-block {
   border-radius: 0.35rem;
   text-decoration: none;
   font-size: 20px;
-  color: #7b7c85;
+  color: #3d5a95;
 }
 
 .breadcrumb-item + .breadcrumb-item {
@@ -5085,7 +5106,7 @@ input[type='button'].btn-block {
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #7b7c85;
+  color: #3d5a95;
   content: '/';
 }
 
@@ -5098,12 +5119,12 @@ input[type='button'].btn-block {
 }
 
 .breadcrumb-item.active {
-  color: #7b7c85;
+  color: #1b1f26;
   font-weight: 700;
 }
 
 .breadcrumb-item a {
-  color: #7b7c85;
+  color: #3d5a95;
   text-decoration: none;
 }
 
@@ -7051,6 +7072,14 @@ button.bg-dark:focus {
 
 .rounded-pill {
   border-radius: 50rem !important;
+}
+
+.rounded-pill-left {
+  border-radius: 50rem 0rem 0rem 50rem !important;
+}
+
+.rounded-pill-right {
+  border-radius: 0rem 50rem 50rem 0rem !important;
 }
 
 .rounded-0 {
@@ -11768,7 +11797,7 @@ body.sidebar-toggled footer.sticky-footer {
   border: 1px solid #eff0f6;
   box-shadow: 0px 2px 8px 0px rgba(38, 68, 103, 0.08);
   background: #ffffff;
-  padding: 16px;
+  padding: 24px;
 }
 
 .icon-wrapper {
@@ -11860,8 +11889,8 @@ button.custom-icon-button {
 .notes-wrapper {
   border-radius: 8px;
   padding: 16px;
-  background: rgba(138, 139, 150, 0.03);
-  border: 1px solid #e5e5e5;
+  background: #f8f9fb;
+  border: 1px solid #e4e7ec;
 }
 
 .indicator-grid {
