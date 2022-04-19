@@ -19,12 +19,13 @@
       type="text/css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <link href="css/typography.css" rel="stylesheet" />
 
     <!-- Custom styles for this page -->
     <link
@@ -40,6 +41,7 @@
       <ul
         class="navbar-nav bg-white sidebar sidebar-light accordion"
         id="accordionSidebar"
+        style="font-size: 24px"
       >
         <!-- Sidebar - Brand -->
         <a
@@ -52,50 +54,91 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-list-alt"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Dashboard</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Client -->
         <li class="nav-item">
           <a class="nav-link" href="client.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Klien</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-user"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Klien</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Proposal -->
         <li class="nav-item">
           <a class="nav-link" href="proposal.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Proposal</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Proposal</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Proyek -->
         <li class="nav-item">
           <a class="nav-link" href="project.html">
-            <i class="fas fa-fw fa-briefcase"></i>
-            <span>Proyek</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Proyek</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Settings -->
         <li class="nav-item active">
           <a class="nav-link" href="settings.html">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Pengaturan</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-cog"></i>
+              </div>
+              <span class="bold-body text-white">Pengaturan</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item" style="margin-top: auto">
+          <a class="nav-link" href="login.html">
+            <div class="row no-gutters align-items-center">
+              <div
+                class="bg-error-800"
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 8px;
+                  padding: 0px 6px;
+                  margin-right: 24px;
+                "
+              >
+                <i class="fas fa-sign-out-alt" style="color: #db2e57"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Keluar</span>
+            </div>
           </a>
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
+        <!-- <hr class="sidebar-divider d-none d-md-block" /> -->
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
+        <!-- <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
+        </div> -->
       </ul>
       <!-- End of Sidebar -->
 
@@ -278,9 +321,7 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">
-              Pengaturan
-            </h1>
+            <h1 class="bold-heading-2 mb-4">Pengaturan</h1>
             <!-- Nav pills -->
             <ul class="nav nav-pills mb-4">
               <li class="nav-item">
@@ -309,15 +350,15 @@
                     class="d-flex justify-content-between align-items-center"
                   >
                     <div>
-                      <p class="font-weight-bolder mb-2">Pengaturan Akun</p>
-                      <p class="mb-3">
+                      <p class="bold-heading-3 mb-2">Pengaturan Akun</p>
+                      <p class="regular-body neutral-600--text mb-3">
                         Amet minim mollit non deserunt ullamco est sit aliqua.
                         <br />
                         Amet minim mollit non deserunt ullamco est sit aliqua.
                       </p>
                     </div>
                     <button
-                      class="btn btn-primary px-4 py-2"
+                      class="btn bg-primary-600 btn-dark bold-body px-4 py-2"
                       style="height: fit-content"
                       onclick="updateAccountHandler()"
                     >
@@ -330,10 +371,7 @@
                   <div class="row no-gutters">
                     <div class="col col-6 p-2">
                       <div class="form-group mb-4">
-                        <p
-                          class="font-weight-bolder"
-                          style="margin-bottom: 12px"
-                        >
+                        <p class="medium-body" style="margin-bottom: 12px">
                           Nama Depan
                         </p>
                         <input
@@ -361,10 +399,7 @@
                     </div>
                     <div class="col col-6 p-2">
                       <div class="form-group mb-4">
-                        <p
-                          class="font-weight-bolder"
-                          style="margin-bottom: 12px"
-                        >
+                        <p class="medium-body" style="margin-bottom: 12px">
                           Nama Belakang
                         </p>
                         <input
@@ -375,10 +410,7 @@
                         />
                       </div>
                       <div class="form-group mb-4">
-                        <p
-                          class="font-weight-bolder"
-                          style="margin-bottom: 12px"
-                        >
+                        <p class="medium-body" style="margin-bottom: 12px">
                           Kata Sandi
                         </p>
                         <input
@@ -430,7 +462,7 @@
                                 </p>
                                 <div class="form-group mb-4">
                                   <p
-                                    class="font-weight-bolder"
+                                    class="medium-body"
                                     style="margin-bottom: 12px"
                                   >
                                     Email
@@ -537,15 +569,20 @@
                   <div
                     class="d-flex flex-row align-items-center justify-content-between mb-2"
                   >
-                    <p class="h5 font-weight-bolder">Riwayat Aktivitas</p>
+                    <p class="bold-heading-4">Riwayat Aktivitas</p>
                     <div class="col-3 p-0">
-                      <div class="form-group">
+                      <div class="input-group input-focus mr-3">
                         <input
                           type="text"
                           class="form-control"
                           id="searchField"
-                          placeholder="Cari Klien..."
+                          placeholder="Cari Riwayat..."
                         />
+                        <div class="input-group-append">
+                          <span class="input-group-text bg-white"
+                            ><i class="fa fa-search"></i
+                          ></span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -591,28 +628,33 @@
                   <div
                     class="d-flex flex-row align-items-center justify-content-between mb-3"
                   >
-                    <p class="h5 font-weight-bolder mb-0">Daftar Pengguna</p>
+                    <p class="bold-heading-4 mb-0">Daftar Pengguna</p>
                     <div class="col-6">
                       <div
                         class="d-flex align-items-center justify-content-end"
                       >
                         <div class="col-6 p-0 mr-2">
-                          <div class="form-group mb-0">
+                          <div class="input-group input-focus mr-3">
                             <input
                               type="text"
                               class="form-control"
                               id="searchField"
-                              placeholder="Cari Klien..."
+                              placeholder="Cari Riwayat..."
                             />
+                            <div class="input-group-append">
+                              <span class="input-group-text bg-white"
+                                ><i class="fa fa-search"></i
+                              ></span>
+                            </div>
                           </div>
                         </div>
                         <button
-                          class="btn btn-primary px-4 py-2"
+                          class="btn btn-dark bg-primary-600 px-4 py-2"
                           data-toggle="modal"
                           data-target="#createAdminModal"
                         >
                           <li class="fas fa-plus mr-2"></li>
-                          Tambah Admin
+                          Tambah Admin Baru
                         </button>
                         <!-- Create Admin Modal -->
                         <div
@@ -628,9 +670,12 @@
                             class="modal-dialog modal-lg modal-dialog-centered"
                           >
                             <div class="modal-content">
-                              <div class="modal-header" style="padding: 40px">
+                              <div
+                                class="modal-header"
+                                style="padding: 40px; padding-bottom: 24px"
+                              >
                                 <h5
-                                  class="modal-title font-weight-bolder"
+                                  class="bold-heading-3 mb-0"
                                   id="staticBackdropLabel"
                                 >
                                   Tambah Admin
@@ -652,9 +697,7 @@
                                     style="padding-bottom: 24px"
                                   >
                                     <div class="col col-3">
-                                      <p class="font-weight-bolder mb-0">
-                                        Nama
-                                      </p>
+                                      <p class="medium-body mb-0">Nama</p>
                                     </div>
                                     <div class="col col-9">
                                       <input
@@ -670,9 +713,7 @@
                                     style="padding-bottom: 24px"
                                   >
                                     <div class="col col-3">
-                                      <p class="font-weight-bolder mb-0">
-                                        Email
-                                      </p>
+                                      <p class="medium-body mb-0">Email</p>
                                     </div>
                                     <div class="col col-9">
                                       <input
@@ -688,9 +729,7 @@
                                     style="padding-bottom: 24px"
                                   >
                                     <div class="col col-3 pt-2">
-                                      <p class="font-weight-bolder mb-0">
-                                        Password
-                                      </p>
+                                      <p class="medium-body mb-0">Password</p>
                                     </div>
                                     <div class="col col-9">
                                       <input
@@ -723,12 +762,22 @@
                                         ></div>
                                       </div>
                                       <div>
-                                        <li>Berisi setidaknya 6 karakter</li>
-                                        <li>
+                                        <li
+                                          class="medium-metadata primary-800--text mb-3"
+                                        >
+                                          Berisi setidaknya 6 karakter
+                                        </li>
+                                        <li
+                                          class="medium-metadata primary-800--text mb-3"
+                                        >
                                           Berisi setidaknya satu angka & huruf
                                           besar
                                         </li>
-                                        <li>Berawalan dengan huruf kapital</li>
+                                        <li
+                                          class="medium-metadata primary-800--text mb-0"
+                                        >
+                                          Berawalan dengan huruf kapital
+                                        </li>
                                       </div>
                                     </div>
                                   </div>
@@ -738,7 +787,7 @@
                                     class="row no-gutters align-items-center"
                                   >
                                     <div class="col col-3">
-                                      <p class="font-weight-bolder mb-0">
+                                      <p class="medium-body mb-0">
                                         Ulangi Password
                                       </p>
                                     </div>
@@ -753,13 +802,16 @@
                                 </div>
                                 <div class="row no-gutters justify-content-end">
                                   <button
-                                    class="btn btn-outline-primary mr-2"
+                                    class="btn bg-white mr-2 primary-600--text"
+                                    style="border: 1px solid #264179"
                                     data-dismiss="modal"
                                   >
-                                    Batalkan
+                                    Batal
                                   </button>
-                                  <button class="btn btn-primary">
-                                    Simpan
+                                  <button
+                                    class="btn btn-dark bg-primary-600 bold-body"
+                                  >
+                                    Tambah
                                   </button>
                                 </div>
                               </div>
@@ -794,10 +846,16 @@
                             <td>example@gmail.com</td>
                             <td>
                               <div class="row no-gutters">
-                                <p id="password-1-hint" class="mb-0 mr-2">
+                                <p
+                                  id="password-1-hint"
+                                  class="bold-metadata primary-600--text mb-0 mr-2"
+                                >
                                   Tampilkan
                                 </p>
-                                <p id="password-1" class="mb-0 mr-2">
+                                <p
+                                  id="password-1"
+                                  class="bold-metadata primary-600--text mb-0 mr-2"
+                                >
                                   hue1h2eiuasad
                                 </p>
                                 <a
@@ -805,14 +863,16 @@
                                   onclick="showPassword('#password-1')"
                                   id="password-1-buttonShow"
                                 >
-                                  <i class="fas fa-eye-slash"></i>
+                                  <i
+                                    class="fas fa-eye-slash primary-600--text"
+                                  ></i>
                                 </a>
                                 <a
                                   role="button"
                                   onclick="hidePassword('#password-1')"
                                   id="password-1-buttonHide"
                                 >
-                                  <i class="fas fa-eye"></i>
+                                  <i class="fas fa-eye primary-600--text"></i>
                                 </a>
                               </div>
                             </td>
@@ -1076,23 +1136,33 @@
                             <td>example@gmail.com</td>
                             <td>
                               <div class="row no-gutters">
-                                <p id="password-2-hint" class="mb-0 mr-2">
+                                <p
+                                  id="password-2-hint"
+                                  class="bold-metadata primary-600--text mb-0 mr-2"
+                                >
                                   Tampilkan
                                 </p>
-                                <p id="password-2" class="mb-0 mr-2">aezakmi</p>
+                                <p
+                                  id="password-2"
+                                  class="bold-metadata primary-600--text mb-0 mr-2"
+                                >
+                                  aezakmi
+                                </p>
                                 <a
                                   role="button"
                                   onclick="showPassword('#password-2')"
                                   id="password-2-buttonShow"
                                 >
-                                  <i class="fas fa-eye-slash"></i>
+                                  <i
+                                    class="fas fa-eye-slash primary-600--text"
+                                  ></i>
                                 </a>
                                 <a
                                   role="button"
                                   onclick="hidePassword('#password-2')"
                                   id="password-2-buttonHide"
                                 >
-                                  <i class="fas fa-eye"></i>
+                                  <i class="fas fa-eye primary-600--text"></i>
                                 </a>
                               </div>
                             </td>
@@ -1183,23 +1253,33 @@
                             <td>example@gmail.com</td>
                             <td>
                               <div class="row no-gutters">
-                                <p id="password-3-hint" class="mb-0 mr-2">
+                                <p
+                                  id="password-3-hint"
+                                  class="bold-metadata primary-600--text mb-0 mr-2"
+                                >
                                   Tampilkan
                                 </p>
-                                <p id="password-3" class="mb-0 mr-2">aezakmi</p>
+                                <p
+                                  id="password-3"
+                                  class="bold-metadata primary-600--text mb-0 mr-2"
+                                >
+                                  aezakmi
+                                </p>
                                 <a
                                   role="button"
                                   onclick="showPassword('#password-3')"
                                   id="password-3-buttonShow"
                                 >
-                                  <i class="fas fa-eye-slash"></i>
+                                  <i
+                                    class="fas fa-eye-slash primary-600--text"
+                                  ></i>
                                 </a>
                                 <a
                                   role="button"
                                   onclick="hidePassword('#password-3')"
                                   id="password-3-buttonHide"
                                 >
-                                  <i class="fas fa-eye"></i>
+                                  <i class="fas fa-eye primary-600--text"></i>
                                 </a>
                               </div>
                             </td>

@@ -2022,7 +2022,7 @@ tr:last-child > td {
 
 .form-control:disabled,
 .form-control[readonly] {
-  background-color: #eaecf4;
+  background-color: #f2f4f7;
   opacity: 1;
 }
 
@@ -4391,12 +4391,15 @@ input[type='button'].btn-block {
 
 .nav-pills .nav-link {
   border-radius: 0.35rem;
+  font-weight: 400;
+  color: #3d5a95;
 }
 
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #4e73df;
+  color: #3d5a95;
+  background-color: #edf3ff;
+  font-weight: 700;
 }
 
 .nav-fill > .nav-link,

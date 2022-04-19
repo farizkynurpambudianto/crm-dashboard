@@ -19,12 +19,13 @@
       type="text/css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      href="https://api.fontshare.com/css?f[]=satoshi@300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet" />
+    <link href="css/typography.css" rel="stylesheet" />
 
     <!-- Custom styles for this page -->
     <link
@@ -46,6 +47,7 @@
       <ul
         class="navbar-nav bg-white sidebar sidebar-light accordion"
         id="accordionSidebar"
+        style="font-size: 24px"
       >
         <!-- Sidebar - Brand -->
         <a
@@ -58,50 +60,91 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
           <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-list-alt"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Dashboard</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Client -->
         <li class="nav-item">
           <a class="nav-link" href="client.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Klien</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-user"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Klien</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Proposal -->
         <li class="nav-item">
           <a class="nav-link" href="proposal.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Proposal</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Proposal</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Proyek -->
         <li class="nav-item active">
           <a class="nav-link" href="project.html">
-            <i class="fas fa-fw fa-briefcase"></i>
-            <span>Proyek</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <span class="bold-body text-white">Proyek</span>
+            </div>
           </a>
         </li>
 
         <!-- Nav Item - Settings -->
         <li class="nav-item">
           <a class="nav-link" href="settings.html">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Pengaturan</span>
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-cog"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Pengaturan</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item" style="margin-top: auto">
+          <a class="nav-link" href="login.html">
+            <div class="row no-gutters align-items-center">
+              <div
+                class="bg-error-800"
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 8px;
+                  padding: 0px 6px;
+                  margin-right: 24px;
+                "
+              >
+                <i class="fas fa-sign-out-alt" style="color: #db2e57"></i>
+              </div>
+              <span class="medium-body neutral-800--text">Keluar</span>
+            </div>
           </a>
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
+        <!-- <hr class="sidebar-divider d-none d-md-block" /> -->
 
         <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
+        <!-- <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
+        </div> -->
       </ul>
       <!-- End of Sidebar -->
 
@@ -284,26 +327,29 @@
 
           <!-- Begin Page Content -->
           <div class="container-fluid">
-            <h1 class="h4 font-weight-bolder mb-0 text-gray-800 mb-4">
-              Proyek
-            </h1>
+            <h1 class="bold-heading-2 neutral-800--text mb-4">Proyek</h1>
             <div class="card shadow mb-4 p-4">
               <div
                 class="d-flex flex-row align-items-center justify-content-between mb-2"
               >
-                <div class="col-3 p-0">
-                  <div class="input-group input-focus">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text bg-white"
-                        ><i class="fa fa-search"></i
-                      ></span>
+                <div class="col-4 p-0">
+                  <div class="d-flex align-items-center flex-nowrap">
+                    <div class="input-group input-focus mr-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="searchField"
+                        placeholder="Cari Proyek..."
+                      />
+                      <div class="input-group-append">
+                        <span class="input-group-text bg-white"
+                          ><i class="fa fa-search"></i
+                        ></span>
+                      </div>
                     </div>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="searchField"
-                      placeholder="Cari Projek..."
-                    />
+                    <button class="btn btn-dark bg-primary-600 bold-body px-4">
+                      Cari
+                    </button>
                   </div>
                 </div>
                 <div
@@ -312,12 +358,13 @@
                   <div class="dropdown no-arrow">
                     <button
                       id="filterDropdown"
-                      class="btn btn-secondary dropdown-toggle"
+                      class="btn dropdown-toggle bold-body primary-600--text"
+                      style="border: 1px solid #d0d5dd"
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <i class="fas fa-filter"></i>
+                      <i class="fas fa-filter primary-600--text"></i>
                       Urutkan dan Filter
                     </button>
                     <!-- Filter Dropdown -->
@@ -535,7 +582,21 @@
                         <td>DKT-202203-0031</td>
                         <td>Cartenz</td>
                         <td>2022</td>
-                        <td>Vivo Mobile Indonesia</td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div
+                              class="bg-primary-600 d-flex align-items-center justify-content-center text-white mr-2"
+                              style="
+                                width: 21px;
+                                height: 21px;
+                                border-radius: 2px;
+                              "
+                            >
+                              <p class="bold-metadata-xs mb-0">N</p>
+                            </div>
+                            Vivo Mobile Indonesia
+                          </div>
+                        </td>
                         <td>Bayu Wibowo</td>
                         <td>Proyek 3</td>
                         <td>
@@ -568,7 +629,7 @@
                                 style="padding: 40px 40px 24px 40px"
                               >
                                 <h5
-                                  class="modal-title font-weight-bolder"
+                                  class="modal-title bold-heading-3"
                                   id="staticBackdropLabel"
                                 >
                                   Detail Proposal
@@ -585,11 +646,10 @@
                               <div class="modal-body" style="padding: 40px">
                                 <div class="d-flex align-items-center mb-4">
                                   <div
-                                    class="d-flex align-items-center justify-content-center"
+                                    class="d-flex align-items-center justify-content-center bg-primary-600"
                                     style="
                                       width: 64px;
                                       height: 64px;
-                                      background: #7b7c85;
                                       border-radius: 4px;
                                     "
                                   >
@@ -603,18 +663,20 @@
                                     class="d-flex justify-content-between flex-grow-1 ml-4"
                                   >
                                     <div>
-                                      <p class="font-weight-bolder mb-2">
+                                      <p class="bold-heading-3 mb-2">
                                         Project Design System
                                       </p>
-                                      <p class="mb-0">Vivo Mobile Indonesia</p>
+                                      <p class="bold-body mb-0">
+                                        Vivo Mobile Indonesia
+                                      </p>
                                     </div>
-                                    <div>
+                                    <div class="text-right">
                                       <p
-                                        class="text-muted font-weight-light mb-2"
+                                        class="regular-body neutral-500--text mb-2"
                                       >
                                         Total Value
                                       </p>
-                                      <p class="font-weight-bolder mb-0">
+                                      <p class="bold-heading-3 mb-0">
                                         Rp 250.000.000
                                       </p>
                                     </div>
@@ -625,35 +687,35 @@
                                     <div class="row no-gutters">
                                       <div class="col-6">
                                         <p
-                                          class="text-muted font-weight-light mb-2"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Industri Klien
                                         </p>
                                         <p
-                                          class="text-muted font-weight-light mb-2"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Kode Proyek
                                         </p>
                                         <p
-                                          class="text-muted font-weight-light mb-2"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Nomor Urut
                                         </p>
                                         <p
-                                          class="text-muted font-weight-light mb-0"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Tahun Proyek
                                         </p>
                                       </div>
                                       <div class="col-6">
-                                        <p class="text-dark mb-2">
+                                        <p class="medium-metadata mb-3">
                                           FMCG, Food & Beverages
                                         </p>
-                                        <p class="text-dark mb-2">
+                                        <p class="medium-metadata mb-3">
                                           DEKA - 0821331203
                                         </p>
-                                        <p class="text-dark mb-2">50</p>
-                                        <p class="text-dark mb-2">2022</p>
+                                        <p class="medium-metadata mb-3">50</p>
+                                        <p class="medium-metadata mb-0">2022</p>
                                       </div>
                                     </div>
                                   </div>
@@ -661,35 +723,35 @@
                                     <div class="row no-gutters">
                                       <div class="col-6">
                                         <p
-                                          class="text-muted font-weight-light mb-2"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Account PIC
                                         </p>
                                         <p
-                                          class="text-muted font-weight-light mb-2"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Jenis Project
                                         </p>
                                         <p
-                                          class="text-muted font-weight-light mb-2"
+                                          class="regular-metadata mb-3 neutral-500--text"
                                         >
                                           Number Sample
                                         </p>
                                         <p
-                                          class="text-muted font-weight-light mb-0"
+                                          class="regular-metadata mb-0 neutral-500--text"
                                         >
                                           CPI
                                         </p>
                                       </div>
                                       <div class="col-6">
-                                        <p class="text-dark mb-2">
+                                        <p class="medium-metadata mb-3">
                                           Septiana Uhuyana
                                         </p>
-                                        <p class="text-dark mb-2">
+                                        <p class="medium-metadata mb-3">
                                           Brand Engagement
                                         </p>
-                                        <p class="text-dark mb-2">-</p>
-                                        <p class="text-dark mb-2">-</p>
+                                        <p class="medium-metadata mb-3">-</p>
+                                        <p class="medium-metadata mb-0">-</p>
                                       </div>
                                     </div>
                                   </div>
