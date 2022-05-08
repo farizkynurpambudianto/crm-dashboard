@@ -1,3 +1,8 @@
+p,
+button,
+a {
+  letter-spacing: 0.02em;
+}
 /* Regular Typography */
 .regular-heading-1 {
   font-weight: 400;
