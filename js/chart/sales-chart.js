@@ -1,7 +1,4 @@
-// Set new default font family and font color to mimic Bootstrap's default styling
-;(Chart.defaults.global.defaultFontFamily = 'Nunito'),
-  '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif'
-Chart.defaults.global.defaultFontColor = '#858796'
+Chart.defaults.global.defaultFontFamily = "'Satoshi', sans-serif"
 
 function assertData(firstYear, endYear, type) {
   if (firstYear === undefined) return
@@ -65,6 +62,7 @@ function arrayGenerator(length) {
 
 // Area Chart Example
 var ctx = document.getElementById('salesChart')
+console.log(Chart.defaults)
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
@@ -96,7 +94,8 @@ var myLineChart = new Chart(ctx, {
         pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
         pointHitRadius: 10,
         pointBorderWidth: 2,
-        data: arrayGenerator(12)
+        data: arrayGenerator(12),
+        hidden: false
       },
       {
         label: 'Penjualan 2021',
@@ -189,3 +188,5 @@ var myLineChart = new Chart(ctx, {
     }
   }
 })
+
+console.log(myLineChart)
