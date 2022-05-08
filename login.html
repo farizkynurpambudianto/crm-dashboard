@@ -50,7 +50,7 @@
             di CRM Deka Insight
           </p>
 
-          <form class="user">
+          <form id="formLogin" class="user" novalidate>
             <div class="mb-5">
               <div class="form-group mb-4">
                 <p
@@ -65,7 +65,9 @@
                   id="exampleInputEmail"
                   aria-describedby="emailHelp"
                   placeholder="Masukkan email anda"
+                  required
                 />
+                <div class="invalid-feedback">Please input email.</div>
               </div>
               <div class="form-group">
                 <p
@@ -79,7 +81,9 @@
                   class="form-control form-control-user"
                   id="exampleInputPassword"
                   placeholder="Masukkan password"
+                  required
                 />
+                <div class="invalid-feedback">Please input password.</div>
               </div>
               <div class="row justify-content-end no-gutters">
                 <a
@@ -90,16 +94,27 @@
                 </a>
               </div>
             </div>
-            <a
-              href="index.html"
-              class="btn btn-dark bg-primary-600 btn-user btn-block bold-body"
-            >
-              Login
-            </a>
           </form>
+          <button
+            onclick="validate()"
+            type="button"
+            href="index.html"
+            class="btn btn-dark bg-primary-600 btn-user btn-block bold-body"
+          >
+            Login
+          </button>
         </div>
       </div>
     </div>
+
+    <script>
+      const validate = () => {
+        $('#formLogin').addClass('was-validated')
+        if ($('#formLogin')[0].checkValidity()) {
+          window.location.pathname = 'index.html'
+        }
+      }
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>

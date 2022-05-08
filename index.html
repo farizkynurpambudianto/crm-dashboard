@@ -70,7 +70,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-user"></i>
               </div>
-              <span class="medium-bodytext neutral-800--text">Klien</span>
+              <span class="regular-body neutral-800--text">Klien</span>
             </div>
           </a>
         </li>
@@ -82,7 +82,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-file-alt"></i>
               </div>
-              <span class="medium-bodytext neutral-800--text">Proposal</span>
+              <span class="regular-body neutral-800--text">Proposal</span>
             </div>
           </a>
         </li>
@@ -94,7 +94,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-briefcase"></i>
               </div>
-              <span class="medium-bodytext neutral-800--text">Proyek</span>
+              <span class="regular-body neutral-800--text">Proyek</span>
             </div>
           </a>
         </li>
@@ -106,7 +106,19 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-cog"></i>
               </div>
-              <span class="medium-bodytext neutral-800--text">Pengaturan</span>
+              <span class="regular-body neutral-800--text">Pengaturan</span>
+            </div>
+          </a>
+        </li>
+
+        <!-- Nav Item - Settings -->
+        <li class="nav-item">
+          <a class="nav-link" href="assets.html">
+            <div class="row no-gutters align-items-center">
+              <div style="width: 24px; margin-right: 24px">
+                <i class="fas fa-cog"></i>
+              </div>
+              <span class="regular-body neutral-800--text">Assets</span>
             </div>
           </a>
         </li>
@@ -127,7 +139,7 @@
               >
                 <i class="fas fa-sign-out-alt" style="color: #db2e57"></i>
               </div>
-              <span class="medium-bodytext neutral-800--text">Keluar</span>
+              <span class="regular-bodytext neutral-800--text">Keluar</span>
             </div>
           </a>
         </li>
@@ -148,7 +160,8 @@
         <div id="content">
           <!-- Topbar -->
           <nav
-            class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+            class="navbar navbar-expand navbar-light bg-white topbar static-top shadow"
+            style="margin-bottom: 2.5rem"
           >
             <!-- Sidebar Toggle (Topbar) -->
             <button
@@ -407,7 +420,7 @@
                     <h6 class="m-0 bold-heading-4 neutral-800--text">
                       Pendapatan & Penjualan Tahunan
                     </h6>
-                    <div class="d-flex">
+                    <!-- <div class="d-flex">
                       <div class="d-flex align-items-center">
                         <p class="regular-bodytext primary-700--text mr-2 mb-0">
                           Komparasi Tahun:
@@ -453,6 +466,150 @@
                           <option>Pendapatan</option>
                         </select>
                       </div>
+                    </div> -->
+                    <div class="dropdown no-arrow">
+                      <button
+                        id="filterDropdown"
+                        class="btn dropdown-toggle bold-body primary-600--text"
+                        style="border: 1px solid #d0d5dd"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i class="fas fa-cog primary-600--text mr-2"></i>
+                        Pengaturan
+                      </button>
+                      <!-- Filter Dropdown -->
+                      <form
+                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown"
+                      >
+                        <div class="py-4" style="width: 400px">
+                          <div
+                            class="d-flex align-items-center justify-content-between px-4"
+                          >
+                            <p class="bold-heading-3 neutral-700--text m-0">
+                              Pengaturan
+                            </p>
+                            <button
+                              class="btn bg-primary-600 btn-dark bold-body"
+                            >
+                              Terapkan
+                            </button>
+                          </div>
+                          <div class="mt-4">
+                            <!-- Urutkan - Collapse -->
+                            <div class="my-3">
+                              <div id="headingOne" class="px-4">
+                                <h2 class="mb-0">
+                                  <button
+                                    class="btn btn-block text-left px-1 btn-collapse"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne"
+                                  >
+                                    <div class="d-flex justify-content-between">
+                                      <p
+                                        class="h6 mb-0 font-weight-bolder primary-600--text"
+                                      >
+                                        Atribut
+                                      </p>
+                                      <li class="fas fa-chevron-down"></li>
+                                    </div>
+                                  </button>
+                                </h2>
+                              </div>
+
+                              <div
+                                id="collapseOne"
+                                class="collapse multi-collapse show"
+                                aria-labelledby="headingOne"
+                              >
+                                <div class="bg-primary-50">
+                                  <div class="px-4 py-3">
+                                    <div
+                                      class="custom-control custom-checkbox my-2"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="sortAlphabet"
+                                      />
+                                      <label
+                                        class="custom-control-label primary-800--text"
+                                        for="sortAlphabet"
+                                        >Penjualan</label
+                                      >
+                                    </div>
+                                    <div
+                                      class="custom-control custom-checkbox my-2"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="sortNewest"
+                                      />
+                                      <label
+                                        class="custom-control-label primary-800--text"
+                                        for="sortNewest"
+                                        >Pendapatan</label
+                                      >
+                                    </div>
+                                    <div
+                                      class="custom-control custom-checkbox my-2"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="sortOldest"
+                                      />
+                                      <label
+                                        class="custom-control-label primary-800--text"
+                                        for="sortOldest"
+                                        >Target</label
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr />
+
+                            <div class="px-4">
+                              <p
+                                class="h6 mb-3 font-weight-bolder primary-600--text"
+                              >
+                                Tahun
+                              </p>
+                              <div
+                                class="input-group input-focus input-date mb-3"
+                              >
+                                <input
+                                  type="text"
+                                  id="datepicker"
+                                  class="form-control"
+                                  placeholder="Pilih tahun project"
+                                />
+                              </div>
+                              <div class="custom-control custom-checkbox">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="comparation"
+                                  onchange="handleCheckbox(event)"
+                                />
+                                <label
+                                  class="custom-control-label primary-800--text"
+                                  for="comparation"
+                                  >Komparasi Tahun</label
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                   <div class="row no-gutters mb-3">
@@ -663,18 +820,13 @@
                   Proyek Terbaru
                 </h6>
                 <div class="col-3 p-0">
-                  <div class="input-group input-focus">
+                  <div class="input-group input-focus input-search">
                     <input
                       type="text"
                       class="form-control"
                       id="searchField"
                       placeholder="Cari Projek..."
                     />
-                    <div class="input-group-append">
-                      <span class="input-group-text bg-white"
-                        ><i class="fa fa-search"></i
-                      ></span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -773,6 +925,13 @@
       </div>
     </div>
 
+    <script>
+      const handleCheckbox = (event) => {
+        const test = $('#comparation')
+        console.log(test)
+      }
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -789,7 +948,7 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/Chart.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="js/chart/project-chart.js"></script>

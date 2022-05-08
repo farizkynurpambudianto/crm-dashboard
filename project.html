@@ -64,7 +64,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-list-alt"></i>
               </div>
-              <span class="medium-body neutral-800--text">Dashboard</span>
+              <span class="regular-body neutral-800--text">Dashboard</span>
             </div>
           </a>
         </li>
@@ -76,7 +76,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-user"></i>
               </div>
-              <span class="medium-body neutral-800--text">Klien</span>
+              <span class="regular-body neutral-800--text">Klien</span>
             </div>
           </a>
         </li>
@@ -88,7 +88,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-file-alt"></i>
               </div>
-              <span class="medium-body neutral-800--text">Proposal</span>
+              <span class="regular-body neutral-800--text">Proposal</span>
             </div>
           </a>
         </li>
@@ -112,7 +112,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-cog"></i>
               </div>
-              <span class="medium-body neutral-800--text">Pengaturan</span>
+              <span class="regular-body neutral-800--text">Pengaturan</span>
             </div>
           </a>
         </li>
@@ -133,7 +133,7 @@
               >
                 <i class="fas fa-sign-out-alt" style="color: #db2e57"></i>
               </div>
-              <span class="medium-body neutral-800--text">Keluar</span>
+              <span class="regular-body neutral-800--text">Keluar</span>
             </div>
           </a>
         </li>
@@ -155,6 +155,7 @@
           <!-- Topbar -->
           <nav
             class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+            style="margin-bottom: 2.5rem"
           >
             <!-- Sidebar Toggle (Topbar) -->
             <button
@@ -271,13 +272,12 @@
               <div class="topbar-divider d-none d-sm-block"></div>
 
               <!-- Nav Item - User Information -->
-              <li class="nav-item dropdown no-arrow">
+              <li class="nav-item">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link"
                   href="#"
                   id="userDropdown"
                   role="button"
-                  data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
@@ -288,38 +288,7 @@
                   <span class="d-none d-lg-inline text-gray-600 small mr-2"
                     >Joseph Augustus</span
                   >
-                  <i class="fas fa-sm fa-chevron-down"></i>
                 </a>
-                <!-- Dropdown - User Information -->
-                <div
-                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                  aria-labelledby="userDropdown"
-                >
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#logoutModal"
-                  >
-                    <i
-                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                    ></i>
-                    Logout
-                  </a>
-                </div>
               </li>
             </ul>
           </nav>
@@ -334,20 +303,17 @@
               >
                 <div class="col-4 p-0">
                   <div class="d-flex align-items-center flex-nowrap">
-                    <div class="input-group input-focus mr-3">
+                    <div class="input-group input-focus input-search mr-3">
                       <input
                         type="text"
                         class="form-control"
                         id="searchField"
                         placeholder="Cari Proyek..."
                       />
-                      <div class="input-group-append">
-                        <span class="input-group-text bg-white"
-                          ><i class="fa fa-search"></i
-                        ></span>
-                      </div>
                     </div>
-                    <button class="btn btn-dark bg-primary-600 bold-body px-4">
+                    <button
+                      class="btn btn-custom-120 btn-dark bg-primary-600 bold-body px-4"
+                    >
                       Cari
                     </button>
                   </div>
@@ -372,22 +338,24 @@
                       class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                       aria-labelledby="userDropdown"
                     >
-                      <div class="p-4" style="width: 400px">
+                      <div class="py-4" style="width: 400px">
                         <div
-                          class="d-flex align-items-center justify-content-between"
+                          class="d-flex align-items-center justify-content-between px-4"
                         >
-                          <p class="h5 font-weight-bolder m-0">
+                          <p class="bold-heading-3 neutral-700--text m-0">
                             Urutkan & Filter
                           </p>
-                          <button class="btn btn-secondary">Terapkan</button>
+                          <button class="btn bg-primary-600 btn-dark bold-body">
+                            Terapkan
+                          </button>
                         </div>
                         <div class="mt-4">
                           <!-- Urutkan - Collapse -->
                           <div class="my-3">
-                            <div id="headingOne">
+                            <div id="headingOne" class="px-4">
                               <h2 class="mb-0">
                                 <button
-                                  class="btn btn-block text-left px-1"
+                                  class="btn btn-block text-left px-1 btn-collapse"
                                   type="button"
                                   data-toggle="collapse"
                                   data-target="#collapseOne"
@@ -395,7 +363,9 @@
                                   aria-controls="collapseOne"
                                 >
                                   <div class="d-flex justify-content-between">
-                                    <p class="h6 mb-0 font-weight-bolder">
+                                    <p
+                                      class="h6 mb-0 font-weight-bolder primary-600--text"
+                                    >
                                       Urutkan
                                     </p>
                                     <li class="fas fa-chevron-down"></li>
@@ -409,48 +379,50 @@
                               class="collapse multi-collapse show"
                               aria-labelledby="headingOne"
                             >
-                              <div class="px-1 pt-2">
-                                <div
-                                  class="custom-control custom-checkbox mb-1"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="sortAlphabet"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="sortAlphabet"
-                                    >Urutkan Sesuai Abjad</label
+                              <div class="bg-primary-50">
+                                <div class="px-4 py-3">
+                                  <div
+                                    class="custom-control custom-checkbox my-2"
                                   >
-                                </div>
-                                <div
-                                  class="custom-control custom-checkbox mb-1"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="sortNewest"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="sortNewest"
-                                    >Urutkan Data Terbaru</label
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="sortAlphabet"
+                                    />
+                                    <label
+                                      class="custom-control-label primary-800--text"
+                                      for="sortAlphabet"
+                                      >Urutkan Sesuai Abjad</label
+                                    >
+                                  </div>
+                                  <div
+                                    class="custom-control custom-checkbox my-2"
                                   >
-                                </div>
-                                <div
-                                  class="custom-control custom-checkbox mb-1"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="sortOldest"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="sortOldest"
-                                    >Urutkan Data Terlama</label
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="sortNewest"
+                                    />
+                                    <label
+                                      class="custom-control-label primary-800--text"
+                                      for="sortNewest"
+                                      >Urutkan Data Terbaru</label
+                                    >
+                                  </div>
+                                  <div
+                                    class="custom-control custom-checkbox my-2"
                                   >
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="sortOldest"
+                                    />
+                                    <label
+                                      class="custom-control-label primary-800--text"
+                                      for="sortOldest"
+                                      >Urutkan Data Terlama</label
+                                    >
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -459,10 +431,10 @@
 
                           <!-- Jenis Project -->
                           <div class="my-3">
-                            <div id="headingTwo">
+                            <div id="headingTwo" class="px-4">
                               <h2 class="mb-0">
                                 <button
-                                  class="btn btn-block text-left px-1"
+                                  class="btn btn-block text-left px-1 btn-collapse"
                                   type="button"
                                   data-toggle="collapse"
                                   data-target="#collapseTwo"
@@ -470,7 +442,9 @@
                                   aria-controls="collapseTwo"
                                 >
                                   <div class="d-flex justify-content-between">
-                                    <p class="h6 mb-0 font-weight-bolder">
+                                    <p
+                                      class="h6 mb-0 font-weight-bolder primary-600--text"
+                                    >
                                       Jenis Project
                                     </p>
                                     <li class="fas fa-chevron-down"></li>
@@ -481,73 +455,72 @@
 
                             <div
                               id="collapseTwo"
-                              class="collapse multi-collapse"
+                              class="collapse multi-collapse show"
                               aria-labelledby="headingTwo"
                             >
-                              <div class="px-1 pt-2">
-                                <div
-                                  class="custom-control custom-checkbox mb-1"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="sortAlphabet"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="sortAlphabet"
-                                    >Jenis Project Satu</label
+                              <div class="bg-primary-50">
+                                <div class="px-4 py-3">
+                                  <div
+                                    class="custom-control custom-checkbox my-2"
                                   >
-                                </div>
-                                <div
-                                  class="custom-control custom-checkbox mb-1"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="sortNewest"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="sortNewest"
-                                    >Jenis Project Dua</label
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="sortAlphabet"
+                                    />
+                                    <label
+                                      class="custom-control-label primary-800--text"
+                                      for="sortAlphabet"
+                                      >Jenis Project Satu</label
+                                    >
+                                  </div>
+                                  <div
+                                    class="custom-control custom-checkbox my-2"
                                   >
-                                </div>
-                                <div
-                                  class="custom-control custom-checkbox mb-1"
-                                >
-                                  <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    id="sortOldest"
-                                  />
-                                  <label
-                                    class="custom-control-label"
-                                    for="sortOldest"
-                                    >Jenis Project Tiga</label
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="sortNewest"
+                                    />
+                                    <label
+                                      class="custom-control-label primary-800--text"
+                                      for="sortNewest"
+                                      >Jenis Project Dua</label
+                                    >
+                                  </div>
+                                  <div
+                                    class="custom-control custom-checkbox my-2"
                                   >
+                                    <input
+                                      type="checkbox"
+                                      class="custom-control-input"
+                                      id="sortOldest"
+                                    />
+                                    <label
+                                      class="custom-control-label primary-800--text"
+                                      for="sortOldest"
+                                      >Jenis Project Tiga</label
+                                    >
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                           <hr />
 
-                          <div style="padding: 4px">
-                            <p class="h6 mb-3 font-weight-bolder">
+                          <div class="px-4">
+                            <p
+                              class="h6 mb-3 font-weight-bolder primary-600--text"
+                            >
                               Tahun Project
                             </p>
-                            <div class="input-group input-focus">
+                            <div class="input-group input-focus input-date">
                               <input
                                 type="text"
                                 id="datepicker"
                                 class="form-control"
                                 placeholder="Pilih tahun project"
                               />
-                              <div class="input-group-append">
-                                <span class="input-group-text bg-white"
-                                  ><i class="fa fa-calendar"></i
-                                ></span>
-                              </div>
                             </div>
                           </div>
                         </div>

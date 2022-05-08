@@ -58,7 +58,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-list-alt"></i>
               </div>
-              <span class="medium-body neutral-800--text">Dashboard</span>
+              <span class="regular-body neutral-800--text">Dashboard</span>
             </div>
           </a>
         </li>
@@ -70,7 +70,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-user"></i>
               </div>
-              <span class="medium-body neutral-800--text">Klien</span>
+              <span class="regular-body neutral-800--text">Klien</span>
             </div>
           </a>
         </li>
@@ -82,7 +82,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-file-alt"></i>
               </div>
-              <span class="medium-body neutral-800--text">Proposal</span>
+              <span class="regular-body neutral-800--text">Proposal</span>
             </div>
           </a>
         </li>
@@ -94,7 +94,7 @@
               <div style="width: 24px; margin-right: 24px">
                 <i class="fas fa-briefcase"></i>
               </div>
-              <span class="medium-body neutral-800--text">Proyek</span>
+              <span class="regular-body neutral-800--text">Proyek</span>
             </div>
           </a>
         </li>
@@ -127,7 +127,7 @@
               >
                 <i class="fas fa-sign-out-alt" style="color: #db2e57"></i>
               </div>
-              <span class="medium-body neutral-800--text">Keluar</span>
+              <span class="regular-body neutral-800--text">Keluar</span>
             </div>
           </a>
         </li>
@@ -149,6 +149,7 @@
           <!-- Topbar -->
           <nav
             class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+            style="margin-bottom: 2.5rem"
           >
             <!-- Sidebar Toggle (Topbar) -->
             <button
@@ -265,13 +266,12 @@
               <div class="topbar-divider d-none d-sm-block"></div>
 
               <!-- Nav Item - User Information -->
-              <li class="nav-item dropdown no-arrow">
+              <li class="nav-item">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link"
                   href="#"
                   id="userDropdown"
                   role="button"
-                  data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
@@ -282,38 +282,7 @@
                   <span class="d-none d-lg-inline text-gray-600 small mr-2"
                     >Joseph Augustus</span
                   >
-                  <i class="fas fa-sm fa-chevron-down"></i>
                 </a>
-                <!-- Dropdown - User Information -->
-                <div
-                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                  aria-labelledby="userDropdown"
-                >
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Profile
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                    Activity Log
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a
-                    class="dropdown-item"
-                    href="#"
-                    data-toggle="modal"
-                    data-target="#logoutModal"
-                  >
-                    <i
-                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
-                    ></i>
-                    Logout
-                  </a>
-                </div>
               </li>
             </ul>
           </nav>
@@ -358,8 +327,7 @@
                       </p>
                     </div>
                     <button
-                      class="btn bg-primary-600 btn-dark bold-body px-4 py-2"
-                      style="height: fit-content"
+                      class="btn bg-primary-600 btn-dark bold-body"
                       onclick="updateAccountHandler()"
                     >
                       Ubah Akun
@@ -421,7 +389,7 @@
                         />
                         <a
                           role="button"
-                          class="text-decoration-none text-black-50"
+                          class="text-decoration-none bold-body primary-600--text"
                           data-toggle="modal"
                           data-target="#changePasswordModal"
                           >Ubah Kata Sandi</a
@@ -438,9 +406,12 @@
                         >
                           <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
-                              <div class="modal-header">
+                              <div
+                                class="modal-header"
+                                style="padding: 40px 40px 24px 40px"
+                              >
                                 <h5
-                                  class="modal-title font-weight-bolder"
+                                  class="bold-heading-3"
                                   id="staticBackdropLabel"
                                 >
                                   Reset Password
@@ -450,12 +421,16 @@
                                   class="close"
                                   data-dismiss="modal"
                                   aria-label="Close"
+                                  style="color: #000000"
                                 >
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                              <div class="modal-body">
-                                <p class="mb-2">
+                              <div
+                                class="modal-body"
+                                style="padding: 24px 40px 40px 40px"
+                              >
+                                <p class="mb-4">
                                   Amet minim mollit non deserunt ullamco est sit
                                   aliqua. Amet minim mollit non deserunt ullamco
                                   est sit aliqua.
@@ -475,7 +450,7 @@
                                 </div>
                                 <button
                                   type="button"
-                                  class="btn btn-primary btn-block"
+                                  class="btn bg-primary-600 btn-dark bold-body btn-block"
                                   data-dismiss="modal"
                                   data-toggle="modal"
                                   data-target="#verifyEmailModal"
@@ -497,7 +472,7 @@
                         >
                           <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
-                              <div class="modal-body">
+                              <div class="modal-body" style="padding: 40px">
                                 <div
                                   class="row no-gutters justify-content-end mb-3"
                                 >
@@ -512,14 +487,17 @@
                                 </div>
                                 <div class="text-center">
                                   <div
-                                    class="mx-auto bg-gray-300 d-flex align-items-center justify-content-center mb-4"
+                                    class="mx-auto bg-gray-300 d-flex align-items-center justify-content-center mb-4 bg-primary-100"
                                     style="
                                       border-radius: 8px;
                                       width: 56px;
                                       height: 56px;
                                     "
                                   >
-                                    <i class="fas fa-envelope"></i>
+                                    <i
+                                      class="fas fa-envelope primary-600--text"
+                                      style="font-size: 1.5em"
+                                    ></i>
                                   </div>
 
                                   <p
@@ -527,18 +505,18 @@
                                   >
                                     Verifikasi Email Anda
                                   </p>
-                                  <p>
-                                    Almost there! We’ve sent a verification
-                                    email to f********@g****.com. You need to
-                                    verify your email address to log into Deka
-                                    CRM Dashboard.
+                                  <p class="mb-4 regular-body">
+                                    Kami telah mengirimkan email verifikasi ke
+                                    <strong>f*******@g****.com.</strong> Anda
+                                    perlu memverifikasi alamat email Anda untuk
+                                    masuk ke Dasbor Deka CRM.
                                   </p>
-
-                                  <hr class="my-4" />
 
                                   <p>
                                     Belum mendapat email?
-                                    <a href="#">Kirim Kembali</a>
+                                    <a href="#" class="primary-600--text"
+                                      >Kirim Kembali</a
+                                    >
                                   </p>
                                 </div>
                               </div>
@@ -551,12 +529,17 @@
                   <div class="row no-gutters justify-content-end">
                     <button
                       id="cancelButton"
-                      class="btn btn-outline-primary mr-2"
+                      class="btn primary-600--text mr-2"
+                      style="border: 1px solid #264179"
                       disabled
                     >
                       Batalkan
                     </button>
-                    <button id="submitButton" class="btn btn-primary" disabled>
+                    <button
+                      id="submitButton"
+                      class="btn btn-dark bg-primary-600 bold-body"
+                      disabled
+                    >
                       Simpan
                     </button>
                   </div>
@@ -569,20 +552,15 @@
                   <div
                     class="d-flex flex-row align-items-center justify-content-between mb-2"
                   >
-                    <p class="bold-heading-4">Riwayat Aktivitas</p>
+                    <p class="bold-heading-4 mb-0">Riwayat Aktivitas</p>
                     <div class="col-3 p-0">
-                      <div class="input-group input-focus mr-3">
+                      <div class="input-group input-focus input-search mr-3">
                         <input
                           type="text"
                           class="form-control"
                           id="searchField"
                           placeholder="Cari Riwayat..."
                         />
-                        <div class="input-group-append">
-                          <span class="input-group-text bg-white"
-                            ><i class="fa fa-search"></i
-                          ></span>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -634,18 +612,15 @@
                         class="d-flex align-items-center justify-content-end"
                       >
                         <div class="col-6 p-0 mr-2">
-                          <div class="input-group input-focus mr-3">
+                          <div
+                            class="input-group input-focus input-search mr-3"
+                          >
                             <input
                               type="text"
                               class="form-control"
                               id="searchField"
-                              placeholder="Cari Riwayat..."
+                              placeholder="Cari Pengguna..."
                             />
-                            <div class="input-group-append">
-                              <span class="input-group-text bg-white"
-                                ><i class="fa fa-search"></i
-                              ></span>
-                            </div>
                           </div>
                         </div>
                         <button
@@ -810,6 +785,9 @@
                                   </button>
                                   <button
                                     class="btn btn-dark bg-primary-600 bold-body"
+                                    onclick="handleShowToast('add-failed')"
+                                    data-dismiss="modal"
+                                    aria-label="Close"
                                   >
                                     Tambah
                                   </button>
@@ -908,7 +886,10 @@
                                     data-toggle="modal"
                                     data-target="#deleteModal-1"
                                   >
-                                    <i class="far fa-trash-alt mr-3"></i>Hapus
+                                    <i
+                                      class="far fa-trash-alt mr-3 error-100--text"
+                                    ></i
+                                    >Hapus
                                   </a>
                                 </div>
                               </div>
@@ -1065,12 +1046,15 @@
                                         class="row no-gutters justify-content-end"
                                       >
                                         <button
-                                          class="btn btn-outline-primary mr-2"
+                                          class="btn bg-white mr-2 primary-600--text"
+                                          style="border: 1px solid #264179"
                                           data-dismiss="modal"
                                         >
-                                          Batalkan
+                                          Batal
                                         </button>
-                                        <button class="btn btn-primary">
+                                        <button
+                                          class="btn btn-dark bg-primary-600 bold-body"
+                                        >
                                           Simpan
                                         </button>
                                       </div>
@@ -1086,14 +1070,20 @@
                                 aria-labelledby="exampleModalLabel"
                                 aria-hidden="true"
                               >
-                                <div class="modal-dialog">
+                                <div
+                                  class="modal-dialog modal-dialog-centered"
+                                  style="min-width: 550px"
+                                >
                                   <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div
+                                      class="modal-header"
+                                      style="padding: 40px 40px 24px 40px"
+                                    >
                                       <h5
-                                        class="modal-title"
+                                        class="bold-heading-3"
                                         id="exampleModalLabel"
                                       >
-                                        Konfirmasi menghapus
+                                        Konfirmasi Hapus
                                       </h5>
                                       <button
                                         type="button"
@@ -1104,26 +1094,33 @@
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <div class="modal-body">
-                                      <p class="mb-0">
-                                        Apakah anda yakin ingin menghapus data
-                                        ini?
+                                    <div
+                                      class="modal-body"
+                                      style="padding: 24px 40px 40px 40px"
+                                    >
+                                      <p class="mb-5 regular-body">
+                                        Apakah Anda yakin akan menghapus
+                                        pengguna ini?
                                       </p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button
-                                        type="button"
-                                        class="btn btn-secondary"
-                                        data-dismiss="modal"
-                                      >
-                                        Batalkan
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn btn-primary"
-                                      >
-                                        Ya, hapus
-                                      </button>
+                                      <div class="row no-gutters">
+                                        <div class="col col-6 px-2">
+                                          <button
+                                            type="button"
+                                            data-dismiss="modal"
+                                            class="btn primary-600--text bold-body btn-block"
+                                            style="border: 1px solid #264179"
+                                          >
+                                            Batal
+                                          </button>
+                                        </div>
+                                        <div class="col col-6 px-2">
+                                          <button
+                                            class="btn bg-primary-600 btn-dark bold-body btn-block"
+                                          >
+                                            Hapus
+                                          </button>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -1192,7 +1189,10 @@
                                     data-toggle="modal"
                                     data-target="#deleteModal-2"
                                   >
-                                    <i class="far fa-trash-alt mr-3"></i>Hapus
+                                    <i
+                                      class="far fa-trash-alt mr-3 error-100--text"
+                                    ></i
+                                    >Hapus
                                   </a>
                                 </div>
                               </div>
@@ -1203,14 +1203,20 @@
                                 aria-labelledby="exampleModalLabel"
                                 aria-hidden="true"
                               >
-                                <div class="modal-dialog">
+                                <div
+                                  class="modal-dialog modal-dialog-centered"
+                                  style="min-width: 550px"
+                                >
                                   <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div
+                                      class="modal-header"
+                                      style="padding: 40px 40px 24px 40px"
+                                    >
                                       <h5
-                                        class="modal-title"
+                                        class="bold-heading-3"
                                         id="exampleModalLabel"
                                       >
-                                        Konfirmasi menghapus
+                                        Konfirmasi Hapus
                                       </h5>
                                       <button
                                         type="button"
@@ -1221,26 +1227,33 @@
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <div class="modal-body">
-                                      <p class="mb-0">
-                                        Apakah anda yakin ingin menghapus data
-                                        ini?
+                                    <div
+                                      class="modal-body"
+                                      style="padding: 24px 40px 40px 40px"
+                                    >
+                                      <p class="mb-5 regular-body">
+                                        Apakah Anda yakin akan menghapus
+                                        pengguna ini?
                                       </p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button
-                                        type="button"
-                                        class="btn btn-secondary"
-                                        data-dismiss="modal"
-                                      >
-                                        Batalkan
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn btn-primary"
-                                      >
-                                        Ya, hapus
-                                      </button>
+                                      <div class="row no-gutters">
+                                        <div class="col col-6 px-2">
+                                          <button
+                                            type="button"
+                                            data-dismiss="modal"
+                                            class="btn primary-600--text bold-body btn-block"
+                                            style="border: 1px solid #264179"
+                                          >
+                                            Batal
+                                          </button>
+                                        </div>
+                                        <div class="col col-6 px-2">
+                                          <button
+                                            class="btn bg-primary-600 btn-dark bold-body btn-block"
+                                          >
+                                            Hapus
+                                          </button>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -1309,7 +1322,10 @@
                                     data-toggle="modal"
                                     data-target="#deleteModal-3"
                                   >
-                                    <i class="far fa-trash-alt mr-3"></i>Hapus
+                                    <i
+                                      class="far fa-trash-alt mr-3 error-100--text"
+                                    ></i
+                                    >Hapus
                                   </a>
                                 </div>
                               </div>
@@ -1320,14 +1336,20 @@
                                 aria-labelledby="exampleModalLabel"
                                 aria-hidden="true"
                               >
-                                <div class="modal-dialog">
+                                <div
+                                  class="modal-dialog modal-dialog-centered"
+                                  style="min-width: 550px"
+                                >
                                   <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div
+                                      class="modal-header"
+                                      style="padding: 40px 40px 24px 40px"
+                                    >
                                       <h5
-                                        class="modal-title"
+                                        class="bold-heading-3"
                                         id="exampleModalLabel"
                                       >
-                                        Konfirmasi menghapus
+                                        Konfirmasi Hapus
                                       </h5>
                                       <button
                                         type="button"
@@ -1338,26 +1360,33 @@
                                         <span aria-hidden="true">&times;</span>
                                       </button>
                                     </div>
-                                    <div class="modal-body">
-                                      <p class="mb-0">
-                                        Apakah anda yakin ingin menghapus data
-                                        ini?
+                                    <div
+                                      class="modal-body"
+                                      style="padding: 24px 40px 40px 40px"
+                                    >
+                                      <p class="mb-5 regular-body">
+                                        Apakah Anda yakin akan menghapus
+                                        pengguna ini?
                                       </p>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button
-                                        type="button"
-                                        class="btn btn-secondary"
-                                        data-dismiss="modal"
-                                      >
-                                        Batalkan
-                                      </button>
-                                      <button
-                                        type="button"
-                                        class="btn btn-primary"
-                                      >
-                                        Ya, hapus
-                                      </button>
+                                      <div class="row no-gutters">
+                                        <div class="col col-6 px-2">
+                                          <button
+                                            type="button"
+                                            data-dismiss="modal"
+                                            class="btn primary-600--text bold-body btn-block"
+                                            style="border: 1px solid #264179"
+                                          >
+                                            Batal
+                                          </button>
+                                        </div>
+                                        <div class="col col-6 px-2">
+                                          <button
+                                            class="btn bg-primary-600 btn-dark bold-body btn-block"
+                                          >
+                                            Hapus
+                                          </button>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -1370,6 +1399,32 @@
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div
+              id="toast-add-failed"
+              class="toast-custom toast-wrapper-failed row no-gutters justify-content-between"
+              style="flex-wrap: nowrap"
+            >
+              <div class="row no-gutters" style="flex-wrap: nowrap">
+                <div class="mr-3">
+                  <img src="img/failed-rounded-icon.svg" alt="icon-failed" />
+                </div>
+                <div>
+                  <p class="bold-body mb-2">Gagal menambah pengguna</p>
+                  <p class="regular-body neutral-500--text mb-2 pr-4">
+                    Pengguna baru gagal Anda tambahkan. Silakan coba dan ulangi
+                    kembali menambahkan pengguna.
+                  </p>
+                </div>
+              </div>
+              <a
+                role="button"
+                class="neutral-600--text"
+                onclick="handleHideToast('add-failed')"
+              >
+                <i class="fas fa-times"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -1446,6 +1501,17 @@
       $(document).ready(function () {
         hideValuePassword()
       })
+
+      const handleShowToast = (type) => {
+        $(`#toast-${type}`).addClass('show')
+        setTimeout(function () {
+          $(`#toast-${type}`).removeClass('show')
+        }, 3000)
+      }
+
+      const handleHideToast = (type) => {
+        $(`#toast-${type}`).removeClass('show')
+      }
 
       const handlePasswordValidation = (e, id) => {
         const pass = e.target.value
