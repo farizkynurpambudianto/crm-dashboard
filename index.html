@@ -32,6 +32,12 @@
       href="vendor/datatables/dataTables.bootstrap4.min.css"
       rel="stylesheet"
     />
+
+    <!-- Datepicker -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="page-top">
@@ -593,18 +599,35 @@
                                   placeholder="Pilih tahun project"
                                 />
                               </div>
-                              <div class="custom-control custom-checkbox">
+                              <div class="custom-control custom-checkbox mb-4">
                                 <input
                                   type="checkbox"
                                   class="custom-control-input"
-                                  id="comparation"
-                                  onchange="handleCheckbox(event)"
+                                  id="comparation-sales"
+                                  onchange="handleShowComparationYear(event, 'comparation-sales')"
                                 />
                                 <label
                                   class="custom-control-label primary-800--text"
-                                  for="comparation"
+                                  for="comparation-sales"
                                   >Komparasi Tahun</label
                                 >
+                              </div>
+                              <div id="comparation-sales-year" class="d-none">
+                                <p
+                                  class="h6 mb-3 font-weight-bolder primary-600--text"
+                                >
+                                  Tahun Perbandingan
+                                </p>
+                                <div
+                                  class="input-group input-focus input-date mb-3"
+                                >
+                                  <input
+                                    type="text"
+                                    id="comparation-datepicker"
+                                    class="form-control"
+                                    placeholder="Pilih tahun project"
+                                  />
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -651,7 +674,7 @@
                     <h6 class="m-0 bold-heading-4 neutral-800--text">
                       Hit Rate
                     </h6>
-                    <div class="d-flex">
+                    <!-- <div class="d-flex">
                       <div class="d-flex align-items-center">
                         <p class="regular-bodytext primary-700--text mr-2 mb-0">
                           Komparasi Tahun:
@@ -682,6 +705,88 @@
                           <option>2019</option>
                         </select>
                       </div>
+                    </div> -->
+                    <div class="dropdown no-arrow">
+                      <button
+                        id="filterDropdown"
+                        class="btn dropdown-toggle bold-body primary-600--text"
+                        style="border: 1px solid #d0d5dd"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i class="fas fa-cog primary-600--text mr-2"></i>
+                        Pengaturan
+                      </button>
+                      <!-- Filter Dropdown -->
+                      <form
+                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown"
+                      >
+                        <div class="py-4" style="width: 400px">
+                          <div
+                            class="d-flex align-items-center justify-content-between px-4"
+                          >
+                            <p class="bold-heading-3 neutral-700--text m-0">
+                              Pengaturan
+                            </p>
+                            <button
+                              class="btn bg-primary-600 btn-dark bold-body"
+                            >
+                              Terapkan
+                            </button>
+                          </div>
+                          <div class="mt-4">
+                            <div class="px-4">
+                              <p
+                                class="h6 mb-3 font-weight-bolder primary-600--text"
+                              >
+                                Tahun
+                              </p>
+                              <div
+                                class="input-group input-focus input-date mb-3"
+                              >
+                                <input
+                                  type="text"
+                                  id="datepicker"
+                                  class="form-control"
+                                  placeholder="Pilih tahun"
+                                />
+                              </div>
+                              <div class="custom-control custom-checkbox mb-4">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="comparation-hitrate"
+                                  onchange="handleShowComparationYear(event, 'comparation-hitrate')"
+                                />
+                                <label
+                                  class="custom-control-label primary-800--text"
+                                  for="comparation-hitrate"
+                                  >Komparasi Tahun</label
+                                >
+                              </div>
+                              <div id="comparation-hitrate-year" class="d-none">
+                                <p
+                                  class="h6 mb-3 font-weight-bolder primary-600--text"
+                                >
+                                  Tahun Perbandingan
+                                </p>
+                                <div
+                                  class="input-group input-focus input-date mb-3"
+                                >
+                                  <input
+                                    type="text"
+                                    id="comparation-datepicker"
+                                    class="form-control"
+                                    placeholder="Pilih tahun project"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                   <div class="row no-gutters mb-3">
@@ -729,7 +834,7 @@
                     <h6 class="m-0 bold-heading-4 neutral-800--text">
                       Prospek dan Projek
                     </h6>
-                    <div class="d-flex">
+                    <!-- <div class="d-flex">
                       <div class="d-flex align-items-center">
                         <p class="regular-bodytext primary-700--text mr-2 mb-0">
                           Komparasi Tahun:
@@ -775,6 +880,153 @@
                           <option>Projek</option>
                         </select>
                       </div>
+                    </div> -->
+                    <div class="dropdown no-arrow">
+                      <button
+                        id="filterDropdown"
+                        class="btn dropdown-toggle bold-body primary-600--text"
+                        style="border: 1px solid #d0d5dd"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i class="fas fa-cog primary-600--text mr-2"></i>
+                        Pengaturan
+                      </button>
+                      <!-- Filter Dropdown -->
+                      <form
+                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                        aria-labelledby="userDropdown"
+                      >
+                        <div class="py-4" style="width: 400px">
+                          <div
+                            class="d-flex align-items-center justify-content-between px-4"
+                          >
+                            <p class="bold-heading-3 neutral-700--text m-0">
+                              Pengaturan
+                            </p>
+                            <button
+                              class="btn bg-primary-600 btn-dark bold-body"
+                            >
+                              Terapkan
+                            </button>
+                          </div>
+                          <div class="mt-4">
+                            <!-- Urutkan - Collapse -->
+                            <div class="my-3">
+                              <div id="headingOne" class="px-4">
+                                <h2 class="mb-0">
+                                  <button
+                                    class="btn btn-block text-left px-1 btn-collapse"
+                                    type="button"
+                                    data-toggle="collapse"
+                                    data-target="#collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne"
+                                  >
+                                    <div class="d-flex justify-content-between">
+                                      <p
+                                        class="h6 mb-0 font-weight-bolder primary-600--text"
+                                      >
+                                        Atribut
+                                      </p>
+                                      <li class="fas fa-chevron-down"></li>
+                                    </div>
+                                  </button>
+                                </h2>
+                              </div>
+
+                              <div
+                                id="collapseOne"
+                                class="collapse multi-collapse show"
+                                aria-labelledby="headingOne"
+                              >
+                                <div class="bg-primary-50">
+                                  <div class="px-4 py-3">
+                                    <div
+                                      class="custom-control custom-checkbox my-2"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="prospect"
+                                      />
+                                      <label
+                                        class="custom-control-label primary-800--text"
+                                        for="prospect"
+                                        >Prospek</label
+                                      >
+                                    </div>
+                                    <div
+                                      class="custom-control custom-checkbox my-2"
+                                    >
+                                      <input
+                                        type="checkbox"
+                                        class="custom-control-input"
+                                        id="project"
+                                      />
+                                      <label
+                                        class="custom-control-label primary-800--text"
+                                        for="project"
+                                        >Proyek</label
+                                      >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <hr />
+
+                            <div class="px-4">
+                              <p
+                                class="h6 mb-3 font-weight-bolder primary-600--text"
+                              >
+                                Tahun
+                              </p>
+                              <div
+                                class="input-group input-focus input-date mb-3"
+                              >
+                                <input
+                                  type="text"
+                                  id="datepicker"
+                                  class="form-control"
+                                  placeholder="Pilih tahun"
+                                />
+                              </div>
+                              <div class="custom-control custom-checkbox mb-4">
+                                <input
+                                  type="checkbox"
+                                  class="custom-control-input"
+                                  id="comparation-project"
+                                  onchange="handleShowComparationYear(event, 'comparation-project')"
+                                />
+                                <label
+                                  class="custom-control-label primary-800--text"
+                                  for="comparation-project"
+                                  >Komparasi Tahun</label
+                                >
+                              </div>
+                              <div id="comparation-project-year" class="d-none">
+                                <p
+                                  class="h6 mb-3 font-weight-bolder primary-600--text"
+                                >
+                                  Tahun Perbandingan
+                                </p>
+                                <div
+                                  class="input-group input-focus input-date mb-3"
+                                >
+                                  <input
+                                    type="text"
+                                    id="comparation-datepicker"
+                                    class="form-control"
+                                    placeholder="Pilih tahun project"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                   <div class="row no-gutters mb-3">
@@ -926,9 +1178,13 @@
     </div>
 
     <script>
-      const handleCheckbox = (event) => {
-        const test = $('#comparation')
-        console.log(test)
+      const handleShowComparationYear = (event, id) => {
+        const checked = $(`#${id}`).is(':checked')
+        if (checked) {
+          $(`#${id}-year`).addClass('d-block')
+        } else {
+          $(`#${id}-year`).removeClass('d-block')
+        }
       }
     </script>
 
@@ -982,5 +1238,17 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+
+    <!-- Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript">
+      $('#datepicker, #comparation-datepicker').datepicker({
+        format: 'yyyy',
+        viewMode: 'years',
+        minViewMode: 'years',
+        autoclose: true
+      })
+    </script>
   </body>
 </html>
