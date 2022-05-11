@@ -345,7 +345,12 @@
                           <p class="bold-heading-3 neutral-700--text m-0">
                             Urutkan & Filter
                           </p>
-                          <button class="btn bg-primary-600 btn-dark bold-body">
+                          <button
+                            type="button"
+                            role="button"
+                            class="btn bg-primary-600 btn-dark bold-body"
+                            onclick="handleSubmitFilter()"
+                          >
                             Terapkan
                           </button>
                         </div>
@@ -466,11 +471,11 @@
                                     <input
                                       type="checkbox"
                                       class="custom-control-input"
-                                      id="sortAlphabet"
+                                      id="projectOne"
                                     />
                                     <label
                                       class="custom-control-label primary-800--text"
-                                      for="sortAlphabet"
+                                      for="projectOne"
                                       >Jenis Project Satu</label
                                     >
                                   </div>
@@ -480,11 +485,11 @@
                                     <input
                                       type="checkbox"
                                       class="custom-control-input"
-                                      id="sortNewest"
+                                      id="projectTwo"
                                     />
                                     <label
                                       class="custom-control-label primary-800--text"
-                                      for="sortNewest"
+                                      for="projectTwo"
                                       >Jenis Project Dua</label
                                     >
                                   </div>
@@ -494,11 +499,11 @@
                                     <input
                                       type="checkbox"
                                       class="custom-control-input"
-                                      id="sortOldest"
+                                      id="projectThree"
                                     />
                                     <label
                                       class="custom-control-label primary-800--text"
-                                      for="sortOldest"
+                                      for="projectThree"
                                       >Jenis Project Tiga</label
                                     >
                                   </div>
@@ -528,6 +533,10 @@
                     </form>
                   </div>
                 </div>
+              </div>
+              <!-- Filter Chips -->
+              <div id="filterChips" class="d-none">
+                <div id="listChips" class="d-flex my-2 flex-wrap"></div>
               </div>
               <div class="card-body p-0">
                 <div class="table-responsive">
@@ -813,6 +822,48 @@
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <script>
+      const handleSubmitFilter = () => {
+        const tempArray = []
+        $(':checkbox:checked').each(function (i) {
+          const id = $(this).attr('id')
+          const text = $(`label[for='${id}']`)[0].innerHTML
+          tempArray[i] = text
+        })
+
+        /* Close dropdown */
+        $('#filterDropdown').dropdown('toggle')
+
+        if (tempArray.length > 0) {
+          $('#filterChips').removeClass('d-none')
+
+          $('#listChips').empty()
+
+          tempArray.forEach((item, index) => {
+            const element = `<div
+                    class="rounded-pill medium-body bg-primary-100 primary-600--text py-2 px-3 d-flex justify-content-between mr-2 mb-2" id="chip-${index}"
+                  >
+                  <p class="mr-2 mb-0" style="white-space: nowrap">
+                    ${item}
+                  </p>
+                  <button type="button" class="close primary-600--text" aria-label="Close" onclick="handleDeleteChip('${item}','chip-${index}')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  </div>`
+            $('#listChips').append(element)
+          })
+        } else {
+          $('#filterChips').addClass('d-none')
+        }
+      }
+
+      const handleDeleteChip = (text, value) => {
+        $(`#${value}`).remove()
+        const element = $(`label:contains(${text})`).attr('for')
+        $(`#${element}`).prop('checked', false)
+      }
+    </script>
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>

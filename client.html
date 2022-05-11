@@ -1021,14 +1021,6 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <script>
-      // $(document).ready(() => {
-      //   $('input:checkbox').change((e) => {
-      //     const id = e.target.id
-      //     const text = $(`label[for='${id}']`)[0].innerHTML
-      //     console.log(text)
-      //   })
-      // })
-
       const handleSubmitFilter = () => {
         const tempArray = []
         $(':checkbox:checked').each(function (i) {
@@ -1036,7 +1028,6 @@
           const text = $(`label[for='${id}']`)[0].innerHTML
           tempArray[i] = text
         })
-        console.log(tempArray)
 
         /* Close dropdown */
         $('#filterDropdown').dropdown('toggle')
@@ -1046,17 +1037,28 @@
 
           $('#listChips').empty()
 
-          tempArray.forEach((item) => {
+          tempArray.forEach((item, index) => {
             const element = `<div
-                    class="rounded-pill medium-body bg-primary-100 primary-600--text py-2 px-3 inline-block mr-2 mb-2"
+                    class="rounded-pill medium-body bg-primary-100 primary-600--text py-2 px-3 d-flex justify-content-between mr-2 mb-2" id="chip-${index}"
                   >
+                  <p class="mr-2 mb-0" style="white-space: nowrap">
                     ${item}
+                  </p>
+                  <button type="button" class="close primary-600--text" aria-label="Close" onclick="handleDeleteChip('${item}','chip-${index}')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                   </div>`
             $('#listChips').append(element)
           })
         } else {
           $('#filterChips').addClass('d-none')
         }
+      }
+
+      const handleDeleteChip = (text, value) => {
+        $(`#${value}`).remove()
+        const element = $(`label:contains(${text})`).attr('for')
+        $(`#${element}`).prop('checked', false)
       }
     </script>
 
