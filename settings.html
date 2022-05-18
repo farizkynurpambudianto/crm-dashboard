@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>CRM - Client</title>
+    <title>CRM DEKA - Settings</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -32,6 +32,7 @@
       href="vendor/datatables/dataTables.bootstrap4.min.css"
       rel="stylesheet"
     />
+    <link rel="icon" href="/32px.png" type="image/png" />
   </head>
 
   <body id="page-top">
@@ -209,9 +210,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i class="fas fa-bell fa-fw"></i>
-                  <!-- Counter - Alerts -->
-                  <span class="badge badge-danger badge-counter">3+</span>
+                  <img class="mr-2" src="img/bell.svg" />
                 </a>
                 <!-- Dropdown - Alerts -->
                 <div
@@ -263,13 +262,11 @@
                 </div>
               </li>
 
-              <div class="topbar-divider d-none d-sm-block"></div>
-
               <!-- Nav Item - User Information -->
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="#"
+                  href="/settings.html"
                   id="userDropdown"
                   role="button"
                   aria-haspopup="true"
@@ -277,7 +274,7 @@
                 >
                   <img
                     class="img-profile rounded-circle mr-2"
-                    src="img/undraw_profile.svg"
+                    src="img/profile-navbar.svg"
                   />
                   <span class="d-none d-lg-inline text-gray-600 small mr-2"
                     >Joseph Augustus</span
@@ -321,14 +318,14 @@
                     <div>
                       <p class="bold-heading-3 mb-2">Pengaturan Akun</p>
                       <p class="regular-body neutral-600--text mb-3">
-                        Amet minim mollit non deserunt ullamco est sit aliqua.
-                        <br />
-                        Amet minim mollit non deserunt ullamco est sit aliqua.
+                        Lengkapi / lakukan perubahan terhadap data diri yang
+                        sudah anda masukkan kedalam website
                       </p>
                     </div>
                     <button
                       class="btn bg-primary-600 btn-dark bold-body"
-                      onclick="updateAccountHandler()"
+                      id="updateButton"
+                      onclick="enableField()"
                     >
                       Ubah Akun
                     </button>
@@ -529,8 +526,9 @@
                   <div class="row no-gutters justify-content-end">
                     <button
                       id="cancelButton"
-                      class="btn primary-600--text mr-2"
+                      class="btn primary-600--text mr-2 bold-body"
                       style="border: 1px solid #264179"
+                      onclick="disableField()"
                       disabled
                     >
                       Batalkan
@@ -1558,17 +1556,13 @@
         $(
           '#inputName-1, #inputEmail, #inputName-2, #cancelButton, #submitButton'
         ).prop('disabled', false)
+        $('#updateButton').prop('disabled', true)
       }
       const disableField = () => {
         $(
           '#inputName-1, #inputEmail, #inputName-2, #cancelButton, #submitButton'
         ).prop('disabled', true)
-      }
-      const updateAccountHandler = () => {
-        const isEnabled = $(
-          '#inputName-1, #inputEmail, #inputName-2, #cancelButton, #submitButton'
-        ).prop('disabled')
-        isEnabled ? enableField() : disableField()
+        $('#updateButton').prop('disabled', false)
       }
     </script>
 

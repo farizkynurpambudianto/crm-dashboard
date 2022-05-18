@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>CRM - Client</title>
+    <title>CRM DEKA - Client</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -32,6 +32,7 @@
       href="vendor/datatables/dataTables.bootstrap4.min.css"
       rel="stylesheet"
     />
+    <link rel="icon" href="/32px.png" type="image/png" />
   </head>
 
   <body id="page-top">
@@ -209,9 +210,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i class="fas fa-bell fa-fw"></i>
-                  <!-- Counter - Alerts -->
-                  <span class="badge badge-danger badge-counter">3+</span>
+                  <img class="mr-2" src="img/bell.svg" />
                 </a>
                 <!-- Dropdown - Alerts -->
                 <div
@@ -263,13 +262,11 @@
                 </div>
               </li>
 
-              <div class="topbar-divider d-none d-sm-block"></div>
-
               <!-- Nav Item - User Information -->
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="#"
+                  href="/settings.html"
                   id="userDropdown"
                   role="button"
                   aria-haspopup="true"
@@ -277,7 +274,7 @@
                 >
                   <img
                     class="img-profile rounded-circle mr-2"
-                    src="img/undraw_profile.svg"
+                    src="img/profile-navbar.svg"
                   />
                   <span class="d-none d-lg-inline text-gray-600 small mr-2"
                     >Joseph Augustus</span
@@ -293,7 +290,7 @@
             <h1 class="bold-heading-2 neutral-800--text mb-4">Klien</h1>
             <div class="card shadow mb-4 p-4">
               <div
-                class="d-flex flex-row align-items-center justify-content-between mb-2"
+                class="d-flex flex-row align-items-center justify-content-between mb-4"
               >
                 <div class="col-4 p-0">
                   <div class="d-flex align-items-center flex-nowrap">
@@ -349,7 +346,7 @@
                             Terapkan
                           </button>
                         </div>
-                        <div class="mt-4" id="accordionExample">
+                        <div class="mt-4">
                           <!-- Urutkan - Collapse -->
                           <div class="mb-2">
                             <div id="headingOne" class="px-4">
@@ -382,7 +379,6 @@
                               id="collapseOne"
                               class="collapse multi-collapse show"
                               aria-labelledby="headingOne"
-                              data-parent="#accordionExample"
                             >
                               <div class="bg-primary-50">
                                 <div class="px-4 py-3">
@@ -464,7 +460,6 @@
                               id="collapseTwo"
                               class="collapse multi-collapse show"
                               aria-labelledby="headingTwo"
-                              data-parent="#accordionExample"
                             >
                               <div class="px-4">
                                 <div class="mb-2">
@@ -474,7 +469,7 @@
                                       <div id="innerHeadingOne">
                                         <h2 class="mb-0">
                                           <button
-                                            class="btn btn-block text-left px-1"
+                                            class="btn btn-block text-left px-1 btn-collapse"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#innerCollapseOne"

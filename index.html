@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>CRM - Dashboard</title>
+    <title>CRM DEKA - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -38,6 +38,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
       rel="stylesheet"
     />
+    <link rel="icon" href="/32px.png" type="image/png" />
   </head>
 
   <body id="page-top">
@@ -227,9 +228,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  <i class="fas fa-bell fa-fw"></i>
-                  <!-- Counter - Alerts -->
-                  <span class="badge badge-danger badge-counter">3+</span>
+                  <img class="mr-2" src="img/bell.svg" />
                 </a>
                 <!-- Dropdown - Alerts -->
                 <div
@@ -281,13 +280,11 @@
                 </div>
               </li>
 
-              <div class="topbar-divider d-none d-sm-block"></div>
-
               <!-- Nav Item - User Information -->
               <li class="nav-item">
                 <a
                   class="nav-link"
-                  href="#"
+                  href="/settings.html"
                   id="userDropdown"
                   role="button"
                   aria-haspopup="true"
@@ -295,7 +292,7 @@
                 >
                   <img
                     class="img-profile rounded-circle mr-2"
-                    src="img/undraw_profile.svg"
+                    src="img/profile-navbar.svg"
                   />
                   <span class="d-none d-lg-inline text-gray-600 small mr-2"
                     >Joseph Augustus</span
@@ -498,7 +495,10 @@
                               Pengaturan
                             </p>
                             <button
+                              type="button"
+                              role="button"
                               class="btn bg-primary-600 btn-dark bold-body"
+                              onclick="handleSubmitFilter()"
                             >
                               Terapkan
                             </button>
@@ -533,7 +533,10 @@
                                 class="collapse multi-collapse show"
                                 aria-labelledby="headingOne"
                               >
-                                <div class="bg-primary-50">
+                                <div
+                                  class="bg-primary-50"
+                                  id="salesCheckboxList"
+                                >
                                   <div class="px-4 py-3">
                                     <div
                                       class="custom-control custom-checkbox my-2"
@@ -635,26 +638,7 @@
                       </form>
                     </div>
                   </div>
-                  <div class="row no-gutters mb-3">
-                    <div class="d-flex align-items-center mr-3">
-                      <span
-                        class="bg-primary-600 mr-2"
-                        style="width: 14px; height: 14px; border-radius: 4px"
-                      ></span>
-                      <p id="legend1-sales-chart" class="regular-metadata mb-0">
-                        Penjualan 2022
-                      </p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <span
-                        class="bg-secondary-600 mr-2"
-                        style="width: 14px; height: 14px; border-radius: 4px"
-                      ></span>
-                      <p id="legend2-sales-chart" class="regular-metadata mb-0">
-                        Penjualan 2021
-                      </p>
-                    </div>
-                  </div>
+                  <div id="legend-sales" class="row no-gutters mb-3"></div>
                   <div class="card-body p-0">
                     <div class="chart-area">
                       <canvas id="salesChart"></canvas>
@@ -883,7 +867,7 @@
                     </div> -->
                     <div class="dropdown no-arrow">
                       <button
-                        id="filterDropdown"
+                        id="filterDropdownProject"
                         class="btn dropdown-toggle bold-body primary-600--text"
                         style="border: 1px solid #d0d5dd"
                         data-toggle="dropdown"
@@ -906,7 +890,10 @@
                               Pengaturan
                             </p>
                             <button
+                              type="button"
+                              role="button"
                               class="btn bg-primary-600 btn-dark bold-body"
+                              onclick="handleSubmitFilterProject()"
                             >
                               Terapkan
                             </button>
@@ -941,7 +928,10 @@
                                 class="collapse multi-collapse show"
                                 aria-labelledby="headingOne"
                               >
-                                <div class="bg-primary-50">
+                                <div
+                                  class="bg-primary-50"
+                                  id="projectCheckboxList"
+                                >
                                   <div class="px-4 py-3">
                                     <div
                                       class="custom-control custom-checkbox my-2"
@@ -988,7 +978,7 @@
                               >
                                 <input
                                   type="text"
-                                  id="datepicker"
+                                  id="datepicker-project"
                                   class="form-control"
                                   placeholder="Pilih tahun"
                                 />
@@ -1017,7 +1007,7 @@
                                 >
                                   <input
                                     type="text"
-                                    id="comparation-datepicker"
+                                    id="comparation-datepicker-project"
                                     class="form-control"
                                     placeholder="Pilih tahun project"
                                   />
@@ -1029,32 +1019,7 @@
                       </form>
                     </div>
                   </div>
-                  <div class="row no-gutters mb-3">
-                    <div class="d-flex align-items-center mr-3">
-                      <span
-                        class="bg-primary-600 mr-2"
-                        style="width: 14px; height: 14px; border-radius: 4px"
-                      ></span>
-                      <p
-                        id="legend1-project-chart"
-                        class="regular-metadata mb-0"
-                      >
-                        Prospek 2022
-                      </p>
-                    </div>
-                    <div class="d-flex align-items-center">
-                      <span
-                        class="bg-secondary-600 mr-2"
-                        style="width: 14px; height: 14px; border-radius: 4px"
-                      ></span>
-                      <p
-                        id="legend2-project-chart"
-                        class="regular-metadata mb-0"
-                      >
-                        Prospek 2021
-                      </p>
-                    </div>
-                  </div>
+                  <div id="legend-project" class="row no-gutters mb-3"></div>
                   <div class="card-body p-0">
                     <div class="chart-area">
                       <canvas id="projectChart"></canvas>
@@ -1177,17 +1142,6 @@
       </div>
     </div>
 
-    <script>
-      const handleShowComparationYear = (event, id) => {
-        const checked = $(`#${id}`).is(':checked')
-        if (checked) {
-          $(`#${id}-year`).addClass('d-block')
-        } else {
-          $(`#${id}-year`).removeClass('d-block')
-        }
-      }
-    </script>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1211,18 +1165,191 @@
     <script src="js/chart/sales-chart.js"></script>
     <script src="js/chart/hitrate-chart.js"></script>
 
-    <script
-      type="text/javascript"
-      src="js/chart/hitrate-chart-handler.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/chart/sales-chart-handler.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/chart/project-chart-handler.js"
-    ></script>
+    <script>
+      $(document).ready(function () {
+        $('#salesCheckboxList')
+          .find('input[type=checkbox]')
+          .each(function () {
+            this.checked = true
+          })
+        handleSubmitFilter()
+        $('#filterDropdown').dropdown('toggle')
+
+        $('#projectCheckboxList')
+          .find('input[type=checkbox]')
+          .each(function () {
+            this.checked = true
+          })
+        handleSubmitFilterProject()
+        $('#filterDropdownProject').dropdown('toggle')
+      })
+      const handleSubmitFilter = () => {
+        const tempArray = []
+        $('#salesCheckboxList :checkbox:checked')
+          .not('#comparation-sales')
+          .each(function (i) {
+            const id = $(this).attr('id')
+            const text = $(`label[for='${id}']`)[0].innerHTML
+            tempArray[i] = text
+          })
+
+        const year = $('#datepicker').val() || new Date().getFullYear()
+        const comparationYear = $('#comparation-datepicker').val()
+
+        /* Close dropdown */
+        $('#filterDropdown').dropdown('toggle')
+
+        if (tempArray.length > 0) {
+          $('#legend-sales').empty()
+
+          const colorPicker = (val) => {
+            const obj = {
+              Penjualan: '#264179',
+              Pendapatan: '#F7A533',
+              Target: '#5C6575'
+            }
+
+            return obj[val]
+          }
+
+          tempArray.forEach((item, index) => {
+            const element = `<div class="d-flex align-items-center mr-3">
+                        <span
+                          class="mr-2"
+                          style="border: 1px solid ${colorPicker(
+                            item
+                          )}; width: 24px"
+                        ></span>
+                        <p class="regular-metadata mb-0">
+                          ${item} ${year}
+                        </p>
+                      </div>`
+            $('#legend-sales').append(element)
+          })
+
+          if ($(`#comparation-sales`).is(':checked')) {
+            const comparationArray = [...tempArray]
+            comparationArray.forEach((item, index) => {
+              const element = `<div class="d-flex align-items-center mr-3">
+                        <span
+                          class="mr-2"
+                          style="border: 1px solid ${colorPicker(
+                            item
+                          )}; width: 24px; border-style: dashed"
+                        ></span>
+                        <p id="legend1-sales-chart" class="regular-metadata mb-0">
+                          ${item} ${comparationYear}
+                        </p>
+                      </div>`
+              $('#legend-sales').append(element)
+            })
+          }
+          const tempArr = tempArray.map((item) => {
+            if (item === 'Penjualan') return 'sales'
+            if (item === 'Pendapatan') return 'income'
+            if (item === 'Target') return 'target'
+          })
+          const compArr = tempArray.map((item) => {
+            if ($(`#comparation-sales`).is(':checked')) {
+              if (item === 'Penjualan') return 'salesComparation'
+              if (item === 'Pendapatan') return 'incomeComparation'
+              if (item === 'Target') return 'targetComparation'
+            } else {
+              return
+            }
+          })
+          const finalArray = [...tempArr, ...compArr]
+          chartHandler(finalArray, year, comparationYear)
+        }
+      }
+
+      const handleSubmitFilterProject = (e) => {
+        const tempArray = []
+        $('#projectCheckboxList :checkbox:checked')
+          .not('#comparation-project')
+          .each(function (i) {
+            const id = $(this).attr('id')
+            const text = $(`label[for='${id}']`)[0].innerHTML
+            tempArray[i] = text
+          })
+
+        const year = $('#datepicker-project').val() || new Date().getFullYear()
+        const comparationYear = $('#comparation-datepicker-project').val()
+
+        /* Close dropdown */
+        $('#filterDropdownProject').dropdown('toggle')
+
+        if (tempArray.length > 0) {
+          $('#legend-project').empty()
+
+          const colorPicker = (val) => {
+            const obj = {
+              Prospek: '#264179',
+              Proyek: '#F7A533'
+            }
+
+            return obj[val]
+          }
+
+          tempArray.forEach((item, index) => {
+            const element = `<div class="d-flex align-items-center mr-3">
+                        <span
+                          class="mr-2"
+                          style="border: 1px solid ${colorPicker(
+                            item
+                          )}; width: 24px"
+                        ></span>
+                        <p class="regular-metadata mb-0">
+                          ${item} ${year}
+                        </p>
+                      </div>`
+            $('#legend-project').append(element)
+          })
+
+          if ($(`#comparation-project`).is(':checked')) {
+            const comparationArray = [...tempArray]
+            comparationArray.forEach((item, index) => {
+              const element = `<div class="d-flex align-items-center mr-3">
+                        <span
+                          class="mr-2"
+                          style="border: 1px solid ${colorPicker(
+                            item
+                          )}; width: 24px; border-style: dashed"
+                        ></span>
+                        <p class="regular-metadata mb-0">
+                          ${item} ${comparationYear}
+                        </p>
+                      </div>`
+              $('#legend-project').append(element)
+            })
+          }
+
+          const tempArr = tempArray.map((item) => {
+            if (item === 'Prospek') return 'prospect'
+            if (item === 'Proyek') return 'project'
+          })
+          const compArr = tempArray.map((item) => {
+            if ($(`#comparation-project`).is(':checked')) {
+              if (item === 'Prospek') return 'prospectComparation'
+              if (item === 'Proyek') return 'projectComparation'
+            } else {
+              return
+            }
+          })
+          const finalArray = [...tempArr, ...compArr]
+          projectChartHandler(finalArray, year, comparationYear)
+        }
+      }
+
+      const handleShowComparationYear = (event, id) => {
+        const checked = $(`#${id}`).is(':checked')
+        if (checked) {
+          $(`#${id}-year`).addClass('d-block')
+        } else {
+          $(`#${id}-year`).removeClass('d-block')
+        }
+      }
+    </script>
 
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
@@ -1243,7 +1370,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 
     <script type="text/javascript">
-      $('#datepicker, #comparation-datepicker').datepicker({
+      $(
+        '#datepicker, #datepicker-project, #datepicker-hitrate, #comparation-datepicker, #comparation-datepicker-project, #comparation-datepicker-hitrate'
+      ).datepicker({
         format: 'yyyy',
         viewMode: 'years',
         minViewMode: 'years',
