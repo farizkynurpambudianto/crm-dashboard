@@ -17,6 +17,38 @@ function assertData(firstYear, endYear, type) {
   myLineChart.update()
 }
 
+function chartHandler(val, year, comparationYear) {
+  const data = myLineChart.data.datasets
+  const sanitizedArr = val.filter((element) => {
+    return element !== undefined
+  })
+
+  const newData = data.map((item) => {
+    const bool = sanitizedArr.some((value) => item.id === value)
+    return {
+      ...item,
+      label: labelGenerator(item.id, year, comparationYear),
+      hidden: !bool
+    }
+  })
+  console.log(data)
+  myLineChart.data.datasets = newData
+  myLineChart.update()
+}
+
+function labelGenerator(key, year, comparationYear) {
+  const obj = {
+    sales: `Penjualan ${year}`,
+    income: `Pendapatan ${year}`,
+    target: `Target ${year}`,
+    incomeComparation: `Pendapatan ${comparationYear}`,
+    salesComparation: `Penjualan ${comparationYear}`,
+    salesComparation: `Target ${comparationYear}`
+  }
+
+  return obj[key]
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -62,7 +94,6 @@ function arrayGenerator(length) {
 
 // Area Chart Example
 var ctx = document.getElementById('salesChart')
-console.log(Chart.defaults)
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
@@ -82,40 +113,63 @@ var myLineChart = new Chart(ctx, {
     ],
     datasets: [
       {
+        id: 'income',
         label: 'Pendapatan 2022',
-        lineTension: 0.3,
-        backgroundColor: 'rgba(237, 243, 255, 1)',
-        borderColor: 'rgba(78, 115, 223, 1)',
-        pointRadius: 3,
-        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointBorderColor: 'rgba(78, 115, 223, 1)',
-        pointHoverRadius: 3,
-        pointHoverBackgroundColor: 'rgba(78, 115, 223, 1)',
-        pointHoverBorderColor: 'rgba(78, 115, 223, 1)',
-        pointHitRadius: 10,
-        pointBorderWidth: 2,
+        borderColor: 'rgba(247, 165, 51, 1)',
         data: arrayGenerator(12),
         hidden: false
       },
       {
+        id: 'sales',
+        label: 'Penjualan 2022',
+        borderColor: 'rgba(61, 90, 149, 1)',
+        data: arrayGenerator(12),
+        hidden: false
+      },
+      {
+        id: 'target',
+        label: 'Target 2022',
+        borderColor: 'rgba(92, 101, 117, 1)',
+        data: arrayGenerator(12),
+        hidden: false
+      },
+      {
+        id: 'incomeComparation',
+        label: 'Pendapatan 2021',
+        borderColor: 'rgba(247, 165, 51, 1)',
+        borderDash: [5, 5],
+        data: arrayGenerator(12),
+        hidden: true
+      },
+      {
+        id: 'salesComparation',
         label: 'Penjualan 2021',
-        lineTension: 0.3,
-        backgroundColor: 'rgba(255, 250, 242, 1)',
-        borderColor: 'rgba(225, 135, 8, 1)',
-        pointRadius: 3,
-        pointBackgroundColor: 'rgba(225, 135, 8, 1)',
-        pointBorderColor: 'rgba(225, 135, 8, 1)',
-        pointHoverRadius: 3,
-        pointHoverBackgroundColor: 'rgba(225, 135, 8, 1)',
-        pointHoverBorderColor: 'rgba(225, 135, 8, 1)',
-        pointHitRadius: 10,
-        pointBorderWidth: 2,
-        data: arrayGenerator(12)
+        borderColor: 'rgba(61, 90, 149, 1)',
+        borderDash: [5, 5],
+        data: arrayGenerator(12),
+        hidden: true
+      },
+      {
+        id: 'targetComparation',
+        label: 'Target 2021',
+        borderColor: 'rgba(92, 101, 117, 1)',
+        borderDash: [5, 5],
+        data: arrayGenerator(12),
+        hidden: true
       }
     ]
   },
   options: {
     maintainAspectRatio: false,
+    elements: {
+      point: {
+        radius: 0
+      },
+      line: {
+        tension: 0,
+        backgroundColor: 'transparent'
+      }
+    },
     layout: {
       padding: {
         left: 10,
