@@ -1617,7 +1617,7 @@ tr:last-child > td {
 
 .table.table-custom thead th {
   vertical-align: bottom;
-  background: #f8faff;
+  background: #f8f9fb;
   color: #1b1f26;
 }
 
@@ -2552,7 +2552,9 @@ textarea.form-control.is-invalid {
 
 .btn.disabled,
 .btn:disabled {
-  opacity: 0.65;
+  background-color: #e4e7ec !important;
+  border: 0px !important;
+  color: #98a2b3 !important;
 }
 
 .btn:not(:disabled):not(.disabled) {
@@ -3894,8 +3896,8 @@ input[type='button'].btn-block {
 
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
-  border-color: #4e73df;
-  background-color: #4e73df;
+  border-color: #264179;
+  background-color: #264179;
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
@@ -5218,8 +5220,8 @@ input[type='button'].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #4e73df;
-  border-color: #4e73df;
+  background-color: #1c305a;
+  border-color: #1c305a;
 }
 
 .page-item.disabled .page-link {
