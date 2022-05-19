@@ -122,7 +122,7 @@ var projectChart = new Chart(ctx, {
       {
         id: 'prospectComparation',
         label: 'Prospek 2021',
-        borderColor: 'rgba(61, 90, 149, 1)',
+        borderColor: 'rgba(61, 90, 149, 0.4)',
         borderDash: [5, 5],
         data: arrayGeneratorProjectChart(12),
         hidden: true
@@ -130,7 +130,7 @@ var projectChart = new Chart(ctx, {
       {
         id: 'projectComparation',
         label: 'Proyek 2021',
-        borderColor: 'rgba(247, 165, 51, 1)',
+        borderColor: 'rgba(247, 165, 51, 0.4)',
         borderDash: [5, 5],
         data: arrayGeneratorProjectChart(12),
         hidden: true
