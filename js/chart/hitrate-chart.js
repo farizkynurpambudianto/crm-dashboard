@@ -14,6 +14,25 @@ function assertDataHitrate(firstYear, endYear) {
   myBarChart.update()
 }
 
+function hitrateChartHandler(val, year, comparationYear) {
+  const data = myBarChart.data.datasets
+  const sanitizedArr = val.filter((element) => {
+    return element !== undefined
+  })
+
+  const newData = data.map((item, index) => {
+    const bool = sanitizedArr.some((value) => item.id === value)
+    return {
+      ...item,
+      label: `Hitrate ${index === 0 ? year : comparationYear}`,
+      hidden: !bool
+    }
+  })
+
+  myBarChart.data.datasets = newData
+  myBarChart.update()
+}
+
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');
   // *     return: '1 234,56'
@@ -75,14 +94,18 @@ var myBarChart = new Chart(ctx, {
     ],
     datasets: [
       {
+        id: 'hitrate',
         label: 'Hit Rate',
         backgroundColor: '#264179',
-        data: numberGeneratorArray()
+        data: numberGeneratorArray(),
+        hidden: false
       },
       {
+        id: 'hitrateComparison',
         label: 'Hit Rate',
         backgroundColor: '#E18708',
-        data: numberGeneratorArray()
+        data: numberGeneratorArray(),
+        hidden: true
       }
     ]
   },

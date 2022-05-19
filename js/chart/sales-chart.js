@@ -129,14 +129,14 @@ var myLineChart = new Chart(ctx, {
       {
         id: 'target',
         label: 'Target 2022',
-        borderColor: 'rgba(92, 101, 117, 1)',
+        borderColor: 'rgba(231, 68, 107, 1)',
         data: arrayGenerator(12),
         hidden: false
       },
       {
         id: 'incomeComparation',
         label: 'Pendapatan 2021',
-        borderColor: 'rgba(247, 165, 51, 1)',
+        borderColor: 'rgba(247, 165, 51, 0.4)',
         borderDash: [5, 5],
         data: arrayGenerator(12),
         hidden: true
@@ -144,7 +144,7 @@ var myLineChart = new Chart(ctx, {
       {
         id: 'salesComparation',
         label: 'Penjualan 2021',
-        borderColor: 'rgba(61, 90, 149, 1)',
+        borderColor: 'rgba(61, 90, 149, 0.4)',
         borderDash: [5, 5],
         data: arrayGenerator(12),
         hidden: true
@@ -152,7 +152,7 @@ var myLineChart = new Chart(ctx, {
       {
         id: 'targetComparation',
         label: 'Target 2021',
-        borderColor: 'rgba(92, 101, 117, 1)',
+        borderColor: 'rgba(231, 68, 107, 0.4)',
         borderDash: [5, 5],
         data: arrayGenerator(12),
         hidden: true
